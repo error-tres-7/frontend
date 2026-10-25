@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { createQuery, useQueryClient } from "@tanstack/svelte-query";
 	import { auth_failure_message } from "#lib/auth/errors.js";
+	import { auth_queries, home_path, safe_next, signed_in } from "#lib/auth/session.js";
 	import { AuthSchema } from "#schemas/auth/index.js";
 	import { auth } from "#services/auth/index.js";
 	import * as Field from "#sharing/molecules/field/index.js";
@@ -7,8 +9,19 @@
 	import type { SignInInput, User } from "#typing/schemas/auth.js";
 	import { goto } from "$app/navigation";
 	import { resolve } from "$app/paths";
+	import { page } from "$app/state";
 
 	let failure = $state("");
+
+	const client = useQueryClient();
+	const session = createQuery(() => auth_queries.me());
+	const next = $derived(safe_next(page.url.searchParams.get("next")));
+	const register_href = $derived(`${resolve("/(auth)/registro")}${next ? `?next=${encodeURIComponent(next)}` : ""}`);
+
+	// Someone already signed in has nothing to do here.
+	$effect(() => {
+		if (session.data) void goto(next ?? home_path(session.data), { replaceState: true });
+	});
 
 	const defaults: SignInInput = { correo: "", contrasena: "" };
 	const form = createAppForm(() => ({
@@ -23,7 +36,8 @@
 				failure = auth_failure_message(error);
 				return;
 			}
-			await goto(user.rol === "comerciante" ? resolve("/(merchants)/negocio") : resolve("/(customers)"));
+			signed_in(client, user);
+			await goto(next ?? home_path(user), { replaceState: true });
 		},
 	}));
 </script>
@@ -32,6 +46,9 @@
 <main id="contenido" class="mx-auto flex min-h-svh max-w-md flex-col justify-center gap-6 px-6 py-12">
 	<a href={resolve("/(customers)")} class="text-sm font-semibold">entrepuestos</a>
 	<h1 class="text-3xl font-semibold tracking-tight">Iniciar sesión</h1>
+	{#if next?.startsWith("/negocio")}
+		<p class="text-sm text-muted-foreground">Entra con tu cuenta de comerciante para ver tu negocio.</p>
+	{/if}
 	<!-- POST so a submit before hydration never puts the password in the URL. -->
 	<form
 		method="post"
@@ -64,6 +81,6 @@
 	</form>
 	<p class="text-sm text-muted-foreground">
 		¿No tienes cuenta?
-		<a href={resolve("/(auth)/registro")} class="font-semibold text-foreground underline">Crea una</a>
+		<a href={register_href} class="font-semibold text-foreground underline">Crea una</a>
 	</p>
 </main>

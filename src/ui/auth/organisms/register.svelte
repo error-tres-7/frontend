@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { createQuery, useQueryClient } from "@tanstack/svelte-query";
 	import { auth_failure_message } from "#lib/auth/errors.js";
+	import { auth_queries, home_path, safe_next, signed_in } from "#lib/auth/session.js";
 	import { AuthSchema } from "#schemas/auth/index.js";
 	import { auth } from "#services/auth/index.js";
 	import * as Field from "#sharing/molecules/field/index.js";
@@ -7,15 +9,32 @@
 	import type { SignUpInput, SignUpValues, User } from "#typing/schemas/auth.js";
 	import { goto } from "$app/navigation";
 	import { resolve } from "$app/paths";
+	import { page } from "$app/state";
 
 	let failure = $state("");
+
+	const client = useQueryClient();
+	const session = createQuery(() => auth_queries.me());
+	const next = $derived(safe_next(page.url.searchParams.get("next")));
+	const login_href = $derived(`${resolve("/(auth)/login")}${next ? `?next=${encodeURIComponent(next)}` : ""}`);
+
+	$effect(() => {
+		if (session.data) void goto(next ?? home_path(session.data), { replaceState: true });
+	});
 
 	const roles = [
 		{ value: "cliente", label: "Cliente", hint: "Aparto productos en los mercados." },
 		{ value: "comerciante", label: "Comerciante", hint: "Vendo en un puesto o local." },
 	] as const;
 
-	const defaults: SignUpInput = { nombre: "", correo: "", contrasena: "", rol: "cliente" };
+	// Arriving from the merchant space, the likely intent is a merchant account.
+	const from_merchant = safe_next(page.url.searchParams.get("next"))?.startsWith("/negocio") ?? false;
+	const defaults: SignUpInput = {
+		nombre: "",
+		correo: "",
+		contrasena: "",
+		rol: from_merchant ? "comerciante" : "cliente",
+	};
 	const form = createAppForm(() => ({
 		defaultValues: defaults,
 		validators: { onSubmit: AuthSchema.SignUp },
@@ -31,7 +50,8 @@
 				failure = auth_failure_message(error);
 				return;
 			}
-			await goto(user.rol === "comerciante" ? resolve("/(merchants)/negocio") : resolve("/(customers)"));
+			signed_in(client, user);
+			await goto(next ?? home_path(user), { replaceState: true });
 		},
 	}));
 </script>
@@ -87,6 +107,6 @@
 	</form>
 	<p class="text-sm text-muted-foreground">
 		¿Ya tienes cuenta?
-		<a href={resolve("/(auth)/login")} class="font-semibold text-foreground underline">Inicia sesión</a>
+		<a href={login_href} class="font-semibold text-foreground underline">Inicia sesión</a>
 	</p>
 </main>

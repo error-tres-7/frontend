@@ -1,11 +1,31 @@
 <script lang="ts">
-	import { Heart, ShoppingBag, Store, UserRound } from "@lucide/svelte";
+	import { Heart, LogOut, ShoppingBag, Store, UserRound } from "@lucide/svelte";
+	import { createQuery, useQueryClient } from "@tanstack/svelte-query";
+	import { auth_queries, sign_out } from "#lib/auth/session.js";
 	import { get_customer } from "#lib/customer/context.js";
 	import { Button } from "#sharing/molecules/button/index.js";
+	import { goto } from "$app/navigation";
 	import { resolve } from "$app/paths";
 	import { page } from "$app/state";
 
 	const customer = get_customer();
+	const client = useQueryClient();
+	const session = createQuery(() => auth_queries.me());
+	let leaving = $state(false);
+	let failure = $state("");
+
+	async function logout() {
+		leaving = true;
+		failure = "";
+		try {
+			await sign_out(client);
+			await goto(resolve("/(customers)"));
+		} catch {
+			failure = "No pudimos cerrar tu sesión. Inténtalo de nuevo.";
+		} finally {
+			leaving = false;
+		}
+	}
 </script>
 
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -42,7 +62,26 @@
 					>
 				{/if}
 			</Button>
-			<Button href={resolve("/(auth)/login")} class="min-h-11 px-3 sm:px-5">Iniciar sesión</Button>
+			{#if session.data}
+				{#if session.data.rol === "comerciante"}
+					<Button href={resolve("/(merchants)/negocio")} class="min-h-11 px-3 sm:px-5">Mi negocio</Button>
+				{/if}
+				<span class="account" title={session.data.correo}>
+					<span class="avatar" aria-hidden="true">{session.data.nombre.charAt(0)}</span>
+					<span class="hidden lg:inline">{session.data.nombre.split(" ")[0]}</span>
+				</span>
+				<Button
+					variant="ghost"
+					size="icon"
+					class="size-11"
+					disabled={leaving}
+					onclick={logout}
+					aria-label={leaving ? "Cerrando sesión" : `Cerrar sesión de ${session.data.nombre}`}
+					><LogOut /></Button
+				>
+			{:else}
+				<Button href={resolve("/(auth)/login")} class="min-h-11 px-3 sm:px-5">Iniciar sesión</Button>
+			{/if}
 		</nav>
 	</div>
 	<nav aria-label="Tipo de usuario" class="flex gap-2 px-4 pb-3 md:hidden">
@@ -60,6 +99,9 @@
 			><ShoppingBag /></Button
 		>
 	</nav>
+	{#if failure}
+		<p role="alert" class="px-5 pb-3 text-sm text-destructive sm:px-8 lg:px-12">{failure}</p>
+	{/if}
 </header>
 
 <style>
@@ -78,6 +120,23 @@
 	}
 	.audience:hover {
 		text-decoration: underline;
+	}
+	.account {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+	}
+	.avatar {
+		display: grid;
+		place-items: center;
+		width: 36px;
+		height: 36px;
+		border-radius: 50%;
+		background: var(--accent, #e3f09a);
+		font-size: 0.8125rem;
+		font-weight: 700;
 	}
 	.mobile-audience {
 		display: flex;

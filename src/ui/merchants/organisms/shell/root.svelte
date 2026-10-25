@@ -1,21 +1,37 @@
 <script lang="ts">
 	import "@fontsource-variable/bricolage-grotesque";
 	import "@fontsource-variable/dm-sans";
-	import { LayoutDashboard, Package, ShoppingBag, Store, Wallet } from "@lucide/svelte";
-	import { createQuery } from "@tanstack/svelte-query";
+	import { LayoutDashboard, LogOut, Package, ShoppingBag, Store, Wallet } from "@lucide/svelte";
+	import { createQuery, useQueryClient } from "@tanstack/svelte-query";
 	import type { Snippet } from "svelte";
+	import { sign_out } from "#lib/auth/session.js";
 	import { set_merchant } from "#lib/merchant/context.js";
 	import { merchant_queries } from "#lib/merchant/queries.js";
 	import StatusBadge from "#merchants/molecules/status-badge.svelte";
 	import SaleDialog from "#merchants/organisms/sale-dialog.svelte";
 	import { iso_day } from "#utils/format.js";
+	import { goto } from "$app/navigation";
 	import { resolve } from "$app/paths";
 	import { page } from "$app/state";
 
 	let { children }: { children: Snippet } = $props();
 
+	const client = useQueryClient();
 	const today = iso_day();
 	let selling = $state(false);
+	let leaving = $state(false);
+
+	async function logout() {
+		leaving = true;
+		try {
+			await sign_out(client);
+			await goto(resolve("/(customers)"));
+		} catch {
+			announcement = "No pudimos cerrar tu sesión. Inténtalo de nuevo.";
+		} finally {
+			leaving = false;
+		}
+	}
 	let announcement = $state("");
 	let shell = $state<HTMLElement>();
 
@@ -91,6 +107,10 @@
 				<span>{profile.data.account_name}</span>
 			</div>
 		{/if}
+		<button type="button" class="logout" class:alone={!profile.data} disabled={leaving} onclick={logout}>
+			<LogOut size={18} aria-hidden="true" />
+			{leaving ? "Cerrando sesión…" : "Cerrar sesión"}
+		</button>
 	</aside>
 
 	<div class="workspace">
@@ -98,11 +118,22 @@
 			<a class="wordmark" href={resolve("/(merchants)/negocio")} aria-label="entrepuestos, resumen de tu negocio"
 				>entrepuestos</a
 			>
-			{#if profile.data}
-				<StatusBadge tone={profile.data.open ? "ok" : "muted"}>
-					{profile.data.open ? "Puesto abierto" : "Cerrado por hoy"}
-				</StatusBadge>
-			{/if}
+			<div class="mobile-actions">
+				{#if profile.data}
+					<StatusBadge tone={profile.data.open ? "ok" : "muted"}>
+						{profile.data.open ? "Puesto abierto" : "Cerrado por hoy"}
+					</StatusBadge>
+				{/if}
+				<button
+					type="button"
+					class="mobile-logout"
+					disabled={leaving}
+					onclick={logout}
+					aria-label={leaving ? "Cerrando sesión" : "Cerrar sesión"}
+				>
+					<LogOut size={20} aria-hidden="true" />
+				</button>
+			</div>
 		</header>
 		<div class="topbar">
 			{#if profile.data}
@@ -295,6 +326,25 @@
 	.mobile-bar .wordmark {
 		font-size: 1.625rem;
 	}
+	.mobile-actions {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+	.mobile-logout {
+		display: grid;
+		place-items: center;
+		width: 44px;
+		height: 44px;
+		border-radius: 8px;
+		color: var(--muted-ink);
+	}
+	.mobile-logout:hover {
+		background: var(--mint);
+	}
+	.logout {
+		display: none;
+	}
 	.topbar {
 		display: none;
 	}
@@ -453,6 +503,24 @@
 			display: grid;
 			place-items: center;
 			background: var(--leaf);
+		}
+		.logout {
+			display: flex;
+			align-items: center;
+			gap: 0.625rem;
+			min-height: 44px;
+			padding-inline: 0.875rem;
+			border-radius: 8px;
+			color: var(--night-text);
+			font-size: 0.8125rem;
+			font-weight: 600;
+		}
+		.logout.alone {
+			margin-top: auto;
+		}
+		.logout:hover {
+			background: #1b4a3e;
+			color: #fff;
 		}
 		.workspace {
 			padding-bottom: 0;

@@ -208,7 +208,11 @@ export class MerchantApi {
 		return this.sent.filter((call) => call.method === method && path.test(call.path));
 	}
 
+	/** The merchant space only renders for a merchant session. */
+	user = { id_usuario: 2, nombre: "Lucha García", correo: "lucha@example.com", rol: "comerciante" };
+
 	async attach(page: Page) {
+		await page.route("**/api/auth/me", (route) => route.fulfill({ json: this.user }));
 		await page.route("**/api/merchant/**", (route, request) => this.#handle(route, request));
 	}
 
