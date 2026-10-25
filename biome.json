@@ -1,0 +1,68 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+	"root": true,
+	"files": {
+		"includes": [
+			"**",
+			"!!**/node_modules",
+			"!!**/.svelte-kit",
+			"!!**/.wrangler",
+			"!!**/build",
+			"!!**/coverage",
+			"!!**/playwright-report",
+			"!!**/test-results",
+			"!!**/worker-configuration.d.ts",
+			"!!**/bun.lock",
+			"!!**/prototype",
+			"!!**/design-assets"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"useEditorconfig": false,
+		"lineWidth": 120,
+		"lineEnding": "lf"
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended"
+		}
+	},
+	"html": {
+		"experimentalFullSupportEnabled": true,
+		"formatter": {
+			"enabled": true,
+			"indentScriptAndStyle": true
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"semicolons": "always",
+			"trailingCommas": "es5"
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["src/ui/sharing/organisms/virtual-list/root.svelte"],
+			"linter": {
+				"rules": {
+					"a11y": { "noNoninteractiveTabindex": "off" }
+				}
+			}
+		}
+	],
+	"json": {
+		"formatter": {
+			"trailingCommas": "none"
+		}
+	}
+}

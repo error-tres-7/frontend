@@ -1,0 +1,33 @@
+node_modules
+
+# Generated types and test output
+worker-configuration.d.ts
+coverage/
+playwright-report/
+test-results/
+
+# Local development secrets
+.dev.vars
+.dev.vars.*
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

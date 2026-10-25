@@ -1,0 +1,97 @@
+const {manifest,nodes}=window.PROTOTYPE_DATA;
+const main=document.querySelector('#main'), modal=document.querySelector('#dialog');
+const defaults=()=>({price:32,draftPrice:30,q:[1,.5,1],pickup:'Hoy · 12:30–13:00',contact:'Ana López',submitted:false,ready:false,expenses:[],sales:[]});
+let state;try{state=Object.assign(defaults(),JSON.parse(sessionStorage.getItem('de-aqui-prototype')||'null'));}catch{state=defaults();}
+let resizeObserver;
+let current='', origin={desktop:'GcHvf',mobile:'p45ipV'}, stack=[], focusReturn=null;
+const products=[{name:'Jitomate saladet',price:32,unit:'kg',step:1},{name:'Aguacate Hass',price:70,unit:'kg',step:.5},{name:'Cilantro fresco',price:10,unit:'manojo',step:1}];
+const money=n=>'$'+n.toFixed(2), total=()=>products.reduce((s,p,i)=>s+p.price*state.q[i],0), count=()=>state.q.filter(q=>q>0).length;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const save=()=>sessionStorage.setItem('de-aqui-prototype',JSON.stringify(state));
+const mobile=()=>manifest.screens[current]?.width===390;
+const market=()=>origin[mobile()?'mobile':'desktop'];
+function notify(text){const el=document.querySelector('#status');el.textContent=text;clearTimeout(notify.timer);notify.timer=setTimeout(()=>el.textContent='',5000);}
+function go(id){if(modal.open)modal.close(); if(id===current)return; if(current)stack.push(current);location.hash=id||'';}
+function back(){if(modal.open){modal.close();return;}go(stack.pop()||'');stack.pop();}
+function closeOverlay(){go(market());}
+function dialog(title,html,onOpen){focusReturn=document.activeElement;modal.innerHTML=`<button class="close-dialog" aria-label="Cerrar diálogo">×</button><h2 id="dialog-title">${esc(title)}</h2>${html}`;modal.querySelector('.close-dialog').onclick=()=>modal.close();modal.showModal();onOpen?.(modal);}
+modal.addEventListener('close',()=>focusReturn?.isConnected&&focusReturn.focus());
+modal.addEventListener('click',e=>{if(e.target===modal){const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)modal.close();}});
+const picker=document.querySelector('#screens');picker.innerHTML='<option value="">Índice de recorridos</option>'+Object.entries(manifest.sections).map(([name,ids])=>`<optgroup label="${esc(name)}">${ids.map(id=>`<option value="${id}">${esc(manifest.screens[id].name)}</option>`).join('')}</optgroup>`).join('');picker.onchange=()=>go(picker.value);
+document.querySelector('#home').onclick=()=>go('');document.querySelector('#back').onclick=back;
+document.querySelector('#hints').onchange=e=>document.body.classList.toggle('show-hints',e.target.checked);
+document.querySelector('#reset').onclick=()=>{state=defaults();save();stack=[];origin={desktop:'GcHvf',mobile:'p45ipV'};if(current){location.hash='';}else render();notify('Recorrido reiniciado. Canasta ilustrativa de $77.00.');};
+window.addEventListener('hashchange',render);
+window.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.open&&['CTwi6','M2vgQT','QRWqF','a4Tzo','mLRAY','EFCOW'].includes(current))closeOverlay();});
+function render(){
+ resizeObserver?.disconnect();
+ current=decodeURIComponent(location.hash.slice(1));picker.value=current;
+ if(!current){main.innerHTML=`<div class="index"><p class="eyebrow">DE AQUÍ · PROTOTIPO LOCAL</p><h1>Lo bueno está cerca.<br>Recorre el barrio.</h1><p class="intro">Elige una tarea y prueba sus controles. Las pantallas conservan el diseño aprobado en español. Los precios y apartados son de demostración.</p><p class="notice">Cliente: busca jitomate, compara $32/kg con $28/kg y revisa tu apartado. Comerciante: recorre tu puesto y prepara un pedido.</p>${Object.entries(manifest.sections).map(([title,ids])=>`<section class="journey"><div><h2>${esc(title)}</h2><button class="start" data-start="${ids[0]}">Iniciar recorrido →</button></div><div class="journey-items">${ids.map(id=>`<a href="#${id}">${esc(manifest.screens[id].name)}<small>${id} · ${manifest.screens[id].width} × ${manifest.screens[id].height}</small></a>`).join('')}</div></section>`).join('')}<p class="muted">Estado guardado en esta pestaña. Reiniciar restaura la canasta. Ningún dato se envía a servicios externos.</p></div>`;main.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>go(b.dataset.start));return;}
+ const s=manifest.screens[current];if(!s){main.innerHTML='<div class="index"><h1>Pantalla no encontrada</h1><p>Este enlace no pertenece al prototipo.</p><a href="#">Volver a los recorridos</a></div>';return;}
+ if(['GcHvf','vHDrB'].includes(current))origin.desktop=current;
+ if(['p45ipV','j6xDkI'].includes(current))origin.mobile=current;
+ main.innerHTML=`<div class="caption"><div><h1>${esc(s.name)}</h1><p>${esc(s.section)} · ${s.id}</p></div><p>Prototipo local · datos ilustrativos</p></div><div class="viewport" style="max-width:${s.width}px"><div class="stage" style="width:${s.width}px;height:${s.height}px"><img class="screen-image" src="${s.image}" alt="${esc(s.name)} — diseño de referencia" width="${s.width}" height="${s.height}"></div></div><details class="actions"><summary>Acciones disponibles en esta pantalla (${s.hotspots.length})</summary><div class="action-buttons"></div></details><p class="prototype-note">Usa los controles de la pantalla o activa “Ver áreas clicables”. Volver, cerrar, los enlaces directos y el selector de pantalla funcionan. Los apartados, pagos y cambios de comerciante se simulan en esta pestaña.</p>`;
+ const stage=main.querySelector('.stage');
+ for(const h of s.hotspots){const b=document.createElement('button');b.className='hotspot';b.dataset.hotspot=h.label;b.setAttribute('aria-label',h.label);b.title=h.label;Object.assign(b.style,{left:h.x+'px',top:h.y+'px',width:h.width+'px',height:h.height+'px'});b.innerHTML=`<span class="hint-label" aria-hidden="true">${esc(h.label)}</span>`;b.onclick=()=>act(h);stage.append(b);const alt=document.createElement('button');alt.textContent=h.label;alt.onclick=()=>act(h);main.querySelector('.action-buttons').append(alt);}
+ patch(stage);
+ const viewport=main.querySelector('.viewport');const resize=()=>{const scale=viewport.clientWidth/s.width;stage.style.transform=`scale(${scale})`;viewport.style.height=s.height*scale+'px';};resize();resizeObserver=new ResizeObserver(resize);resizeObserver.observe(viewport);
+ window.scrollTo(0,0);
+}
+function stamp(stage,name,content,{bg='#fff',width,color='#123c32'}={}){const n=nodes.findLast(n=>n.root===current&&n.name===name);if(!n)return;const el=document.createElement('span');el.className='stamp';el.textContent=content;Object.assign(el.style,{left:(n.x-2)+'px',top:(n.y-1)+'px',width:(width||Math.max(n.w+6,80))+'px',height:(n.h+2)+'px',fontSize:Math.round(n.h*.78)+'px',background:bg,color});stage.append(el);}
+function patch(stage){
+ const price=state.price, draft=state.draftPrice;
+ if(current==='T28VaZ'&&price!==32)stamp(stage,'Producto y precio actual','Frutas y verduras · Jitomate saladet · Tu precio '+money(price)+' / kg',{width:740,bg:'#f5f7f6'});
+ if(current==='pSIRS'&&price!==32)stamp(stage,'Giro y producto móvil','Jitomate saladet · Tu precio '+money(price)+' / kg',{width:310,bg:'#f5f7f6'});
+ if(current==='D2zhK')stamp(stage,'Tu precio actual · 1',money(price)+' MXN',{width:160});
+ if(current==='TtKVe')stamp(stage,'Precio actual de comparación móvil','Tu precio actual: '+money(price)+' / kg',{width:350});
+ if(['Mgewd','y15ABx'].includes(current)){
+  const mob=current==='y15ABx';
+  stamp(stage,mob?'Nuevo precio móvil valor':'Nuevo precio valor',money(draft),{width:130,bg:'#f5f7f6'});
+  stamp(stage,mob?'Precio anterior móvil':'Valor del precio actual',(mob?'Precio actual: ':'')+money(price)+' / kg',{width:mob?310:240});
+  const delta=draft-price,pct=price?delta/price*100:0;
+  stamp(stage,mob?'Diferencia móvil':'Impacto por unidad',(delta<0?'Baja ':delta>0?'Sube ':'Sin cambio: ')+money(Math.abs(delta))+' por kg ('+pct.toFixed(2)+'%).',{width:mob?288:660,bg:'#eaf1ed'});
+  stamp(stage,'Enviar solicitud label','Guardar '+money(draft)+' / kg',{width:mob?190:220,bg:'#155641',color:'#fff'});
+  if(!mob)stamp(stage,'Precio en vista previa',money(draft)+' / kg',{width:250});
+ }
+ if(['kQgTm','X0uXg'].includes(current)){stamp(stage,'Importe confirmado',money(price)+' / kg',{width:mobile()?300:400,bg:'#f5f7f6'});stamp(stage,'Importe anterior confirmado','Guardado en esta sesión · MXN',{width:mobile()?300:400,bg:'#f5f7f6'});}
+
+ const changed=state.q.some((q,i)=>q!==[1,.5,1][i]);
+ if(current==='BVUFI'){const panel=document.createElement('section');panel.className='live-panel';Object.assign(panel.style,{left:'0px',top:'150px',width:'390px',height:'915px'});panel.innerHTML=cartHtml(true);stage.append(panel);bindCart(panel,true);}
+ if(['CTwi6','M2vgQT'].includes(current)&&changed){for(let i=0;i<3;i++)stamp(stage,products[i].name+' selected amount',state.q[i]+' '+products[i].unit);for(const n of nodes.filter(n=>n.root===current&&n.type==='text'&&n.name.includes('quantity')))if(n.y>300&&n.name.includes('quantity'))stamp(stage,n.name,state.q[n.name.startsWith('Jitomate')?0:n.name.startsWith('Aguacate')?1:2]+' '+products[n.name.startsWith('Jitomate')?0:n.name.startsWith('Aguacate')?1:2].unit);for(const n of nodes.filter(n=>n.root===current&&n.type==='text'&&['Selected product count','Selected estimated total'].includes(n.name)))stamp(stage,n.name,n.content.startsWith('$')?money(total()):count()+' productos',{bg:'#eaf1ed',width:n.w});}
+ if(['QRWqF','a4Tzo'].includes(current)){
+  for(let i=0;i<3;i++){stamp(stage,products[i].name+' review quantity',state.q[i]+' '+products[i].unit);stamp(stage,products[i].name+' review subtotal',money(state.q[i]*products[i].price),{width:65});}
+  stamp(stage,'Apartado estimated amount',money(total()),{width:100});stamp(stage,'¿Cuándo recogerás? value',state.pickup,{width:mobile()?294:400});stamp(stage,'Pickup customer name',state.contact,{width:mobile()?280:370});
+ }
+ if(['mLRAY','EFCOW'].includes(current)){stamp(stage,'Pending apartado item count',count()+' productos · Estimado',{bg:'#f5f7f6',width:200});stamp(stage,'Pending apartado estimated total',money(total()),{bg:'#f5f7f6',width:75});stamp(stage,'Requested pickup slot','Recogida solicitada: '+state.pickup,{bg:'#f5f7f6',width:mobile()?314:436});}
+ if(current==='OrB9k'&&state.ready){stamp(stage,'Marcar como listo label','Pedido listo',{width:220,bg:'#155641',color:'#fff'});notify('Pedido listo para recoger · simulación local.');}
+ if(['GcHvf','vHDrB'].includes(current)&&changed){const panel=document.createElement('section');panel.className='live-panel';Object.assign(panel.style,{left:'1072px',top:'220px',width:'320px',height:'500px',fontSize:'15px'});panel.innerHTML=`<h2>Tu carrito</h2><p>Doña Lucha · Local 24</p>${products.map((p,i)=>state.q[i]?`<p>${esc(p.name)}<br>${state.q[i]} ${p.unit} · ${money(state.q[i]*p.price)}</p>`:'').join('')}<div class="total"><span>Estimado</span><span>${money(total())}</span></div><button class="full start" data-cart>Abrir carrito</button>`;stage.append(panel);panel.querySelector('[data-cart]').onclick=openCart;}
+}
+function changeQuantity(target){const i=+target[0],op=target[1];state.q[i]=op==='0'?0:Math.max(0,Math.min(10,state.q[i]+(op==='+'?1:-1)*products[i].step));save();render();notify(`${products[i].name}: ${state.q[i]} ${products[i].unit} · Total ${money(total())}`);}
+function cartHtml(inScreen=false){return `<h2>${inScreen?'Doña Lucha':'Tu carrito'}</h2><p class="muted">Medellín · Local 24, Pasillo B<br>Pagas al recoger · Efectivo, transferencia o tarjeta.</p>${count()?products.map((p,i)=>state.q[i]>0?`<div class="cart-line"><strong>${esc(p.name)}</strong><span>${money(p.price)} / ${p.unit}</span><div class="quantity"><button data-q="${i}-" aria-label="Reducir ${esc(p.name)}">−</button><span>${state.q[i]} ${p.unit}</span><button data-q="${i}+" aria-label="Aumentar ${esc(p.name)}">+</button><span>${money(p.price*state.q[i])}</span><button class="remove" data-q="${i}0" aria-label="Eliminar ${esc(p.name)}">Quitar</button></div></div>`:'').join(''):'<p class="notice">Tu carrito está vacío. Vuelve al catálogo para elegir productos.</p>'}<div class="total"><span>Total estimado</span><span data-total>${money(total())}</span></div><p class="muted">El importe puede variar por el peso final. Te avisaremos antes de confirmar.</p><button class="start full" data-review ${count()?'':'disabled'}>Revisar apartado</button><button class="full" data-continue>Seguir buscando productos</button>`;}
+function bindCart(el,inScreen=false){el.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{const target=b.dataset.q;const i=+target[0];state.q[i]=target[1]==='0'?0:Math.max(0,Math.min(10,state.q[i]+(target[1]==='+'?1:-1)*products[i].step));save();if(inScreen)render();else{el.innerHTML=`<button class="close-dialog" aria-label="Cerrar diálogo">×</button><h2 id="dialog-title">Tu carrito</h2>${cartHtml()}`;el.querySelector('.close-dialog').onclick=()=>modal.close();bindCart(el);}});el.querySelector('[data-review]').onclick=()=>{modal.close();go(mobile()?'a4Tzo':'QRWqF');};el.querySelector('[data-continue]').onclick=()=>{if(modal.open)modal.close();go(market());};}
+function openCart(){if(mobile()){go('BVUFI');return;}dialog('Tu carrito',cartHtml(),el=>bindCart(el));}
+function act(h){switch(h.action){
+ case'price-review':state.draftPrice=30;save();go(h.target);break;
+ case'price-cancel':state.draftPrice=30;save();go(h.target);notify('Cambio descartado. Conservas '+money(state.price)+' / kg.');break;
+ case'price-edit':dialog('Nuevo precio · MXN por kg',`<form><label for="price">Precio propuesto</label><input id="price" type="number" min="0.01" max="9999" step="0.01" value="${state.draftPrice}" required><p class="muted">Editar no cambia tu catálogo. Guarda el cambio en la pantalla de revisión.</p><button class="primary full">Usar en la propuesta</button></form>`,el=>el.querySelector('form').onsubmit=e=>{e.preventDefault();state.draftPrice=Number(el.querySelector('#price').value);save();modal.close();render();});break;
+ case'price-save':if(!(state.draftPrice>0)){notify('Escribe un precio mayor a $0.');return;}state.price=state.draftPrice;save();go(h.target);break;
+ case'route':go(h.target);break;
+ case'catalog':go(h.target);break;
+ case'close':closeOverlay();break;
+ case'market':go(market());break;
+ case'cart':openCart();break;
+ case'review':if(!count()){notify('Elige al menos un producto antes de revisar tu apartado.');return;}go(h.target);break;
+ case'quantity':changeQuantity(h.target);break;
+ case'notice':notify(h.target);break;
+ case'search':dialog('Busca en tu mercado',`<form id="search-form"><label for="query">Producto</label><input id="query" name="query" value="Jitomate" required><p class="muted">Escenario disponible: jitomate en Mercado Medellín.</p><p id="search-error" class="error" role="alert"></p><button class="primary full">Comparar precios</button></form>`,el=>el.querySelector('form').onsubmit=e=>{e.preventDefault();if(el.querySelector('input').value.toLowerCase().includes('jitomate')){const target=mobile()?'p45ipV':'GcHvf';modal.close();go(target);}else el.querySelector('#search-error').textContent='No hay resultados simulados para ese producto. Prueba con jitomate.';});break;
+ case'pepe':dialog('El huerto de Pepe',`<p>Mercado Medellín · Local 18, Pasillo A</p><h3>Jitomate saladet</h3><p class="stat">$28.00 <small>/ kg</small></p><p>Doña Lucha: $32.00/kg · Diferencia ilustrativa: $4.00/kg.</p><p class="muted">Acepta efectivo y transferencia al recoger.</p><p class="notice">Este catálogo permite comparar precios. El apartado interactivo está preparado para la canasta de Doña Lucha.</p><button class="full" id="compare-return">Volver a comparar</button>`,el=>el.querySelector('#compare-return').onclick=()=>modal.close());break;
+ case'pickup':dialog('¿Cuándo recogerás?',`<form><label for="pickup">Horario solicitado</label><select id="pickup"><option>Hoy · 12:30–13:00</option><option>Hoy · 13:00–13:30</option><option>Hoy · 13:30–14:00</option></select><button class="primary full">Guardar horario</button></form>`,el=>{el.querySelector('select').value=state.pickup;el.querySelector('form').onsubmit=e=>{e.preventDefault();state.pickup=el.querySelector('select').value;save();modal.close();render();};});break;
+ case'contact':dialog('Quién recoge',`<form><label for="name">Nombre</label><input id="name" maxlength="30" value="${esc(state.contact)}" required><p class="muted">Celular verificado de demostración · •••• 4312</p><button class="primary full">Guardar nombre</button></form>`,el=>el.querySelector('form').onsubmit=e=>{e.preventDefault();if(!el.querySelector('input').value.trim()){el.querySelector('input').setCustomValidity('Escribe un nombre.');el.querySelector('input').reportValidity();return;}state.contact=el.querySelector('input').value.trim();save();modal.close();render();});break;
+ case'submit':if(!count()){notify('Tu carrito está vacío. Vuelve al catálogo.');return;}state.submitted=true;save();go(h.target);break;
+ case'reservation':dialog('Apartado #041 · Por confirmar',`<p>${esc(state.contact)} · Doña Lucha · Local 24</p><p>${esc(state.pickup)}</p>${products.map((p,i)=>state.q[i]?`<p>${esc(p.name)} · ${state.q[i]} ${p.unit} · ${money(p.price*state.q[i])}</p>`:'').join('')}<div class="total"><span>Estimado</span><span>${money(total())}</span></div><p>El puesto debe confirmar disponibilidad. Pagas al recoger.</p><p class="muted">${state.submitted?'Solicitud simulada guardada en esta pestaña.':'Vista de referencia: aún no has enviado una solicitud en esta pestaña.'}</p>`);break;
+ case'login':dialog('Acceso de demostración','<p>Este recorrido utiliza a Ana López como cliente y a Lucha García como comerciante. No solicita contraseñas ni envía códigos.</p><button class="primary full" id="demo-login">Continuar como cliente</button>',el=>el.querySelector('#demo-login').onclick=()=>{modal.close();notify('Sesión de demostración lista.');});break;
+ case'ready':state.ready=true;save();render();notify('Pedido #041 listo para recoger. Aviso simulado.');break;
+ case'expense':case'sale':{const expense=h.action==='expense';dialog(expense?'Registrar gasto de demostración':'Registrar venta de demostración',`<form><label for="amount">Monto (MXN)</label><input id="amount" type="number" min="0.01" step="0.01" required><label for="concept">${expense?'Concepto':'Referencia'}</label><input id="concept" required maxlength="60"><p class="muted">Se guardará solo en esta pestaña.</p><button class="primary full">Guardar ${expense?'gasto':'venta'}</button></form>`,el=>el.querySelector('form').onsubmit=e=>{e.preventDefault();const record={amount:Number(el.querySelector('#amount').value),concept:el.querySelector('#concept').value};state[expense?'expenses':'sales'].push(record);save();modal.close();notify(`${expense?'Gasto':'Venta'} de ${money(record.amount)} guardado en la demostración.`);});break;}
+ case'download':{const csv='tipo,concepto,monto_MXN\n'+[...state.expenses.map(r=>['gasto',r.concept,r.amount]),...state.sales.map(r=>['venta',r.concept,r.amount])].map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='de-aqui-demostracion.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('Registro local descargado. Solo incluye movimientos de esta sesión.');break;}
+}}
+render();

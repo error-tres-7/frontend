@@ -1,0 +1,2222 @@
+{
+  "sections": {
+    "Cliente · escritorio": [
+      "aiuVt",
+      "GcHvf",
+      "CTwi6",
+      "QRWqF",
+      "mLRAY"
+    ],
+    "Cliente · móvil": [
+      "KKxdU",
+      "p45ipV",
+      "M2vgQT",
+      "BVUFI",
+      "a4Tzo",
+      "EFCOW"
+    ],
+    "Comerciante": [
+      "T28VaZ",
+      "BnjUF",
+      "SWso9",
+      "bpqzW",
+      "h91to",
+      "OrB9k",
+      "D2zhK",
+      "Mgewd",
+      "X0uXg",
+      "pSIRS",
+      "TtKVe",
+      "y15ABx",
+      "kQgTm"
+    ],
+    "Alternativas": [
+      "vHDrB",
+      "j6xDkI",
+      "defJ5"
+    ],
+    "Soporte y referencia": [
+      "U3vDvD",
+      "euR0h",
+      "o8vGp",
+      "r2JYH",
+      "Ijo5S",
+      "spnbx",
+      "Vo4aC",
+      "mplP7",
+      "DVSNA"
+    ]
+  },
+  "screens": {
+    "U3vDvD": {
+      "id": "U3vDvD",
+      "name": "De Aquí · Brand and experience direction",
+      "width": 1440,
+      "height": 680,
+      "image": "screens/U3vDvD.png",
+      "hotspots": [],
+      "section": "Soporte y referencia"
+    },
+    "o8vGp": {
+      "id": "o8vGp",
+      "name": "Reusable photography · illustrative assets",
+      "width": 2000,
+      "height": 400,
+      "image": "screens/o8vGp.png",
+      "hotspots": [],
+      "section": "Soporte y referencia"
+    },
+    "aiuVt": {
+      "id": "aiuVt",
+      "name": "01 · Explorar el barrio",
+      "width": 1440,
+      "height": 957,
+      "image": "screens/aiuVt.png",
+      "hotspots": [
+        {
+          "label": "Buscar jitomate en el mercado",
+          "action": "search",
+          "target": null,
+          "x": 400,
+          "y": 110,
+          "width": 630,
+          "height": 60
+        },
+        {
+          "label": "Ver Mercado Medellín",
+          "action": "route",
+          "target": "GcHvf",
+          "x": 74.0,
+          "y": 810.5,
+          "width": 246,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de Doña Lucha",
+          "action": "catalog",
+          "target": "CTwi6",
+          "x": 140.0,
+          "y": 732.5,
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Entrar como comerciante",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 970.0,
+          "y": 18.0,
+          "width": 148,
+          "height": 44
+        },
+        {
+          "label": "Entrar como cliente",
+          "action": "route",
+          "target": "aiuVt",
+          "x": 1126.0,
+          "y": 18.0,
+          "width": 105,
+          "height": 44
+        },
+        {
+          "label": "Iniciar sesión de demostración",
+          "action": "login",
+          "target": null,
+          "x": 1263.0,
+          "y": 18.0,
+          "width": 121,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · escritorio"
+    },
+    "GcHvf": {
+      "id": "GcHvf",
+      "name": "02 · Mercado y comerciantes",
+      "width": 1440,
+      "height": 780,
+      "image": "screens/GcHvf.png",
+      "hotspots": [
+        {
+          "label": "Volver al mapa",
+          "action": "route",
+          "target": "aiuVt",
+          "x": 213.0,
+          "y": 18.0,
+          "width": 124,
+          "height": 44
+        },
+        {
+          "label": "Ver cuadrícula",
+          "action": "route",
+          "target": "GcHvf",
+          "x": 700.0,
+          "y": 228.0,
+          "width": 100,
+          "height": 44
+        },
+        {
+          "label": "Ver lista",
+          "action": "route",
+          "target": "vHDrB",
+          "x": 831.0,
+          "y": 228.0,
+          "width": 56,
+          "height": 44
+        },
+        {
+          "label": "Buscar productos",
+          "action": "search",
+          "target": null,
+          "x": 553.0,
+          "y": 144.5,
+          "width": 647,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de Doña Lucha",
+          "action": "catalog",
+          "target": "CTwi6",
+          "x": 244.0,
+          "y": 480.0,
+          "width": 122,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de El huerto de Pepe",
+          "action": "pepe",
+          "target": null,
+          "x": 752.0,
+          "y": 480.0,
+          "width": 122,
+          "height": 44
+        },
+        {
+          "label": "Abrir carrito",
+          "action": "cart",
+          "target": null,
+          "x": 1196.0,
+          "y": 618.0,
+          "width": 98,
+          "height": 44
+        },
+        {
+          "label": "Abrir carrito desde cabecera",
+          "action": "cart",
+          "target": null,
+          "x": 1260,
+          "y": 18,
+          "width": 132,
+          "height": 46
+        },
+        {
+          "label": "Plano disponible próximamente",
+          "action": "notice",
+          "target": "El plano del mercado aún no está disponible.",
+          "x": 918.0,
+          "y": 228.0,
+          "width": 120,
+          "height": 44
+        },
+        {
+          "label": "Iniciar sesión de demostración",
+          "action": "login",
+          "target": null,
+          "x": 1114.0,
+          "y": 18.0,
+          "width": 114,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · escritorio"
+    },
+    "CTwi6": {
+      "id": "CTwi6",
+      "name": "03 · Puesto · Catálogo en modal",
+      "width": 1440,
+      "height": 900,
+      "image": "screens/CTwi6.png",
+      "hotspots": [
+        {
+          "label": "Cerrar catálogo",
+          "action": "close",
+          "target": null,
+          "x": 1192.0,
+          "y": 124.5,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Revisar apartado",
+          "action": "review",
+          "target": "QRWqF",
+          "x": 1034.5,
+          "y": 747.0,
+          "width": 149,
+          "height": 44
+        },
+        {
+          "label": "Reducir jitomate",
+          "action": "quantity",
+          "target": "0-",
+          "x": 218.0,
+          "y": 610.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Aumentar jitomate",
+          "action": "quantity",
+          "target": "0+",
+          "x": 479.3333333333333,
+          "y": 610.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Reducir aguacate",
+          "action": "quantity",
+          "target": "1-",
+          "x": 567.3333333333333,
+          "y": 610.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Aumentar aguacate",
+          "action": "quantity",
+          "target": "1+",
+          "x": 828.6666666666666,
+          "y": 610.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Reducir cilantro",
+          "action": "quantity",
+          "target": "2-",
+          "x": 916.6666666666666,
+          "y": 610.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Aumentar cilantro",
+          "action": "quantity",
+          "target": "2+",
+          "x": 1178.0,
+          "y": 610.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Buscar en el catálogo",
+          "action": "notice",
+          "target": "Este escenario incluye jitomate, aguacate y cilantro.",
+          "x": 206.0,
+          "y": 265.0,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · escritorio"
+    },
+    "QRWqF": {
+      "id": "QRWqF",
+      "name": "04 · Revisar apartado · Modal",
+      "width": 1440,
+      "height": 900,
+      "image": "screens/QRWqF.png",
+      "hotspots": [
+        {
+          "label": "Volver al catálogo",
+          "action": "catalog",
+          "target": "CTwi6",
+          "x": 274.0,
+          "y": 237.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Cerrar revisión",
+          "action": "close",
+          "target": null,
+          "x": 1122.0,
+          "y": 237.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Solicitar apartado",
+          "action": "submit",
+          "target": "mLRAY",
+          "x": 960.5,
+          "y": 615.0,
+          "width": 157,
+          "height": 44
+        },
+        {
+          "label": "Elegir horario de recogida",
+          "action": "pickup",
+          "target": null,
+          "x": 712.0,
+          "y": 328.0,
+          "width": 424,
+          "height": 44
+        },
+        {
+          "label": "Editar quién recoge",
+          "action": "contact",
+          "target": null,
+          "x": 710.0,
+          "y": 414.5,
+          "width": 95,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · escritorio"
+    },
+    "T28VaZ": {
+      "id": "T28VaZ",
+      "name": "05 · Resumen del comerciante",
+      "width": 1440,
+      "height": 1100,
+      "image": "screens/T28VaZ.png",
+      "hotspots": [
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 54.0,
+          "y": 229.0,
+          "width": 93,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 54.0,
+          "y": 341.0,
+          "width": 98,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 54.0,
+          "y": 285.0,
+          "width": 81,
+          "height": 44
+        },
+        {
+          "label": "Ir a finanzas",
+          "action": "route",
+          "target": "bpqzW",
+          "x": 54.0,
+          "y": 397.0,
+          "width": 86,
+          "height": 44
+        },
+        {
+          "label": "Ir a mi puesto",
+          "action": "route",
+          "target": "h91to",
+          "x": 54.0,
+          "y": 453.0,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "label": "Ver puesto público",
+          "action": "catalog",
+          "target": "CTwi6",
+          "x": 1242.0,
+          "y": 22.0,
+          "width": 125,
+          "height": 44
+        },
+        {
+          "label": "Consultar ayuda",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 63.0,
+          "y": 958.0,
+          "width": 138,
+          "height": 44
+        },
+        {
+          "label": "Revisar pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 1198.0,
+          "y": 570.0,
+          "width": 140,
+          "height": 44
+        },
+        {
+          "label": "Ver todos los pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 1309.0,
+          "y": 685.5,
+          "width": 91,
+          "height": 44
+        },
+        {
+          "label": "Ver pedido 041",
+          "action": "route",
+          "target": "SWso9",
+          "x": 278.0,
+          "y": 756.0,
+          "width": 114,
+          "height": 44
+        },
+        {
+          "label": "Registrar venta de demostración",
+          "action": "sale",
+          "target": null,
+          "x": 1266.0,
+          "y": 91.5,
+          "width": 136,
+          "height": 44
+        },
+        {
+          "label": "Comparar precios del giro",
+          "action": "route",
+          "target": "D2zhK",
+          "x": 1220.5,
+          "y": 350.0,
+          "width": 157,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "BnjUF": {
+      "id": "BnjUF",
+      "name": "06 · Productos e inventario",
+      "width": 1440,
+      "height": 1100,
+      "image": "screens/BnjUF.png",
+      "hotspots": [
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 54.0,
+          "y": 229.0,
+          "width": 90,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 54.0,
+          "y": 341.0,
+          "width": 102,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 54.0,
+          "y": 285.0,
+          "width": 81,
+          "height": 44
+        },
+        {
+          "label": "Ir a finanzas",
+          "action": "route",
+          "target": "bpqzW",
+          "x": 54.0,
+          "y": 397.0,
+          "width": 86,
+          "height": 44
+        },
+        {
+          "label": "Ir a mi puesto",
+          "action": "route",
+          "target": "h91to",
+          "x": 54.0,
+          "y": 453.0,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "label": "Ver puesto público",
+          "action": "catalog",
+          "target": "CTwi6",
+          "x": 1238.0,
+          "y": 26.0,
+          "width": 125,
+          "height": 44
+        },
+        {
+          "label": "Consultar ayuda",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 63.0,
+          "y": 958.0,
+          "width": 138,
+          "height": 44
+        },
+        {
+          "label": "Guardar cambios de producto",
+          "action": "notice",
+          "target": "Cambios simulados. El inventario real no se modifica.",
+          "x": 1166.5,
+          "y": 811.0,
+          "width": 151,
+          "height": 44
+        },
+        {
+          "label": "Agregar producto de demostración",
+          "action": "notice",
+          "target": "Alta de productos fuera del recorrido interactivo. Puedes revisar precio y existencias en esta pantalla.",
+          "x": 1244.0,
+          "y": 105.5,
+          "width": 154,
+          "height": 44
+        },
+        {
+          "label": "Cancelar edición",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 1184.0,
+          "y": 877.0,
+          "width": 90,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "SWso9": {
+      "id": "SWso9",
+      "name": "07 · Gestión de pedidos",
+      "width": 1440,
+      "height": 1100,
+      "image": "screens/SWso9.png",
+      "hotspots": [
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 54.0,
+          "y": 229.0,
+          "width": 90,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 54.0,
+          "y": 341.0,
+          "width": 98,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 54.0,
+          "y": 285.0,
+          "width": 84,
+          "height": 44
+        },
+        {
+          "label": "Ir a finanzas",
+          "action": "route",
+          "target": "bpqzW",
+          "x": 54.0,
+          "y": 397.0,
+          "width": 86,
+          "height": 44
+        },
+        {
+          "label": "Ir a mi puesto",
+          "action": "route",
+          "target": "h91to",
+          "x": 54.0,
+          "y": 453.0,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "label": "Ver puesto público",
+          "action": "catalog",
+          "target": "CTwi6",
+          "x": 1238.0,
+          "y": 26.0,
+          "width": 125,
+          "height": 44
+        },
+        {
+          "label": "Consultar ayuda",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 63.0,
+          "y": 958.0,
+          "width": 138,
+          "height": 44
+        },
+        {
+          "label": "Aceptar pedido y preparar",
+          "action": "route",
+          "target": "OrB9k",
+          "x": 853.0,
+          "y": 886.0,
+          "width": 138,
+          "height": 44
+        },
+        {
+          "label": "Proponer cambio",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 1222.0,
+          "y": 886.0,
+          "width": 150,
+          "height": 44
+        },
+        {
+          "label": "No puedo atenderlo",
+          "action": "notice",
+          "target": "Cancelación simulada. No se ha enviado ningún aviso.",
+          "x": 628.0,
+          "y": 938.5,
+          "width": 150,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "bpqzW": {
+      "id": "bpqzW",
+      "name": "08 · Finanzas y registro de gastos",
+      "width": 1440,
+      "height": 1100,
+      "image": "screens/bpqzW.png",
+      "hotspots": [
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 54.0,
+          "y": 229.0,
+          "width": 90,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 54.0,
+          "y": 341.0,
+          "width": 98,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 54.0,
+          "y": 285.0,
+          "width": 81,
+          "height": 44
+        },
+        {
+          "label": "Ir a finanzas",
+          "action": "route",
+          "target": "bpqzW",
+          "x": 54.0,
+          "y": 397.0,
+          "width": 90,
+          "height": 44
+        },
+        {
+          "label": "Ir a mi puesto",
+          "action": "route",
+          "target": "h91to",
+          "x": 54.0,
+          "y": 453.0,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "label": "Ver puesto público",
+          "action": "catalog",
+          "target": "CTwi6",
+          "x": 1238.0,
+          "y": 26.0,
+          "width": 125,
+          "height": 44
+        },
+        {
+          "label": "Consultar ayuda",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 63.0,
+          "y": 958.0,
+          "width": 138,
+          "height": 44
+        },
+        {
+          "label": "Guardar gasto de demostración",
+          "action": "expense",
+          "target": null,
+          "x": 1182.5,
+          "y": 910.0,
+          "width": 129,
+          "height": 44
+        },
+        {
+          "label": "Descargar registro de demostración",
+          "action": "download",
+          "target": null,
+          "x": 1238.0,
+          "y": 105.5,
+          "width": 160,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "KKxdU": {
+      "id": "KKxdU",
+      "name": "09 · Móvil · Explorar",
+      "width": 390,
+      "height": 992,
+      "image": "screens/KKxdU.png",
+      "hotspots": [
+        {
+          "label": "Buscar jitomate en el mercado",
+          "action": "search",
+          "target": null,
+          "x": 20,
+          "y": 145,
+          "width": 350,
+          "height": 50
+        },
+        {
+          "label": "Ver Mercado Medellín",
+          "action": "route",
+          "target": "p45ipV",
+          "x": 42.0,
+          "y": 681.5,
+          "width": 280,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de Doña Lucha",
+          "action": "catalog",
+          "target": "M2vgQT",
+          "x": 116.0,
+          "y": 599.5,
+          "width": 252,
+          "height": 44
+        },
+        {
+          "label": "Entrar como comerciante",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 46.0,
+          "y": 64.0,
+          "width": 140,
+          "height": 44
+        },
+        {
+          "label": "Entrar como cliente",
+          "action": "route",
+          "target": "KKxdU",
+          "x": 250.0,
+          "y": 64.0,
+          "width": 100,
+          "height": 44
+        },
+        {
+          "label": "Iniciar sesión de demostración",
+          "action": "login",
+          "target": null,
+          "x": 268.0,
+          "y": 10.0,
+          "width": 114,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · móvil"
+    },
+    "M2vgQT": {
+      "id": "M2vgQT",
+      "name": "10 · Móvil · Catálogo en hoja",
+      "width": 390,
+      "height": 844,
+      "image": "screens/M2vgQT.png",
+      "hotspots": [
+        {
+          "label": "Cerrar catálogo",
+          "action": "close",
+          "target": null,
+          "x": 326.0,
+          "y": 101.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Revisar apartado",
+          "action": "review",
+          "target": "a4Tzo",
+          "x": 133.5,
+          "y": 776.0,
+          "width": 149,
+          "height": 44
+        },
+        {
+          "label": "Reducir jitomate",
+          "action": "quantity",
+          "target": "0-",
+          "x": 110.0,
+          "y": 374.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Aumentar jitomate",
+          "action": "quantity",
+          "target": "0+",
+          "x": 326.0,
+          "y": 374.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Reducir aguacate",
+          "action": "quantity",
+          "target": "1-",
+          "x": 110.0,
+          "y": 490.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Aumentar aguacate",
+          "action": "quantity",
+          "target": "1+",
+          "x": 326.0,
+          "y": 490.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Reducir cilantro",
+          "action": "quantity",
+          "target": "2-",
+          "x": 110.0,
+          "y": 606.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Aumentar cilantro",
+          "action": "quantity",
+          "target": "2+",
+          "x": 326.0,
+          "y": 606.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Buscar en el catálogo",
+          "action": "notice",
+          "target": "Este escenario incluye jitomate, aguacate y cilantro.",
+          "x": 22.0,
+          "y": 225.0,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · móvil"
+    },
+    "EFCOW": {
+      "id": "EFCOW",
+      "name": "11 · Móvil · Apartado por confirmar",
+      "width": 390,
+      "height": 844,
+      "image": "screens/EFCOW.png",
+      "hotspots": [
+        {
+          "label": "Cerrar solicitud enviada",
+          "action": "close",
+          "target": null,
+          "x": 326.0,
+          "y": 213.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Volver al mercado",
+          "action": "market",
+          "target": null,
+          "x": 130.0,
+          "y": 675.0,
+          "width": 156,
+          "height": 44
+        },
+        {
+          "label": "Ver mi apartado",
+          "action": "reservation",
+          "target": null,
+          "x": 124.0,
+          "y": 745.0,
+          "width": 142,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · móvil"
+    },
+    "OrB9k": {
+      "id": "OrB9k",
+      "name": "12 · Móvil · Preparar pedido",
+      "width": 390,
+      "height": 880,
+      "image": "screens/OrB9k.png",
+      "hotspots": [
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 21.75,
+          "y": 827.0,
+          "width": 72,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 115.25,
+          "y": 827.0,
+          "width": 68,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 201.25,
+          "y": 827.0,
+          "width": 79,
+          "height": 44
+        },
+        {
+          "label": "Ir a más",
+          "action": "route",
+          "target": "h91to",
+          "x": 309.25,
+          "y": 827.0,
+          "width": 46,
+          "height": 44
+        },
+        {
+          "label": "Marcar pedido como listo",
+          "action": "ready",
+          "target": null,
+          "x": 130.0,
+          "y": 714.0,
+          "width": 156,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "euR0h": {
+      "id": "euR0h",
+      "name": "Sistema de marca · Tokens y componentes",
+      "width": 1440,
+      "height": 680,
+      "image": "screens/euR0h.png",
+      "hotspots": [],
+      "section": "Soporte y referencia"
+    },
+    "r2JYH": {
+      "id": "r2JYH",
+      "name": "UX · Cliente · Descubrir y apartar",
+      "width": 1600,
+      "height": 977,
+      "image": "screens/r2JYH.png",
+      "hotspots": [],
+      "section": "Soporte y referencia"
+    },
+    "Ijo5S": {
+      "id": "Ijo5S",
+      "name": "Estados UX · Acceso, cambios y recuperación",
+      "width": 1440,
+      "height": 1120,
+      "image": "screens/Ijo5S.png",
+      "hotspots": [],
+      "section": "Soporte y referencia"
+    },
+    "h91to": {
+      "id": "h91to",
+      "name": "13 · Mi puesto · Información pública",
+      "width": 1440,
+      "height": 1300,
+      "image": "screens/h91to.png",
+      "hotspots": [
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 54.0,
+          "y": 229.0,
+          "width": 90,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 54.0,
+          "y": 341.0,
+          "width": 98,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 54.0,
+          "y": 285.0,
+          "width": 81,
+          "height": 44
+        },
+        {
+          "label": "Ir a finanzas",
+          "action": "route",
+          "target": "bpqzW",
+          "x": 54.0,
+          "y": 397.0,
+          "width": 86,
+          "height": 44
+        },
+        {
+          "label": "Ir a mi puesto",
+          "action": "route",
+          "target": "h91to",
+          "x": 54.0,
+          "y": 453.0,
+          "width": 97,
+          "height": 44
+        },
+        {
+          "label": "Ver puesto público",
+          "action": "catalog",
+          "target": "CTwi6",
+          "x": 1238.0,
+          "y": 26.0,
+          "width": 125,
+          "height": 44
+        },
+        {
+          "label": "Consultar ayuda",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 63.0,
+          "y": 1158.0,
+          "width": 138,
+          "height": 44
+        },
+        {
+          "label": "Guardar puesto de demostración",
+          "action": "notice",
+          "target": "Información guardada solo como demostración; no se publica.",
+          "x": 561.0,
+          "y": 1229.0,
+          "width": 228,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "defJ5": {
+      "id": "defJ5",
+      "name": "14 · Móvil · Mis favoritos",
+      "width": 390,
+      "height": 960,
+      "image": "screens/defJ5.png",
+      "hotspots": [
+        {
+          "label": "Ir a explorar",
+          "action": "route",
+          "target": "KKxdU",
+          "x": 23.75,
+          "y": 907.0,
+          "width": 68,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "EFCOW",
+          "x": 207.75,
+          "y": 907.0,
+          "width": 66,
+          "height": 44
+        },
+        {
+          "label": "Ir a favoritos",
+          "action": "route",
+          "target": "defJ5",
+          "x": 111.75,
+          "y": 907.0,
+          "width": 75,
+          "height": 44
+        },
+        {
+          "label": "Ver productos favoritos",
+          "action": "catalog",
+          "target": "M2vgQT",
+          "x": 205.5,
+          "y": 415.0,
+          "width": 115,
+          "height": 44
+        }
+      ],
+      "section": "Alternativas"
+    },
+    "j6xDkI": {
+      "id": "j6xDkI",
+      "name": "Mercado · Móvil · Vista lista",
+      "width": 390,
+      "height": 1010,
+      "image": "screens/j6xDkI.png",
+      "hotspots": [
+        {
+          "label": "Volver al mapa",
+          "action": "route",
+          "target": "KKxdU",
+          "x": 138.0,
+          "y": 10.0,
+          "width": 62,
+          "height": 44
+        },
+        {
+          "label": "Ver cuadrícula",
+          "action": "route",
+          "target": "p45ipV",
+          "x": 47.16666666666666,
+          "y": 291.0,
+          "width": 86.0,
+          "height": 44
+        },
+        {
+          "label": "Ver lista",
+          "action": "route",
+          "target": "j6xDkI",
+          "x": 178.5,
+          "y": 291.0,
+          "width": 53.99999999999999,
+          "height": 44
+        },
+        {
+          "label": "Buscar productos",
+          "action": "search",
+          "target": null,
+          "x": 55.0,
+          "y": 219.0,
+          "width": 257,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de Doña Lucha",
+          "action": "catalog",
+          "target": "M2vgQT",
+          "x": 147.0,
+          "y": 585.0,
+          "width": 122,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de El huerto de Pepe",
+          "action": "pepe",
+          "target": null,
+          "x": 147.0,
+          "y": 813.0,
+          "width": 122,
+          "height": 44
+        },
+        {
+          "label": "Abrir carrito",
+          "action": "cart",
+          "target": null,
+          "x": 55.0,
+          "y": 942.0,
+          "width": 246,
+          "height": 44
+        },
+        {
+          "label": "Abrir carrito desde cabecera",
+          "action": "cart",
+          "target": null,
+          "x": 330,
+          "y": 8,
+          "width": 50,
+          "height": 44
+        },
+        {
+          "label": "Plano disponible próximamente",
+          "action": "notice",
+          "target": "El plano del mercado aún no está disponible.",
+          "x": 289.3333333333333,
+          "y": 290.0,
+          "width": 62.99999999999999,
+          "height": 46
+        }
+      ],
+      "section": "Alternativas"
+    },
+    "p45ipV": {
+      "id": "p45ipV",
+      "name": "Mercado · Móvil · Vista cuadrícula",
+      "width": 390,
+      "height": 983,
+      "image": "screens/p45ipV.png",
+      "hotspots": [
+        {
+          "label": "Volver al mapa",
+          "action": "route",
+          "target": "KKxdU",
+          "x": 138.0,
+          "y": 10.0,
+          "width": 62,
+          "height": 44
+        },
+        {
+          "label": "Ver cuadrícula",
+          "action": "route",
+          "target": "p45ipV",
+          "x": 45.666666666666664,
+          "y": 291.0,
+          "width": 89,
+          "height": 44
+        },
+        {
+          "label": "Ver lista",
+          "action": "route",
+          "target": "j6xDkI",
+          "x": 179.5,
+          "y": 291.0,
+          "width": 51.99999999999999,
+          "height": 44
+        },
+        {
+          "label": "Buscar productos",
+          "action": "search",
+          "target": null,
+          "x": 55.0,
+          "y": 219.0,
+          "width": 257,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de Doña Lucha",
+          "action": "catalog",
+          "target": "M2vgQT",
+          "x": 56.5,
+          "y": 786.0,
+          "width": 122,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de El huerto de Pepe",
+          "action": "pepe",
+          "target": null,
+          "x": 237.5,
+          "y": 770.0,
+          "width": 122,
+          "height": 44
+        },
+        {
+          "label": "Abrir carrito",
+          "action": "cart",
+          "target": null,
+          "x": 55.0,
+          "y": 915.0,
+          "width": 246,
+          "height": 44
+        },
+        {
+          "label": "Abrir carrito desde cabecera",
+          "action": "cart",
+          "target": null,
+          "x": 330,
+          "y": 8,
+          "width": 50,
+          "height": 44
+        },
+        {
+          "label": "Plano disponible próximamente",
+          "action": "notice",
+          "target": "El plano del mercado aún no está disponible.",
+          "x": 289.3333333333333,
+          "y": 290.0,
+          "width": 62.99999999999999,
+          "height": 46
+        }
+      ],
+      "section": "Cliente · móvil"
+    },
+    "vHDrB": {
+      "id": "vHDrB",
+      "name": "Mercado · Escritorio · Vista lista",
+      "width": 1440,
+      "height": 780,
+      "image": "screens/vHDrB.png",
+      "hotspots": [
+        {
+          "label": "Volver al mapa",
+          "action": "route",
+          "target": "aiuVt",
+          "x": 213.0,
+          "y": 18.0,
+          "width": 124,
+          "height": 44
+        },
+        {
+          "label": "Ver cuadrícula",
+          "action": "route",
+          "target": "GcHvf",
+          "x": 702.0,
+          "y": 228.0,
+          "width": 96,
+          "height": 44
+        },
+        {
+          "label": "Ver lista",
+          "action": "route",
+          "target": "vHDrB",
+          "x": 829.0,
+          "y": 228.0,
+          "width": 58,
+          "height": 44
+        },
+        {
+          "label": "Buscar productos",
+          "action": "search",
+          "target": null,
+          "x": 553.0,
+          "y": 144.5,
+          "width": 647,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de Doña Lucha",
+          "action": "catalog",
+          "target": "CTwi6",
+          "x": 906.0,
+          "y": 337.0,
+          "width": 122,
+          "height": 44
+        },
+        {
+          "label": "Ver productos de El huerto de Pepe",
+          "action": "pepe",
+          "target": null,
+          "x": 906.0,
+          "y": 483.0,
+          "width": 122,
+          "height": 44
+        },
+        {
+          "label": "Abrir carrito",
+          "action": "cart",
+          "target": null,
+          "x": 1196.0,
+          "y": 618.0,
+          "width": 98,
+          "height": 44
+        },
+        {
+          "label": "Abrir carrito desde cabecera",
+          "action": "cart",
+          "target": null,
+          "x": 1260,
+          "y": 18,
+          "width": 132,
+          "height": 46
+        },
+        {
+          "label": "Plano disponible próximamente",
+          "action": "notice",
+          "target": "El plano del mercado aún no está disponible.",
+          "x": 918.0,
+          "y": 228.0,
+          "width": 120,
+          "height": 44
+        },
+        {
+          "label": "Iniciar sesión de demostración",
+          "action": "login",
+          "target": null,
+          "x": 1114.0,
+          "y": 18.0,
+          "width": 114,
+          "height": 44
+        }
+      ],
+      "section": "Alternativas"
+    },
+    "BVUFI": {
+      "id": "BVUFI",
+      "name": "Mercado · Móvil · Carrito abierto",
+      "width": 390,
+      "height": 1065,
+      "image": "screens/BVUFI.png",
+      "hotspots": [
+        {
+          "label": "Volver al mercado",
+          "action": "market",
+          "target": null,
+          "x": 34.0,
+          "y": 10.0,
+          "width": 147,
+          "height": 44
+        },
+        {
+          "label": "Seguir buscando productos",
+          "action": "market",
+          "target": null,
+          "x": 88.5,
+          "y": 968.0,
+          "width": 213,
+          "height": 44
+        },
+        {
+          "label": "Revisar apartado",
+          "action": "review",
+          "target": "a4Tzo",
+          "x": 137.5,
+          "y": 863.0,
+          "width": 141,
+          "height": 44
+        },
+        {
+          "label": "Eliminar jitomate",
+          "action": "quantity",
+          "target": "00",
+          "x": 327,
+          "y": 307,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Reducir jitomate",
+          "action": "quantity",
+          "target": "0-",
+          "x": 22,
+          "y": 372,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Aumentar jitomate",
+          "action": "quantity",
+          "target": "0+",
+          "x": 90,
+          "y": 372,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Eliminar aguacate",
+          "action": "quantity",
+          "target": "10",
+          "x": 327,
+          "y": 456,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Reducir aguacate",
+          "action": "quantity",
+          "target": "1-",
+          "x": 22,
+          "y": 521,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Aumentar aguacate",
+          "action": "quantity",
+          "target": "1+",
+          "x": 104,
+          "y": 521,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Eliminar cilantro",
+          "action": "quantity",
+          "target": "20",
+          "x": 327,
+          "y": 605,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Reducir cilantro",
+          "action": "quantity",
+          "target": "2-",
+          "x": 22,
+          "y": 670,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Aumentar cilantro",
+          "action": "quantity",
+          "target": "2+",
+          "x": 122,
+          "y": 670,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · móvil"
+    },
+    "a4Tzo": {
+      "id": "a4Tzo",
+      "name": "Cliente · Móvil · Revisar apartado",
+      "width": 390,
+      "height": 844,
+      "image": "screens/a4Tzo.png",
+      "hotspots": [
+        {
+          "label": "Volver al catálogo",
+          "action": "catalog",
+          "target": "M2vgQT",
+          "x": 20.0,
+          "y": 88.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Cerrar revisión",
+          "action": "close",
+          "target": null,
+          "x": 326.0,
+          "y": 88.0,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Solicitar apartado",
+          "action": "submit",
+          "target": "EFCOW",
+          "x": 129.5,
+          "y": 776.0,
+          "width": 157,
+          "height": 44
+        },
+        {
+          "label": "Elegir horario de recogida",
+          "action": "pickup",
+          "target": null,
+          "x": 22.0,
+          "y": 417.0,
+          "width": 318,
+          "height": 44
+        },
+        {
+          "label": "Editar quién recoge",
+          "action": "contact",
+          "target": null,
+          "x": 20.0,
+          "y": 503.5,
+          "width": 95,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · móvil"
+    },
+    "mLRAY": {
+      "id": "mLRAY",
+      "name": "Cliente · Escritorio · Apartado por confirmar",
+      "width": 1440,
+      "height": 900,
+      "image": "screens/mLRAY.png",
+      "hotspots": [
+        {
+          "label": "Cerrar solicitud enviada",
+          "action": "close",
+          "target": null,
+          "x": 912.0,
+          "y": 142.5,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Volver al mercado",
+          "action": "market",
+          "target": null,
+          "x": 655.0,
+          "y": 604.5,
+          "width": 156,
+          "height": 44
+        },
+        {
+          "label": "Ver mi apartado",
+          "action": "reservation",
+          "target": null,
+          "x": 649.0,
+          "y": 674.5,
+          "width": 142,
+          "height": 44
+        }
+      ],
+      "section": "Cliente · escritorio"
+    },
+    "DVSNA": {
+      "id": "DVSNA",
+      "name": "Prototipo · Índice de recorridos",
+      "width": 1440,
+      "height": 1100,
+      "image": "screens/DVSNA.png",
+      "hotspots": [
+        {
+          "label": "Abrir recorrido 1",
+          "action": "route",
+          "target": "aiuVt",
+          "x": 80,
+          "y": 205,
+          "width": 1260,
+          "height": 90
+        },
+        {
+          "label": "Abrir recorrido 2",
+          "action": "route",
+          "target": "KKxdU",
+          "x": 80,
+          "y": 337,
+          "width": 1260,
+          "height": 90
+        },
+        {
+          "label": "Abrir recorrido 3",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 80,
+          "y": 469,
+          "width": 1260,
+          "height": 90
+        },
+        {
+          "label": "Abrir recorrido 4",
+          "action": "route",
+          "target": "vHDrB",
+          "x": 80,
+          "y": 601,
+          "width": 1260,
+          "height": 90
+        },
+        {
+          "label": "Abrir recorrido 5",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 80,
+          "y": 733,
+          "width": 1260,
+          "height": 90
+        }
+      ],
+      "section": "Soporte y referencia"
+    },
+    "D2zhK": {
+      "id": "D2zhK",
+      "name": "Comerciante · Comparar precios del mismo giro",
+      "width": 1440,
+      "height": 1100,
+      "image": "screens/D2zhK.png",
+      "hotspots": [
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 54.0,
+          "y": 229.0,
+          "width": 93,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 54.0,
+          "y": 341.0,
+          "width": 98,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 54.0,
+          "y": 285.0,
+          "width": 81,
+          "height": 44
+        },
+        {
+          "label": "Ir a finanzas",
+          "action": "route",
+          "target": "bpqzW",
+          "x": 54.0,
+          "y": 397.0,
+          "width": 86,
+          "height": 44
+        },
+        {
+          "label": "Ir a mi puesto",
+          "action": "route",
+          "target": "h91to",
+          "x": 54.0,
+          "y": 453.0,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "label": "Consultar ayuda",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 63.0,
+          "y": 958.0,
+          "width": 138,
+          "height": 44
+        },
+        {
+          "label": "Volver al resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 288.0,
+          "y": 28.0,
+          "width": 146,
+          "height": 44
+        },
+        {
+          "label": "Revisar nuevo precio",
+          "action": "price-review",
+          "target": "Mgewd",
+          "x": 1187.0,
+          "y": 702.0,
+          "width": 176,
+          "height": 44
+        },
+        {
+          "label": "Conservar precio actual",
+          "action": "price-cancel",
+          "target": "T28VaZ",
+          "x": 1194.0,
+          "y": 762.0,
+          "width": 162,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "Mgewd": {
+      "id": "Mgewd",
+      "name": "Comerciante · Revisar cambio de precio",
+      "width": 1440,
+      "height": 1000,
+      "image": "screens/Mgewd.png",
+      "hotspots": [
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 54.0,
+          "y": 229.0,
+          "width": 93,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 54.0,
+          "y": 341.0,
+          "width": 98,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 54.0,
+          "y": 285.0,
+          "width": 81,
+          "height": 44
+        },
+        {
+          "label": "Ir a finanzas",
+          "action": "route",
+          "target": "bpqzW",
+          "x": 54.0,
+          "y": 397.0,
+          "width": 86,
+          "height": 44
+        },
+        {
+          "label": "Ir a mi puesto",
+          "action": "route",
+          "target": "h91to",
+          "x": 54.0,
+          "y": 453.0,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "label": "Consultar ayuda",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 63.0,
+          "y": 858.0,
+          "width": 138,
+          "height": 44
+        },
+        {
+          "label": "Volver a comparar precios",
+          "action": "route",
+          "target": "D2zhK",
+          "x": 288.0,
+          "y": 28.0,
+          "width": 149,
+          "height": 44
+        },
+        {
+          "label": "Editar nuevo precio",
+          "action": "price-edit",
+          "target": null,
+          "x": 673.0,
+          "y": 359.5,
+          "width": 106,
+          "height": 51
+        },
+        {
+          "label": "Guardar nuevo precio",
+          "action": "price-save",
+          "target": "X0uXg",
+          "x": 335.5,
+          "y": 663.0,
+          "width": 171,
+          "height": 44
+        },
+        {
+          "label": "Cancelar cambio de precio",
+          "action": "price-cancel",
+          "target": "D2zhK",
+          "x": 614.0,
+          "y": 663.0,
+          "width": 90,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "spnbx": {
+      "id": "spnbx",
+      "name": "UX · Comerciante · Operación diaria",
+      "width": 1600,
+      "height": 977,
+      "image": "screens/spnbx.png",
+      "hotspots": [],
+      "section": "Soporte y referencia"
+    },
+    "Vo4aC": {
+      "id": "Vo4aC",
+      "name": "UX · Alta y pagos · Publicar el puesto",
+      "width": 1600,
+      "height": 790,
+      "image": "screens/Vo4aC.png",
+      "hotspots": [],
+      "section": "Soporte y referencia"
+    },
+    "pSIRS": {
+      "id": "pSIRS",
+      "name": "Comerciante · Móvil · Resumen y precios",
+      "width": 390,
+      "height": 1291,
+      "image": "screens/pSIRS.png",
+      "hotspots": [
+        {
+          "label": "Comparar precios del giro",
+          "action": "route",
+          "target": "TtKVe",
+          "x": 129.5,
+          "y": 1073.0,
+          "width": 157,
+          "height": 44
+        },
+        {
+          "label": "Registrar venta de demostración",
+          "action": "sale",
+          "target": null,
+          "x": 140.0,
+          "y": 211.0,
+          "width": 136,
+          "height": 44
+        },
+        {
+          "label": "Editar formas de pago",
+          "action": "route",
+          "target": "h91to",
+          "x": 38.0,
+          "y": 655.0,
+          "width": 344,
+          "height": 44
+        },
+        {
+          "label": "Revisar pedidos pendientes",
+          "action": "route",
+          "target": "SWso9",
+          "x": 38.0,
+          "y": 755.0,
+          "width": 316,
+          "height": 44
+        },
+        {
+          "label": "Revisar stock de cilantro",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 38.0,
+          "y": 809.0,
+          "width": 316,
+          "height": 44
+        },
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "pSIRS",
+          "x": 19.250000000000004,
+          "y": 1244.5,
+          "width": 74,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 116.25,
+          "y": 1244.5,
+          "width": 65,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 202.75,
+          "y": 1244.5,
+          "width": 77,
+          "height": 44
+        },
+        {
+          "label": "Ir a mi puesto",
+          "action": "route",
+          "target": "h91to",
+          "x": 296.25,
+          "y": 1244.5,
+          "width": 75,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "mplP7": {
+      "id": "mplP7",
+      "name": "UX · Precios · Comparar y decidir",
+      "width": 1600,
+      "height": 943,
+      "image": "screens/mplP7.png",
+      "hotspots": [],
+      "section": "Soporte y referencia"
+    },
+    "TtKVe": {
+      "id": "TtKVe",
+      "name": "Comerciante · Móvil · Comparar precios",
+      "width": 390,
+      "height": 1050,
+      "image": "screens/TtKVe.png",
+      "hotspots": [
+        {
+          "label": "Volver al resumen",
+          "action": "route",
+          "target": "pSIRS",
+          "x": 42.0,
+          "y": 36.0,
+          "width": 91,
+          "height": 44
+        },
+        {
+          "label": "Revisar nuevo precio",
+          "action": "price-review",
+          "target": "y15ABx",
+          "x": 120.0,
+          "y": 860.0,
+          "width": 176,
+          "height": 44
+        },
+        {
+          "label": "Conservar precio actual",
+          "action": "price-cancel",
+          "target": "pSIRS",
+          "x": 115.5,
+          "y": 930.0,
+          "width": 185,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "y15ABx": {
+      "id": "y15ABx",
+      "name": "Comerciante · Móvil · Revisar precio",
+      "width": 390,
+      "height": 1008,
+      "image": "screens/y15ABx.png",
+      "hotspots": [
+        {
+          "label": "Volver a comparar precios",
+          "action": "route",
+          "target": "TtKVe",
+          "x": 42.0,
+          "y": 36.0,
+          "width": 157,
+          "height": 44
+        },
+        {
+          "label": "Editar nuevo precio",
+          "action": "price-edit",
+          "target": null,
+          "x": 44.0,
+          "y": 370.5,
+          "width": 106,
+          "height": 51
+        },
+        {
+          "label": "Guardar nuevo precio",
+          "action": "price-save",
+          "target": "kQgTm",
+          "x": 122.5,
+          "y": 818.0,
+          "width": 171,
+          "height": 44
+        },
+        {
+          "label": "Cancelar cambio de precio",
+          "action": "price-cancel",
+          "target": "TtKVe",
+          "x": 163.0,
+          "y": 888.0,
+          "width": 90,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "kQgTm": {
+      "id": "kQgTm",
+      "name": "Comerciante · Móvil · Precio guardado · Simulación",
+      "width": 390,
+      "height": 683,
+      "image": "screens/kQgTm.png",
+      "hotspots": [
+        {
+          "label": "Volver al resumen",
+          "action": "route",
+          "target": "pSIRS",
+          "x": 131.0,
+          "y": 539.0,
+          "width": 154,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    },
+    "X0uXg": {
+      "id": "X0uXg",
+      "name": "Comerciante · Precio guardado · Simulación",
+      "width": 1440,
+      "height": 1000,
+      "image": "screens/X0uXg.png",
+      "hotspots": [
+        {
+          "label": "Ir a resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 54.0,
+          "y": 229.0,
+          "width": 93,
+          "height": 44
+        },
+        {
+          "label": "Ir a productos",
+          "action": "route",
+          "target": "BnjUF",
+          "x": 54.0,
+          "y": 341.0,
+          "width": 98,
+          "height": 44
+        },
+        {
+          "label": "Ir a pedidos",
+          "action": "route",
+          "target": "SWso9",
+          "x": 54.0,
+          "y": 285.0,
+          "width": 81,
+          "height": 44
+        },
+        {
+          "label": "Ir a finanzas",
+          "action": "route",
+          "target": "bpqzW",
+          "x": 54.0,
+          "y": 397.0,
+          "width": 86,
+          "height": 44
+        },
+        {
+          "label": "Ir a mi puesto",
+          "action": "route",
+          "target": "h91to",
+          "x": 54.0,
+          "y": 453.0,
+          "width": 94,
+          "height": 44
+        },
+        {
+          "label": "Consultar ayuda",
+          "action": "route",
+          "target": "Ijo5S",
+          "x": 63.0,
+          "y": 858.0,
+          "width": 138,
+          "height": 44
+        },
+        {
+          "label": "Volver al resumen",
+          "action": "route",
+          "target": "T28VaZ",
+          "x": 775.0,
+          "y": 699.0,
+          "width": 154,
+          "height": 44
+        }
+      ],
+      "section": "Comerciante"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+	"name": "chilangathon",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"packageManager": "bun@1.4.4",
+	"engines": {
+		"node": ">=24",
+		"bun": ">=1.4.4"
+	},
+	"scripts": {
+		"dev": "vite dev",
+		"build": "wrangler types --check && vite build",
+		"preview": "wrangler dev .svelte-kit/cloudflare/_worker.js --port 4173",
+		"prepare": "wrangler types && svelte-kit sync",
+		"check": "wrangler types --check && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"gen": "wrangler types",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format --write .",
+		"format:check": "biome format .",
+		"test": "bun test",
+		"test:e2e": "playwright test",
+		"deploy:dry-run": "bun run build && wrangler deploy --dry-run --outdir .wrangler/dry-run"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.6.3",
+		"@fontsource-variable/geist": "5.3.0",
+		"@internationalized/date": "3.12.4",
+		"@lucide/svelte": "1.61.0",
+		"@playwright/test": "1.64.1",
+		"@sveltejs/adapter-cloudflare": "8.0.1",
+		"@sveltejs/kit": "3.1.0",
+		"@sveltejs/vite-plugin-svelte": "7.3.1",
+		"@tailwindcss/vite": "4.3.3",
+		"@tanstack/form-devtools": "0.2.34",
+		"@tanstack/query-devtools": "5.104.5",
+		"@tanstack/svelte-devtools": "0.1.7",
+		"@types/bun": "1.4.4",
+		"bits-ui": "2.20.2",
+		"cn": "0.5.0",
+		"shadcn-svelte": "1.7.1",
+		"svelte": "5.57.2",
+		"svelte-check": "4.7.7",
+		"tailwind-variants": "3.3.1",
+		"tailwindcss": "4.3.3",
+		"tw-animate-css": "1.4.0",
+		"typescript": "6.0.3",
+		"vite": "8.3.5",
+		"wrangler": "4.152.0"
+	},
+	"imports": {
+		"#lib": "./src/logic/index.js",
+		"#lib/*": "./src/logic/*",
+		"#utils/*": "./src/logic/utils/*",
+		"#contexts/*": "./src/logic/contexts/*",
+		"#sharing/*": "./src/ui/sharing/*",
+		"#home/*": "./src/ui/home/*",
+		"#auth/*": "./src/ui/auth/*",
+		"#merchants/*": "./src/ui/merchants/*",
+		"#assets/*": "./src/assets/*"
+	},
+	"dependencies": {
+		"@tanstack/charts": "1.1.0",
+		"@tanstack/query-core": "5.104.5",
+		"@tanstack/svelte-form": "1.33.5",
+		"@tanstack/svelte-query": "6.3.5",
+		"@tanstack/svelte-virtual": "3.13.48"
+	}
+}
