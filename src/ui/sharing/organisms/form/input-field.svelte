@@ -9,11 +9,13 @@
 	let {
 		label,
 		description,
+		type = "text",
 		id = generatedId,
 		...props
 	}: Omit<HTMLInputAttributes, "value" | "oninput" | "onblur" | "name" | "type" | "files" | "id"> & {
 		label: string;
 		description?: string;
+		type?: "text" | "email" | "password";
 		id?: string;
 	} = $props();
 
@@ -32,7 +34,7 @@
 	<Input
 		{...props}
 		{id}
-		type="text"
+		{type}
 		name={field.name}
 		value={field.state.value}
 		aria-invalid={invalid}

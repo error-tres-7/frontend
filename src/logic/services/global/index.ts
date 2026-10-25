@@ -28,7 +28,8 @@ export class GlobalService {
 
 		if (key) headers.set("Idempotency-Key", key);
 
-		return { headers, thrower, signal };
+		// The API lives on another subdomain; the session cookie only travels with credentials.
+		return { headers, thrower, signal, credentials: "include" as const };
 	};
 
 	/** Validates what the API answered; a mismatch is a contract failure, not data to render. */
