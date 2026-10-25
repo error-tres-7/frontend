@@ -1,4 +1,4 @@
-# De Aquí · Prototipo local
+# entrepuestos · Prototipo local
 
 Abre [prototype/index.html](prototype/index.html) en un navegador moderno. En macOS, desde la raíz del proyecto:
 
@@ -24,23 +24,28 @@ Después abre `http://127.0.0.1:4174`. El puerto no pudo abrirse en este sandbox
 - **Fallos de precio:** en “Escenarios de demostración”, alternar ausencia de referencias bloquea una propuesta; simular fallo al guardar conserva el precio anterior y el borrador. Reintentar lleva al éxito. El guardado evita la doble ejecución durante la transición.
 - **Controles comunes:** enlaces por fragmento, selector de pantalla, índice de recorridos, botón Volver, historial del navegador, cerrar diálogos, áreas clicables opcionales y lista accesible de acciones. Favoritos abre el catálogo y conecta a explorar/pedidos.
 
+## Marca
+
+La marca confirmada es **entrepuestos**: una palabra, en minúsculas, sin punto final. El wordmark "de aquí." fue reemplazado en las 30 apariciones del lienzo (navegación de cliente y comerciante, escritorio y móvil), en el tablero de marca `U3vDvD`/`euR0h` y en el índice `DVSNA`; las capturas, el manifiesto y `data.js` se regeneraron tras el cambio. En código, títulos, `aria-label`, claves de almacenamiento (`entrepuestos.customer.v1`, `entrepuestos-prototype`) y clases del mapa (`entrepuestos-pin`, `entrepuestos-label`) usan la nueva marca. El dominio `entrepuestos.com` está registrado en Cloudflare y declarado como rutas en `wrangler.jsonc`; el despliegue requiere `wrangler login` en esa cuenta.
+
 ## Organización del lienzo
 
-`design.pen` conserva los IDs y el contenido de las pantallas. Este trabajo organiza posiciones y agrega el índice `DVSNA` y cinco encabezados de sección. No edita contenido de `T28VaZ` ni `r2JYH`; sus cambios concurrentes corresponden a sus diseñadores. Las pantallas nuevas se cotejaron con [DASHBOARD-DESIGN.md](DASHBOARD-DESIGN.md).
+`design.pen` conserva los IDs y el contenido de las pantallas. El lienzo separa los recorridos principales de sus alternativas y cuenta con el índice `DVSNA` y encabezados de sección. Las pantallas nuevas se cotejaron con [DASHBOARD-DESIGN.md](DASHBOARD-DESIGN.md).
 
 | Área | Posición |
 | --- | --- |
 | Marca, componentes y fotografías | y = 0 |
 | Cliente escritorio | y = 780, izquierda a derecha |
-| Comerciante escritorio y preparación | y = 2000 |
-| Comerciante móvil: resumen y precios | y = 3200, desde x = 8190 |
-| Tableros UX del diseñador principal | y = 4292; no se reubicaron |
-| Estados de apoyo `Ijo5S` | x = 8260, y = 4600; se movió para evitar el nuevo tablero UX |
-| Cliente móvil | y = 5500, izquierda a derecha |
-| Alternativas: listas y favoritos | y = 7000 |
-| Índice `DVSNA` | x = 0, y = 8500 |
+| Comerciante escritorio | y = 2000 |
+| Alternativa escritorio: mercado en lista | x = 0, y = 3500; último bloque de escritorio |
+| Cliente móvil: recorrido principal | y = 4600, x = 0–2450, izquierda a derecha |
+| Cliente móvil: favoritos y lista | y = 6000; favoritos bajo Explorar, lista bajo Mercado |
+| Comerciante móvil: resumen → comparar → revisar → guardado | y = 7300, x = 0–1470 |
+| Comerciante móvil: preparar pedido | x = 2200, y = 7300; rama de operación independiente |
+| Todos los tableros y estados UX | y = 8910, x = 0–6880; encabezado en y = 8800 |
+| Índice `DVSNA` | x = 0, y = 10300 |
 
-Auditoría final nativa: 41 raíces, sin solapamientos entre raíces, sin flags `placeholder` y sin problemas de recorte reportados en DVSNA. Se revisaron capturas de las secciones y del índice; las pantallas aprobadas conservan su composición. El índice usa los colores y fuentes existentes; no se sustituyó la UI de producción.
+Orden vertical del lienzo: escritorio → móvil → UX → índice. La última pantalla de escritorio termina en y = 4280; los móviles empiezan en y = 4600 y terminan en y = 8591. Los flujos y estados UX comienzan en y = 8910 y terminan en y = 10030. Se verificó la separación de escritorio y móvil; el diseñador delegado verificó las seis raíces de la sección UX, sin solapamientos y con placeholders despejados. Se actualizó la exportación del índice del prototipo. Las pantallas conservan su composición y sus destinos; este cambio solo modifica su ubicación en el lienzo y las indicaciones del índice. No se sustituyó la UI de producción.
 
 ## Alcance y límites
 
@@ -131,7 +136,7 @@ Cada nombre corresponde a un control del prototipo. Los destinos y rectángulos 
 
 | ID | Pantalla | Acciones |
 | --- | --- | --- |
-| `U3vDvD` | De Aquí · Brand and experience direction | Referencia estática; selector, índice y Volver |
+| `U3vDvD` | entrepuestos · Marca y experiencia | Referencia estática; selector, índice y Volver |
 | `euR0h` | Sistema de marca · Tokens y componentes | Referencia estática; selector, índice y Volver |
 | `o8vGp` | Reusable photography · illustrative assets | Referencia estática; selector, índice y Volver |
 | `r2JYH` | UX · Cliente · Descubrir y apartar | Referencia estática; selector, índice y Volver |
@@ -140,4 +145,3 @@ Cada nombre corresponde a un control del prototipo. Los destinos y rectángulos 
 | `Vo4aC` | UX · Alta y pagos · Publicar el puesto | Referencia estática; selector, índice y Volver |
 | `mplP7` | UX · Precios · Comparar y decidir | Referencia estática; selector, índice y Volver |
 | `DVSNA` | Prototipo · Índice de recorridos | Abrir recorrido 1 · Abrir recorrido 2 · Abrir recorrido 3 · Abrir recorrido 4 · Abrir recorrido 5 |
-

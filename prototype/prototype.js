@@ -1,19 +1,19 @@
 const {manifest,nodes}=window.PROTOTYPE_DATA;
 const main=document.querySelector('#main'), modal=document.querySelector('#dialog');
 const defaults=()=>({price:32,draftPrice:30,failPriceSave:false,noReferences:false,q:[1,.5,1],pickup:'Hoy · 12:30–13:00',contact:'Ana López',submitted:false,ready:false,expenses:[],sales:[]});
-let state;try{state=Object.assign(defaults(),JSON.parse(sessionStorage.getItem('de-aqui-prototype')||'null'));}catch{state=defaults();}
+let state;try{state=Object.assign(defaults(),JSON.parse(sessionStorage.getItem('entrepuestos-prototype')||'null'));}catch{state=defaults();}
 let resizeObserver,priceSaving=false;
 let current='', origin={desktop:'GcHvf',mobile:'p45ipV'}, focusReturn=null;
-history.replaceState({deAqui:0},'',location.href);
+history.replaceState({entrepuestos:0},'',location.href);
 const products=[{name:'Jitomate saladet',price:32,unit:'kg',step:1},{name:'Aguacate Hass',price:70,unit:'kg',step:.5},{name:'Cilantro fresco',price:10,unit:'manojo',step:1}];
 const money=n=>'$'+n.toFixed(2), total=()=>products.reduce((s,p,i)=>s+p.price*state.q[i],0), count=()=>state.q.filter(q=>q>0).length;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const save=()=>{try{sessionStorage.setItem('de-aqui-prototype',JSON.stringify(state));}catch{}};
+const save=()=>{try{sessionStorage.setItem('entrepuestos-prototype',JSON.stringify(state));}catch{}};
 const mobile=()=>manifest.screens[current]?.width===390;
 const market=()=>origin[mobile()?'mobile':'desktop'];
 function notify(text){const el=document.querySelector('#status');el.textContent=text;clearTimeout(notify.timer);notify.timer=setTimeout(()=>el.textContent='',5000);}
-function go(id){if(modal.open)modal.close();if(id===current)return;history.pushState({deAqui:(history.state?.deAqui||0)+1},'','#'+(id||''));render();}
-function back(){if(modal.open){modal.close();return;}if(history.state?.deAqui>0)history.back();else go('');}
+function go(id){if(modal.open)modal.close();if(id===current)return;history.pushState({entrepuestos:(history.state?.entrepuestos||0)+1},'','#'+(id||''));render();}
+function back(){if(modal.open){modal.close();return;}if(history.state?.entrepuestos>0)history.back();else go('');}
 function closeOverlay(){go(market());}
 function dialog(title,html,onOpen){focusReturn=document.activeElement;modal.innerHTML=`<button class="close-dialog" aria-label="Cerrar diálogo">×</button><h2 id="dialog-title">${esc(title)}</h2>${html}`;modal.querySelector('.close-dialog').onclick=()=>modal.close();modal.showModal();onOpen?.(modal);}
 modal.addEventListener('close',()=>focusReturn?.isConnected&&focusReturn.focus());
@@ -21,14 +21,14 @@ modal.addEventListener('click',e=>{if(e.target===modal){const r=modal.getBoundin
 const picker=document.querySelector('#screens');picker.innerHTML='<option value="">Índice de recorridos</option>'+Object.entries(manifest.sections).map(([name,ids])=>`<optgroup label="${esc(name)}">${ids.map(id=>`<option value="${id}">${esc(manifest.screens[id].name)}</option>`).join('')}</optgroup>`).join('');picker.onchange=()=>go(picker.value);
 document.querySelector('#home').onclick=()=>go('');document.querySelector('#back').onclick=back;
 document.querySelector('#hints').onchange=e=>document.body.classList.toggle('show-hints',e.target.checked);
-document.querySelector('#reset').onclick=()=>{state=defaults();save();origin={desktop:'GcHvf',mobile:'p45ipV'};if(current)go('');else render();history.replaceState({deAqui:0},'',location.href);notify('Recorrido reiniciado. Canasta ilustrativa de $77.00.');};
+document.querySelector('#reset').onclick=()=>{state=defaults();save();origin={desktop:'GcHvf',mobile:'p45ipV'};if(current)go('');else render();history.replaceState({entrepuestos:0},'',location.href);notify('Recorrido reiniciado. Canasta ilustrativa de $77.00.');};
 window.addEventListener('hashchange',render);window.addEventListener('popstate',render);
 document.addEventListener('click',e=>{const link=e.target.closest('a[href^="#"]');if(link){e.preventDefault();go(link.getAttribute('href').slice(1));}});
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.open&&['CTwi6','M2vgQT','QRWqF','a4Tzo','mLRAY','EFCOW'].includes(current))closeOverlay();});
 function render(){
  resizeObserver?.disconnect();priceSaving=false;
  current=decodeURIComponent(location.hash.slice(1));picker.value=current;
- if(!current){main.innerHTML=`<div class="index"><p class="eyebrow">DE AQUÍ · PROTOTIPO LOCAL</p><h1>Lo bueno está cerca.<br>Recorre el barrio.</h1><p class="intro">Elige una tarea y prueba sus controles. Las pantallas conservan el diseño aprobado en español. Los precios y apartados son de demostración.</p><p class="notice">Cliente: busca jitomate, compara $32/kg con $28/kg y revisa tu apartado. Comerciante: recorre tu puesto y prepara un pedido.</p>${Object.entries(manifest.sections).map(([title,ids])=>`<section class="journey"><div><h2>${esc(title)}</h2><button class="start" data-start="${ids[0]}">Iniciar recorrido →</button></div><div class="journey-items">${ids.map(id=>`<a href="#${id}">${esc(manifest.screens[id].name)}<small>${id} · ${manifest.screens[id].width} × ${manifest.screens[id].height}</small></a>`).join('')}</div></section>`).join('')}<p class="muted">Estado guardado en esta pestaña. Reiniciar restaura la canasta. Ningún dato se envía a servicios externos.</p></div>`;main.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>go(b.dataset.start));return;}
+ if(!current){main.innerHTML=`<div class="index"><p class="eyebrow">ENTREPUESTOS · PROTOTIPO LOCAL</p><h1>Lo bueno está cerca.<br>Recorre el barrio.</h1><p class="intro">Elige una tarea y prueba sus controles. Las pantallas conservan el diseño aprobado en español. Los precios y apartados son de demostración.</p><p class="notice">Cliente: busca jitomate, compara $32/kg con $28/kg y revisa tu apartado. Comerciante: recorre tu puesto y prepara un pedido.</p>${Object.entries(manifest.sections).map(([title,ids])=>`<section class="journey"><div><h2>${esc(title)}</h2><button class="start" data-start="${ids[0]}">Iniciar recorrido →</button></div><div class="journey-items">${ids.map(id=>`<a href="#${id}">${esc(manifest.screens[id].name)}<small>${id} · ${manifest.screens[id].width} × ${manifest.screens[id].height}</small></a>`).join('')}</div></section>`).join('')}<p class="muted">Estado guardado en esta pestaña. Reiniciar restaura la canasta. Ningún dato se envía a servicios externos.</p></div>`;main.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>go(b.dataset.start));return;}
  const s=manifest.screens[current];if(!s){main.innerHTML='<div class="index"><h1>Pantalla no encontrada</h1><p>Este enlace no pertenece al prototipo.</p><a href="#">Volver a los recorridos</a></div>';return;}
  if(['GcHvf','vHDrB'].includes(current))origin.desktop=current;
  if(['p45ipV','j6xDkI'].includes(current))origin.mobile=current;
@@ -103,6 +103,6 @@ function act(h){switch(h.action){
  case'login':dialog('Acceso de demostración','<p>Este recorrido utiliza a Ana López como cliente y a Lucha García como comerciante. No solicita contraseñas ni envía códigos.</p><button class="primary full" id="demo-login">Continuar como cliente</button>',el=>el.querySelector('#demo-login').onclick=()=>{modal.close();notify('Sesión de demostración lista.');});break;
  case'ready':state.ready=true;save();render();notify('Pedido #041 listo para recoger. Aviso simulado.');break;
  case'expense':case'sale':{const expense=h.action==='expense';dialog(expense?'Registrar gasto de demostración':'Registrar venta de demostración',`<form><label for="amount">Monto (MXN)</label><input id="amount" type="number" min="0.01" step="0.01" required><label for="concept">${expense?'Concepto':'Referencia'}</label><input id="concept" required maxlength="60"><p class="muted">Se guardará solo en esta pestaña.</p><button class="primary full">Guardar ${expense?'gasto':'venta'}</button></form>`,el=>el.querySelector('form').onsubmit=e=>{e.preventDefault();const record={amount:Number(el.querySelector('#amount').value),concept:el.querySelector('#concept').value};state[expense?'expenses':'sales'].push(record);save();modal.close();notify(`${expense?'Gasto':'Venta'} de ${money(record.amount)} guardado en la demostración.`);});break;}
- case'download':{const csv='tipo,concepto,monto_MXN\n'+[...state.expenses.map(r=>['gasto',r.concept,r.amount]),...state.sales.map(r=>['venta',r.concept,r.amount])].map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='de-aqui-demostracion.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('Registro local descargado. Solo incluye movimientos de esta sesión.');break;}
+ case'download':{const csv='tipo,concepto,monto_MXN\n'+[...state.expenses.map(r=>['gasto',r.concept,r.amount]),...state.sales.map(r=>['venta',r.concept,r.amount])].map(r=>r.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='entrepuestos-demostracion.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify('Registro local descargado. Solo incluye movimientos de esta sesión.');break;}
 }}
 render();

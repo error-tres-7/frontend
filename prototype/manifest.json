@@ -50,9 +50,9 @@
   "screens": {
     "U3vDvD": {
       "id": "U3vDvD",
-      "name": "De Aquí · Brand and experience direction",
-      "width": 1440,
-      "height": 680,
+      "name": "entrepuestos · Marca y experiencia",
+      "width": 1440.0,
+      "height": 680.0,
       "image": "screens/U3vDvD.png",
       "hotspots": [],
       "section": "Soporte y referencia"
@@ -141,9 +141,9 @@
           "label": "Volver al mapa",
           "action": "route",
           "target": "aiuVt",
-          "x": 213.0,
+          "x": 294.0,
           "y": 18.0,
-          "width": 124,
+          "width": 124.0,
           "height": 44
         },
         {
@@ -852,7 +852,7 @@
           "target": null,
           "x": 268.0,
           "y": 10.0,
-          "width": 114,
+          "width": 114.0,
           "height": 44
         }
       ],
@@ -1207,9 +1207,9 @@
           "label": "Volver al mapa",
           "action": "route",
           "target": "KKxdU",
-          "x": 138.0,
+          "x": 200.0,
           "y": 10.0,
-          "width": 62,
+          "width": 62.0,
           "height": 44
         },
         {
@@ -1298,9 +1298,9 @@
           "label": "Volver al mapa",
           "action": "route",
           "target": "KKxdU",
-          "x": 138.0,
+          "x": 200.0,
           "y": 10.0,
-          "width": 62,
+          "width": 62.0,
           "height": 44
         },
         {
@@ -1389,9 +1389,9 @@
           "label": "Volver al mapa",
           "action": "route",
           "target": "aiuVt",
-          "x": 213.0,
+          "x": 294.0,
           "y": 18.0,
-          "width": 124,
+          "width": 124.0,
           "height": 44
         },
         {
