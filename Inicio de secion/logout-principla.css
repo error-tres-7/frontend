@@ -110,7 +110,8 @@ main {
     color: #46A2FD;
 }
 
-.contenedor__login-register form input {
+.contenedor__login-register form input,
+.contenedor__login-register form select {
     width: 100%;
     margin-top: 20px;
     padding: 10px;

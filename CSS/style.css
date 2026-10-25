@@ -161,6 +161,7 @@ body {
     color: var(--text-secondary);
     font-size: 1.2rem;
     cursor: pointer;
+    text-decoration: none;
     transition: var(--transition-smooth);
     position: relative;
     outline: none;
