@@ -67,3 +67,11 @@ Archivo único de diseño: `design.pen`. Se refinó únicamente la raíz existen
 ## Detección por organización
 
 Se detectaron en el lienzo las raíces D2zhK, Mgewd, pSIRS, TtKVe, y15ABx, kQgTm y X0uXg, todas sin placeholder. Se están integrando los recorridos desktop y móvil de comparar → revisar → guardar/cancelar. Se espera la entrega de IDs/acciones del diseñador de dashboard para cotejar el manifiesto. Los nuevos tableros UX spnbx, Vo4aC y mplP7 se incorporarán como referencia, sin editar su contenido.
+
+## Integración completada por organización / prototipo
+
+Entrega del dashboard cotejada con los IDs y acciones de la tabla anterior. Se incorporaron las ocho raíces (incluido el resumen existente T28VaZ) y los tres tableros UX nuevos a `prototype/`. El manifiesto cubre comparación desktop/móvil, precio editable, guardar explícitamente, éxito, cancelar/conservar, volver y configurar pagos. Fallo al guardar/reintento y ausencia de referencias son escenarios locales de demostración. Se mantienen los estados de precio en la pestaña y se restauran al reiniciar. El inventario y la canasta de cliente son escenarios independientes; la limitación se detalla en PROTOTYPE.md.
+
+Verificación: 187 comprobaciones de navegador aprobadas y una pasada adicional de clics reales de puntero en escritorio/móvil. Resumen final y manifiesto: `PROTOTYPE.md`, `prototype/manifest.json`, `prototype/browser-checks.json`, `prototype/pointer-checks.json`.
+
+Organización final: T28VaZ y r2JYH conservaron su posición y este agente no editó su contenido. Ijo5S se movió a (8260, 4600) para evitar solapamiento con la ampliación de r2JYH. Las 41 raíces finalizaron sin placeholders ni solapamientos. Índice DVSNA en (0, 8500). Solo cambios locales; sin staging ni commits.

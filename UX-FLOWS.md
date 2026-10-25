@@ -27,7 +27,7 @@ Public listing `h91to`: identity, giro, market/local, operating hours, accepted 
 
 Dashboard recommendations → comparable giro/product/unit and market scope → inspect dated market references and source → review own proposed price → explicitly save or cancel. Never automatically apply another merchant's price. References are illustrative unless verified; low-quality, stale, or noncomparable data should not produce a confident recommendation.
 
-The dashboard designer will publish new screen IDs and actions in `DASHBOARD-DESIGN.md`. Integrate those exact IDs into the prototype and final UX boards once available.
+The dashboard screen IDs and actions are recorded in `DASHBOARD-DESIGN.md` and referenced by the pricing UX board.
 
 Native dashboard-family roots now available for linking:
 
@@ -43,6 +43,21 @@ The pricing UX board's screen-reference contexts point to these exact roots. [De
 ## Scope and safety of the demonstration
 
 Use the established Spanish identity and pickup-first service assumption. No real payments, messaging, stock holds, account verification, price scraping, or published data changes occur. A combined multi-merchant cart remains an open product decision; the demonstrated cart contains Doña Lucha only. All examples are fictional.
+
+## Acceptance contracts by part
+
+This table specifies expected behavior for implementation and prototype review; it is not a test-pass report.
+
+| Part | Observable success | Recovery / boundary |
+| --- | --- | --- |
+| Discovery and market search | A product search leads to merchants within the selected market; grid/list retains the query and cart. | Manual area when location is unavailable; clear or change an unmatched product. |
+| Merchant product overlay | All merchant products are visible; changing quantities updates the estimated total; back/close returns to the market context. | Zero quantity removes a selection; empty cart blocks review; longer content scrolls while actions stay available. |
+| Apartado | Review shows pickup, contact, merchant and amount; submission ends in pending acceptance. | Missing contact is verified first; changed stock/price needs acceptance; failure preserves input and retry does not duplicate. |
+| Orders | Merchant accepts, prepares, marks ready, then records delivery and actual collection. | Cancellation releases a hold; uncollected or pending requests are not counted as sales. |
+| Inventory | A reviewed price/stock/unit change appears in the merchant's public catalog. | Reject negative/invalid values; cancellation preserves the existing value; failed saves retain the draft. |
+| Finances | A valid expense appears once and updates the chosen period's summary. | Invalid amounts receive field feedback; retry does not duplicate a movement; cash flow is labeled separately from profit. |
+| Giro / price references | Comparable, dated references lead to a merchant-controlled price review and explicit save or cancel. | Missing/stale/different-unit references keep the current price; saving never silently changes existing accepted apartados. |
+| Public setup and payments | Explicit giro, location, hours and accepted methods appear in the public preview. | At least one declared method before publishing; unknown acceptance says “Consulta al comerciante”; login phone stays private by default. |
 
 ## UX boards
 
@@ -65,6 +80,8 @@ Own verification: reviewed each completed board and the profile form; no clippin
 
 Opened the UX PDF with PDFKit: four pages, all page bounds valid.
 
-Canvas index, screen organization, and clickable local prototype belong to the prototype designer; see `PROTOTYPE.md` when ready. Dashboard and comparison screen IDs/actions are in `DASHBOARD-DESIGN.md`.
+Checked all ten handoff entry/reference IDs against the prototype manifest: ten present, zero missing. This checks link targets, not interactive behavior.
+
+Canvas index, screen organization, and clickable local prototype are complete; see [PROTOTYPE.md](PROTOTYPE.md) for launch instructions and exact coverage. The prototype designer recorded 187 passing Chromium checks and a separate pointer-click pass for desktop/mobile customer journeys. These are simulated interactions, not production service tests. Dashboard and comparison screen IDs/actions are in [DASHBOARD-DESIGN.md](DASHBOARD-DESIGN.md).
 
 No commits, staging, publishing, or deployment are authorized. Existing application code is outside this design/prototype task.

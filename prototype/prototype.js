@@ -1,18 +1,19 @@
 const {manifest,nodes}=window.PROTOTYPE_DATA;
 const main=document.querySelector('#main'), modal=document.querySelector('#dialog');
-const defaults=()=>({price:32,draftPrice:30,q:[1,.5,1],pickup:'Hoy · 12:30–13:00',contact:'Ana López',submitted:false,ready:false,expenses:[],sales:[]});
+const defaults=()=>({price:32,draftPrice:30,failPriceSave:false,noReferences:false,q:[1,.5,1],pickup:'Hoy · 12:30–13:00',contact:'Ana López',submitted:false,ready:false,expenses:[],sales:[]});
 let state;try{state=Object.assign(defaults(),JSON.parse(sessionStorage.getItem('de-aqui-prototype')||'null'));}catch{state=defaults();}
-let resizeObserver;
-let current='', origin={desktop:'GcHvf',mobile:'p45ipV'}, stack=[], focusReturn=null;
+let resizeObserver,priceSaving=false;
+let current='', origin={desktop:'GcHvf',mobile:'p45ipV'}, focusReturn=null;
+history.replaceState({deAqui:0},'',location.href);
 const products=[{name:'Jitomate saladet',price:32,unit:'kg',step:1},{name:'Aguacate Hass',price:70,unit:'kg',step:.5},{name:'Cilantro fresco',price:10,unit:'manojo',step:1}];
 const money=n=>'$'+n.toFixed(2), total=()=>products.reduce((s,p,i)=>s+p.price*state.q[i],0), count=()=>state.q.filter(q=>q>0).length;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const save=()=>sessionStorage.setItem('de-aqui-prototype',JSON.stringify(state));
+const save=()=>{try{sessionStorage.setItem('de-aqui-prototype',JSON.stringify(state));}catch{}};
 const mobile=()=>manifest.screens[current]?.width===390;
 const market=()=>origin[mobile()?'mobile':'desktop'];
 function notify(text){const el=document.querySelector('#status');el.textContent=text;clearTimeout(notify.timer);notify.timer=setTimeout(()=>el.textContent='',5000);}
-function go(id){if(modal.open)modal.close(); if(id===current)return; if(current)stack.push(current);location.hash=id||'';}
-function back(){if(modal.open){modal.close();return;}go(stack.pop()||'');stack.pop();}
+function go(id){if(modal.open)modal.close();if(id===current)return;history.pushState({deAqui:(history.state?.deAqui||0)+1},'','#'+(id||''));render();}
+function back(){if(modal.open){modal.close();return;}if(history.state?.deAqui>0)history.back();else go('');}
 function closeOverlay(){go(market());}
 function dialog(title,html,onOpen){focusReturn=document.activeElement;modal.innerHTML=`<button class="close-dialog" aria-label="Cerrar diálogo">×</button><h2 id="dialog-title">${esc(title)}</h2>${html}`;modal.querySelector('.close-dialog').onclick=()=>modal.close();modal.showModal();onOpen?.(modal);}
 modal.addEventListener('close',()=>focusReturn?.isConnected&&focusReturn.focus());
@@ -20,11 +21,12 @@ modal.addEventListener('click',e=>{if(e.target===modal){const r=modal.getBoundin
 const picker=document.querySelector('#screens');picker.innerHTML='<option value="">Índice de recorridos</option>'+Object.entries(manifest.sections).map(([name,ids])=>`<optgroup label="${esc(name)}">${ids.map(id=>`<option value="${id}">${esc(manifest.screens[id].name)}</option>`).join('')}</optgroup>`).join('');picker.onchange=()=>go(picker.value);
 document.querySelector('#home').onclick=()=>go('');document.querySelector('#back').onclick=back;
 document.querySelector('#hints').onchange=e=>document.body.classList.toggle('show-hints',e.target.checked);
-document.querySelector('#reset').onclick=()=>{state=defaults();save();stack=[];origin={desktop:'GcHvf',mobile:'p45ipV'};if(current){location.hash='';}else render();notify('Recorrido reiniciado. Canasta ilustrativa de $77.00.');};
-window.addEventListener('hashchange',render);
+document.querySelector('#reset').onclick=()=>{state=defaults();save();origin={desktop:'GcHvf',mobile:'p45ipV'};if(current)go('');else render();history.replaceState({deAqui:0},'',location.href);notify('Recorrido reiniciado. Canasta ilustrativa de $77.00.');};
+window.addEventListener('hashchange',render);window.addEventListener('popstate',render);
+document.addEventListener('click',e=>{const link=e.target.closest('a[href^="#"]');if(link){e.preventDefault();go(link.getAttribute('href').slice(1));}});
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&!modal.open&&['CTwi6','M2vgQT','QRWqF','a4Tzo','mLRAY','EFCOW'].includes(current))closeOverlay();});
 function render(){
- resizeObserver?.disconnect();
+ resizeObserver?.disconnect();priceSaving=false;
  current=decodeURIComponent(location.hash.slice(1));picker.value=current;
  if(!current){main.innerHTML=`<div class="index"><p class="eyebrow">DE AQUÍ · PROTOTIPO LOCAL</p><h1>Lo bueno está cerca.<br>Recorre el barrio.</h1><p class="intro">Elige una tarea y prueba sus controles. Las pantallas conservan el diseño aprobado en español. Los precios y apartados son de demostración.</p><p class="notice">Cliente: busca jitomate, compara $32/kg con $28/kg y revisa tu apartado. Comerciante: recorre tu puesto y prepara un pedido.</p>${Object.entries(manifest.sections).map(([title,ids])=>`<section class="journey"><div><h2>${esc(title)}</h2><button class="start" data-start="${ids[0]}">Iniciar recorrido →</button></div><div class="journey-items">${ids.map(id=>`<a href="#${id}">${esc(manifest.screens[id].name)}<small>${id} · ${manifest.screens[id].width} × ${manifest.screens[id].height}</small></a>`).join('')}</div></section>`).join('')}<p class="muted">Estado guardado en esta pestaña. Reiniciar restaura la canasta. Ningún dato se envía a servicios externos.</p></div>`;main.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>go(b.dataset.start));return;}
  const s=manifest.screens[current];if(!s){main.innerHTML='<div class="index"><h1>Pantalla no encontrada</h1><p>Este enlace no pertenece al prototipo.</p><a href="#">Volver a los recorridos</a></div>';return;}
@@ -35,15 +37,24 @@ function render(){
  for(const h of s.hotspots){const b=document.createElement('button');b.className='hotspot';b.dataset.hotspot=h.label;b.setAttribute('aria-label',h.label);b.title=h.label;Object.assign(b.style,{left:h.x+'px',top:h.y+'px',width:h.width+'px',height:h.height+'px'});b.innerHTML=`<span class="hint-label" aria-hidden="true">${esc(h.label)}</span>`;b.onclick=()=>act(h);stage.append(b);const alt=document.createElement('button');alt.textContent=h.label;alt.onclick=()=>act(h);main.querySelector('.action-buttons').append(alt);}
  patch(stage);
  const viewport=main.querySelector('.viewport');const resize=()=>{const scale=viewport.clientWidth/s.width;stage.style.transform=`scale(${scale})`;viewport.style.height=s.height*scale+'px';};resize();resizeObserver=new ResizeObserver(resize);resizeObserver.observe(viewport);
+ if(['D2zhK','TtKVe','Mgewd','y15ABx'].includes(current)){const tools=document.createElement('details');tools.className='actions';tools.innerHTML='<summary>Escenarios de demostración</summary>'+(['D2zhK','TtKVe'].includes(current)?'<button id=references-scenario>Alternar referencias disponibles / sin referencias</button>':'<label><input id=failure-scenario type=checkbox> Simular fallo al guardar el precio</label>');main.append(tools);tools.querySelector('#references-scenario')?.addEventListener('click',()=>{state.noReferences=!state.noReferences;save();render();});const fail=tools.querySelector('#failure-scenario');if(fail){fail.checked=state.failPriceSave;fail.onchange=()=>{state.failPriceSave=fail.checked;save();};}}
  window.scrollTo(0,0);
 }
-function stamp(stage,name,content,{bg='#fff',width,color='#123c32'}={}){const n=nodes.findLast(n=>n.root===current&&n.name===name);if(!n)return;const el=document.createElement('span');el.className='stamp';el.textContent=content;Object.assign(el.style,{left:(n.x-2)+'px',top:(n.y-1)+'px',width:(width||Math.max(n.w+6,80))+'px',height:(n.h+2)+'px',fontSize:Math.round(n.h*.78)+'px',background:bg,color});stage.append(el);}
+function stamp(stage,name,content,{bg='#fff',width,color='#123c32'}={}){const n=nodes.findLast(n=>n.root===current&&n.name===name);if(!n)return;const el=document.createElement('span');el.className='stamp';el.textContent=content;Object.assign(el.style,{left:(n.x-2)+'px',top:(n.y-1)+'px',width:(width||Math.max(n.w+6,80))+'px',height:(n.h+2)+'px',fontSize:(n.fontSize||Math.round(n.h*.78))+'px',background:bg,color});stage.append(el);}
 function patch(stage){
  const price=state.price, draft=state.draftPrice;
  if(current==='T28VaZ'&&price!==32)stamp(stage,'Producto y precio actual','Frutas y verduras · Jitomate saladet · Tu precio '+money(price)+' / kg',{width:740,bg:'#f5f7f6'});
  if(current==='pSIRS'&&price!==32)stamp(stage,'Giro y producto móvil','Jitomate saladet · Tu precio '+money(price)+' / kg',{width:310,bg:'#f5f7f6'});
  if(current==='D2zhK')stamp(stage,'Tu precio actual · 1',money(price)+' MXN',{width:160});
  if(current==='TtKVe')stamp(stage,'Precio actual de comparación móvil','Tu precio actual: '+money(price)+' / kg',{width:350});
+ if(['D2zhK','TtKVe'].includes(current)){
+  const mob=mobile();stamp(stage,'Guardar mercado label','Conservar '+money(price)+' / kg',{width:mob?210:190});
+  stamp(stage,mob?'Rango y situación móvil':'Rango de los comparables','Rango $28–$34 / kg · Tu precio: '+money(price)+' / kg',{width:mob?310:700,bg:'#f5f7f6'});
+  if(state.noReferences){const panel=document.createElement('section');panel.className='live-panel';Object.assign(panel.style,{left:mob?'20px':'274px',top:mob?'420px':'354px',width:mob?'350px':'1126px',height:mob?'240px':'310px',border:'1px solid #dae2dd'});panel.innerHTML='<h2>No hay referencias comparables vigentes</h2><p>Conserva tu precio. No se puede calcular una propuesta con unidades o calidades distintas.</p>';stage.append(panel);}
+ }
+ if(current==='Mgewd')stamp(stage,'Control del guardado','Solo Guardar cambia el precio. Cancelar o volver conserva '+money(price)+' / kg.',{width:1120});
+ if(current==='y15ABx')stamp(stage,'Solo confirmar guarda móvil','Cancelar o volver conserva '+money(price)+' / kg.',{width:350});
+
  if(['Mgewd','y15ABx'].includes(current)){
   const mob=current==='y15ABx';
   stamp(stage,mob?'Nuevo precio móvil valor':'Nuevo precio valor',money(draft),{width:130,bg:'#f5f7f6'});
@@ -62,7 +73,7 @@ function patch(stage){
   for(let i=0;i<3;i++){stamp(stage,products[i].name+' review quantity',state.q[i]+' '+products[i].unit);stamp(stage,products[i].name+' review subtotal',money(state.q[i]*products[i].price),{width:65});}
   stamp(stage,'Apartado estimated amount',money(total()),{width:100});stamp(stage,'¿Cuándo recogerás? value',state.pickup,{width:mobile()?294:400});stamp(stage,'Pickup customer name',state.contact,{width:mobile()?280:370});
  }
- if(['mLRAY','EFCOW'].includes(current)){stamp(stage,'Pending apartado item count',count()+' productos · Estimado',{bg:'#f5f7f6',width:200});stamp(stage,'Pending apartado estimated total',money(total()),{bg:'#f5f7f6',width:75});stamp(stage,'Requested pickup slot','Recogida solicitada: '+state.pickup,{bg:'#f5f7f6',width:mobile()?314:436});}
+ if(['mLRAY','EFCOW'].includes(current)){stamp(stage,'Pending apartado item count',count()+' productos · Estimado',{bg:'#eaf1ed',width:200});stamp(stage,'Pending apartado estimated total',money(total()),{bg:'#eaf1ed',width:75});stamp(stage,'Requested pickup slot','Recogida solicitada: '+state.pickup,{bg:'#eaf1ed',width:mobile()?314:436});}
  if(current==='OrB9k'&&state.ready){stamp(stage,'Marcar como listo label','Pedido listo',{width:220,bg:'#155641',color:'#fff'});notify('Pedido listo para recoger · simulación local.');}
  if(['GcHvf','vHDrB'].includes(current)&&changed){const panel=document.createElement('section');panel.className='live-panel';Object.assign(panel.style,{left:'1072px',top:'220px',width:'320px',height:'500px',fontSize:'15px'});panel.innerHTML=`<h2>Tu carrito</h2><p>Doña Lucha · Local 24</p>${products.map((p,i)=>state.q[i]?`<p>${esc(p.name)}<br>${state.q[i]} ${p.unit} · ${money(state.q[i]*p.price)}</p>`:'').join('')}<div class="total"><span>Estimado</span><span>${money(total())}</span></div><button class="full start" data-cart>Abrir carrito</button>`;stage.append(panel);panel.querySelector('[data-cart]').onclick=openCart;}
 }
@@ -71,10 +82,10 @@ function cartHtml(inScreen=false){return `<h2>${inScreen?'Doña Lucha':'Tu carri
 function bindCart(el,inScreen=false){el.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{const target=b.dataset.q;const i=+target[0];state.q[i]=target[1]==='0'?0:Math.max(0,Math.min(10,state.q[i]+(target[1]==='+'?1:-1)*products[i].step));save();if(inScreen)render();else{el.innerHTML=`<button class="close-dialog" aria-label="Cerrar diálogo">×</button><h2 id="dialog-title">Tu carrito</h2>${cartHtml()}`;el.querySelector('.close-dialog').onclick=()=>modal.close();bindCart(el);}});el.querySelector('[data-review]').onclick=()=>{modal.close();go(mobile()?'a4Tzo':'QRWqF');};el.querySelector('[data-continue]').onclick=()=>{if(modal.open)modal.close();go(market());};}
 function openCart(){if(mobile()){go('BVUFI');return;}dialog('Tu carrito',cartHtml(),el=>bindCart(el));}
 function act(h){switch(h.action){
- case'price-review':state.draftPrice=30;save();go(h.target);break;
+ case'price-review':if(state.noReferences){notify('No hay referencias comparables vigentes. Conserva tu precio.');return;}state.draftPrice=30;save();go(h.target);break;
  case'price-cancel':state.draftPrice=30;save();go(h.target);notify('Cambio descartado. Conservas '+money(state.price)+' / kg.');break;
- case'price-edit':dialog('Nuevo precio · MXN por kg',`<form><label for="price">Precio propuesto</label><input id="price" type="number" min="0.01" max="9999" step="0.01" value="${state.draftPrice}" required><p class="muted">Editar no cambia tu catálogo. Guarda el cambio en la pantalla de revisión.</p><button class="primary full">Usar en la propuesta</button></form>`,el=>el.querySelector('form').onsubmit=e=>{e.preventDefault();state.draftPrice=Number(el.querySelector('#price').value);save();modal.close();render();});break;
- case'price-save':if(!(state.draftPrice>0)){notify('Escribe un precio mayor a $0.');return;}state.price=state.draftPrice;save();go(h.target);break;
+ case'price-edit':dialog('Nuevo precio · MXN por kg',`<form><label for="price">Precio propuesto</label><input id="price" type="number" min="0.01" max="9999" step="0.01" value="${state.draftPrice}" required><p id="price-error" class="error" role="alert"></p><p class="muted">Editar no cambia tu catálogo. Guarda el cambio en la pantalla de revisión.</p><button class="primary full">Usar en la propuesta</button></form>`,el=>{const input=el.querySelector('#price');input.oninput=()=>el.querySelector('#price-error').textContent=input.checkValidity()?'':'Escribe un precio mayor a $0 con máximo dos decimales.';el.querySelector('form').onsubmit=e=>{e.preventDefault();state.draftPrice=Number(input.value);save();modal.close();render();};});break;
+ case'price-save':if(priceSaving)return;if(!(state.draftPrice>0)){notify('Escribe un precio mayor a $0.');return;}if(state.failPriceSave){dialog('No pudimos guardar el precio',`<p>Tu precio anterior sigue vigente: ${money(state.price)} / kg.</p><p>Conservamos tu propuesta de ${money(state.draftPrice)} / kg.</p><button class="primary full" id="retry-price">Reintentar</button>`,el=>el.querySelector('#retry-price').onclick=()=>{state.failPriceSave=false;save();modal.close();act(h);});return;}priceSaving=true;state.price=state.draftPrice;save();go(h.target);break;
  case'route':go(h.target);break;
  case'catalog':go(h.target);break;
  case'close':closeOverlay();break;

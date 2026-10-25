@@ -447,6 +447,15 @@
           "height": 44
         },
         {
+          "label": "Editar formas de pago",
+          "action": "route",
+          "target": "h91to",
+          "x": 619.0,
+          "y": 22.0,
+          "width": 205,
+          "height": 44
+        },
+        {
           "label": "Revisar pedidos",
           "action": "route",
           "target": "SWso9",
@@ -2211,7 +2220,7 @@
           "action": "route",
           "target": "T28VaZ",
           "x": 775.0,
-          "y": 699.0,
+          "y": 649.0,
           "width": 154,
           "height": 44
         }

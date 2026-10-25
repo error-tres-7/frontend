@@ -1,0 +1,64 @@
+{
+  "viewportDesktop": [
+    1440,
+    1000
+  ],
+  "viewportMobile": [
+    390,
+    844
+  ],
+  "results": [
+    [
+      "desktop start",
+      "#aiuVt"
+    ],
+    [
+      "desktop search",
+      "#GcHvf"
+    ],
+    [
+      "desktop list",
+      "#vHDrB"
+    ],
+    [
+      "desktop catalog",
+      "#CTwi6"
+    ],
+    [
+      "desktop close returns list",
+      "#vHDrB"
+    ],
+    [
+      "toolbar back",
+      "#CTwi6"
+    ],
+    [
+      "mobile market",
+      "#p45ipV"
+    ],
+    [
+      "mobile list",
+      "#j6xDkI"
+    ],
+    [
+      "mobile catalog",
+      "#M2vgQT"
+    ],
+    [
+      "mobile quantity",
+      2
+    ],
+    [
+      "mobile review",
+      "#a4Tzo"
+    ],
+    [
+      "mobile pending",
+      "#EFCOW"
+    ],
+    [
+      "mobile no horizontal overflow",
+      true
+    ]
+  ]
+}

@@ -69,6 +69,7 @@ for id in ['T28VaZ','BnjUF','SWso9','bpqzW','h91to','D2zhK','Mgewd','X0uXg']:
  for text,target in nav.items():add(id,'Ir a '+text.lower(),'route',target,text=text,index=0)
  if id in ['T28VaZ','BnjUF','SWso9','bpqzW','h91to']:add(id,'Ver puesto público','catalog','CTwi6',text='Ver mi puesto')
  add(id,'Consultar ayuda','route','Ijo5S',text='Necesito ayuda')
+add('T28VaZ','Editar formas de pago','route','h91to',text='Formas de pago que aceptas →')
 add('T28VaZ','Revisar pedidos','route','SWso9',text='Revisar pedidos')
 add('T28VaZ','Ver todos los pedidos','route','SWso9',text='Ver todos')
 add('T28VaZ','Ver pedido 041','route','SWso9',text='#041')
@@ -104,5 +105,7 @@ add('pSIRS','Revisar stock de cilantro','route','BnjUF',text='Cilantro: quedan 3
 for text,target in [('Resumen','pSIRS'),('Pedidos','SWso9'),('Productos','BnjUF'),('Mi puesto','h91to')]:add('pSIRS','Ir a '+text.lower(),'route',target,text=text)
 if any(n['root']=='T28VaZ' and n.get('content')=='Comparar precios' for n in nodes):add('T28VaZ','Comparar precios del giro','route','D2zhK',text='Comparar precios')
 for i,target in enumerate(['aiuVt','KKxdU','T28VaZ','vHDrB','Ijo5S']):add('DVSNA','Abrir recorrido '+str(i+1),'route',target,box=[80,205+i*132,1260,90])
-Path(__file__).with_name('manifest.json').write_text(json.dumps({'sections':sections,'screens':screens},ensure_ascii=False,indent=2)+'\n')
+data={'sections':sections,'screens':screens}
+Path(__file__).with_name('manifest.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+Path(__file__).with_name('data.js').write_text('window.PROTOTYPE_DATA='+json.dumps({'manifest':data,'nodes':nodes},ensure_ascii=False)+';\n')
 print(len(screens),'screens;',sum(len(s['hotspots']) for s in screens.values()),'hotspots')
