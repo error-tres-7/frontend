@@ -1,4 +1,4 @@
-# De Aquí · Prototipo local
+# entrepuestos · Prototipo local
 
 Abre [prototype/index.html](prototype/index.html) en un navegador moderno. En macOS, desde la raíz del proyecto:
 
@@ -23,6 +23,10 @@ Después abre `http://127.0.0.1:4174`. El puerto no pudo abrirse en este sandbox
 - **Precio del comerciante, escritorio y móvil:** resumen → referencias del mismo giro → revisar propuesta → editar un precio positivo con dos decimales → guardar explícitamente → éxito. Cancelar/conservar no aplica el borrador. El precio elegido se conserva en los resúmenes y comparaciones de este recorrido.
 - **Fallos de precio:** en “Escenarios de demostración”, alternar ausencia de referencias bloquea una propuesta; simular fallo al guardar conserva el precio anterior y el borrador. Reintentar lleva al éxito. El guardado evita la doble ejecución durante la transición.
 - **Controles comunes:** enlaces por fragmento, selector de pantalla, índice de recorridos, botón Volver, historial del navegador, cerrar diálogos, áreas clicables opcionales y lista accesible de acciones. Favoritos abre el catálogo y conecta a explorar/pedidos.
+
+## Marca
+
+La marca confirmada es **entrepuestos**: una palabra, en minúsculas, sin punto final. El wordmark "de aquí." fue reemplazado en las 30 apariciones del lienzo (navegación de cliente y comerciante, escritorio y móvil), en el tablero de marca `U3vDvD`/`euR0h` y en el índice `DVSNA`; las capturas, el manifiesto y `data.js` se regeneraron tras el cambio. En código, títulos, `aria-label`, claves de almacenamiento (`entrepuestos.customer.v1`, `entrepuestos-prototype`) y clases del mapa (`entrepuestos-pin`, `entrepuestos-label`) usan la nueva marca. El dominio `entrepuestos.com` está registrado en Cloudflare y declarado como rutas en `wrangler.jsonc`; el despliegue requiere `wrangler login` en esa cuenta.
 
 ## Organización del lienzo
 
@@ -132,7 +136,7 @@ Cada nombre corresponde a un control del prototipo. Los destinos y rectángulos 
 
 | ID | Pantalla | Acciones |
 | --- | --- | --- |
-| `U3vDvD` | De Aquí · Brand and experience direction | Referencia estática; selector, índice y Volver |
+| `U3vDvD` | entrepuestos · Marca y experiencia | Referencia estática; selector, índice y Volver |
 | `euR0h` | Sistema de marca · Tokens y componentes | Referencia estática; selector, índice y Volver |
 | `o8vGp` | Reusable photography · illustrative assets | Referencia estática; selector, índice y Volver |
 | `r2JYH` | UX · Cliente · Descubrir y apartar | Referencia estática; selector, índice y Volver |

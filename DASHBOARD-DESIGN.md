@@ -1,4 +1,4 @@
-# Coordinación local · De Aquí
+# Coordinación local · entrepuestos
 
 ## Organización y prototipo
 

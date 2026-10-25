@@ -21,6 +21,7 @@
 		"format": "biome format --write .",
 		"format:check": "biome format .",
 		"test": "bun test",
+		"markets:refresh": "bun run scripts/import-markets.ts",
 		"test:e2e": "playwright test",
 		"deploy:dry-run": "bun run build && wrangler deploy --dry-run --outdir .wrangler/dry-run"
 	},
@@ -58,6 +59,9 @@
 		"#lib/*": "./src/logic/*",
 		"#utils/*": "./src/logic/utils/*",
 		"#contexts/*": "./src/logic/contexts/*",
+		"#schemas/*": "./src/logic/schemas/*",
+		"#services/*": "./src/logic/services/*",
+		"#typing/*": "./src/logic/typing/*",
 		"#sharing/*": "./src/ui/sharing/*",
 		"#home/*": "./src/ui/home/*",
 		"#auth/*": "./src/ui/auth/*",
@@ -70,6 +74,8 @@
 		"@tanstack/svelte-form": "1.33.5",
 		"@tanstack/svelte-query": "6.3.5",
 		"@tanstack/svelte-virtual": "3.13.48",
-		"leaflet": "1.9.4"
+		"@tuentyfaiv/http": "0.1.15",
+		"leaflet": "1.9.4",
+		"zod": "4.6.7"
 	}
 }

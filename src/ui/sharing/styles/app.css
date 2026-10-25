@@ -1,29 +1,30 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn-svelte/tailwind.css";
-@import "@fontsource-variable/geist";
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/bricolage-grotesque";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-	--background: oklch(1 0 0);
-	--foreground: oklch(0.145 0 0);
+	--background: #f5f7f6;
+	--foreground: #123c32;
 	--card: oklch(1 0 0);
-	--card-foreground: oklch(0.145 0 0);
+	--card-foreground: var(--foreground);
 	--popover: oklch(1 0 0);
-	--popover-foreground: oklch(0.145 0 0);
-	--primary: oklch(0.205 0 0);
+	--popover-foreground: var(--foreground);
+	--primary: #155641;
 	--primary-foreground: oklch(0.985 0 0);
-	--secondary: oklch(0.97 0 0);
-	--secondary-foreground: oklch(0.205 0 0);
-	--muted: oklch(0.97 0 0);
-	--muted-foreground: oklch(0.556 0 0);
-	--accent: oklch(0.97 0 0);
-	--accent-foreground: oklch(0.205 0 0);
-	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.922 0 0);
-	--input: oklch(0.922 0 0);
-	--ring: oklch(0.708 0 0);
+	--secondary: #e3f09a;
+	--secondary-foreground: var(--foreground);
+	--muted: #eaf0ec;
+	--muted-foreground: #54615c;
+	--accent: #e3f09a;
+	--accent-foreground: var(--foreground);
+	--destructive: #b83d2a;
+	--border: #dae2dd;
+	--input: #b9c7bf;
+	--ring: #155641;
 	--chart-1: oklch(0.87 0 0);
 	--chart-2: oklch(0.556 0 0);
 	--chart-3: oklch(0.439 0 0);
@@ -75,7 +76,8 @@
 }
 
 @theme inline {
-	--font-sans: "Geist Variable", sans-serif;
+	--font-sans: "DM Sans Variable", sans-serif;
+	--font-heading: "Bricolage Grotesque Variable", sans-serif;
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -125,5 +127,43 @@
 	}
 	html {
 		@apply font-sans;
+		scrollbar-color: var(--border) var(--background);
+		text-underline-offset: 0.2em;
+	}
+	::selection {
+		background: var(--accent);
+		color: var(--foreground);
+	}
+	:focus-visible {
+		outline: 2px solid var(--primary);
+		outline-offset: 3px;
+	}
+	input,
+	textarea {
+		caret-color: var(--primary);
+	}
+	h1,
+	h2,
+	h3 {
+		text-wrap: balance;
+	}
+	button:not(:disabled),
+	a,
+	input,
+	select,
+	textarea {
+		-webkit-tap-highlight-color: transparent;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			/* biome-ignore lint/complexity/noImportantStyles: User motion preferences override component animations. */
+			scroll-behavior: auto !important;
+			/* biome-ignore lint/complexity/noImportantStyles: User motion preferences override component animations. */
+			animation-duration: 0.01ms !important;
+			/* biome-ignore lint/complexity/noImportantStyles: User motion preferences override component animations. */
+			transition-duration: 0.01ms !important;
+		}
 	}
 }

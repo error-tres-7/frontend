@@ -1,7 +1,8 @@
 <script lang="ts">
+	import MerchantShell from "#merchants/organisms/shell/root.svelte";
 	import type { LayoutProps } from "./$types";
 
 	let { children }: LayoutProps = $props();
 </script>
 
-{@render children()}
+<MerchantShell>{@render children()}</MerchantShell>

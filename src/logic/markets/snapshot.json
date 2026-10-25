@@ -1,0 +1,3326 @@
+{
+	"market_source": {
+		"url": "https://datos.cdmx.gob.mx/dataset/mercados-publicos",
+		"title": "Mercados públicos",
+		"license": "CC-BY-4.0-ESP",
+		"imported_at": "2026-10-25T19:28:40.561Z"
+	},
+	"provenance": {
+		"publisher": "Secretaría de Desarrollo Económico (SEDECO)",
+		"download_url": "https://datos.cdmx.gob.mx/dataset/6e008c6b-197c-49f2-899f-47b9a406596c/resource/39a74f11-55c5-4abf-aaf2-3558a9a281f7/download/39a74f11-55c5-4abf-aaf2-3558a9a281f7.json",
+		"resource_id": "39a74f11-55c5-4abf-aaf2-3558a9a281f7",
+		"sha256": "d88a0f9c81bb54ca9307a8c48c0cfcef3658bf70f62d58602a672a395212c8bb",
+		"feature_count": 329,
+		"normalization_version": 1,
+		"id_fields": ["N°", "NUM_OFIC"],
+		"field_mapping": {
+			"id": "sedeco-{N°}-{NUM_OFIC}",
+			"name": "MERCADO",
+			"borough": "DELEGACION",
+			"neighborhood": "COLONIA",
+			"address": "DIRECCION",
+			"longitude": "geometry.coordinates[0]",
+			"latitude": "geometry.coordinates[1]",
+			"stalls": "NUM_LOCALE"
+		},
+		"notes": [
+			"Attribution: Mercados públicos — Secretaría de Desarrollo Económico (SEDECO), Portal de Datos Abiertos de la Ciudad de México; CC-BY-4.0-ESP.",
+			"Changes: NFC/whitespace normalization and Spanish display casing; source spellings and missing accents are not corrected. Geographic coordinates are preserved; altitude is omitted.",
+			"N° and NUM_OFIC each contain duplicates. Their pair is unique; IDs always use both, preserving zero, signed numbers, and the source's literal NUM_OFIC 0.394. Records are sorted by ID, not source position.",
+			"Missing NUM_LOCALE becomes null, not zero. Other malformed values, duplicate IDs/records, non-WGS84 CRS, and coordinates outside a conservative CDMX envelope are rejected.",
+			"imported_at records retrieval, not the observation date. This inventory does not verify current operation, opening hours, payments, products, or live stall availability."
+		]
+	},
+	"markets": [
+		{
+			"id": "sedeco-0-136",
+			"name": "Providencia",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Providencia",
+			"address": "Estado de Zacatecas, entre Estado de Morelos y Estado de Oaxaca",
+			"latitude": 19.483972136921487,
+			"longitude": -99.07081098601417,
+			"stalls": 193
+		},
+		{
+			"id": "sedeco-1-407",
+			"name": "Centenario",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "La Martinica",
+			"address": "Av. Centenario 1020 Esq. Jose Galvez Moya",
+			"latitude": 19.3606099150213,
+			"longitude": -99.22742299985869,
+			"stalls": 86
+		},
+		{
+			"id": "sedeco-2-279",
+			"name": "Corpus Cristy",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Corpus Cristy",
+			"address": "San Luis y San Francisco, entre Prol. Santa Fe y la Paz",
+			"latitude": 19.3612959150352,
+			"longitude": -99.248678999845,
+			"stalls": 87
+		},
+		{
+			"id": "sedeco-3-173",
+			"name": "Cristo Rey",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Cristo Rey",
+			"address": "Escuadrón 201,entre Javier Martinez y Camino Real a Toluca",
+			"latitude": 19.3899429149639,
+			"longitude": -99.20209999985099,
+			"stalls": 118
+		},
+		{
+			"id": "sedeco-4-413",
+			"name": "Jalalpa el Grande",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Jalalpa",
+			"address": "Av. Jalalpa Norte S/N, Esq. Colipa",
+			"latitude": 19.3683359150328,
+			"longitude": -99.2441759999193,
+			"stalls": 61
+		},
+		{
+			"id": "sedeco-5-82",
+			"name": "Jose Maria Pino Suarez",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Jose Marìa Pino Suarez",
+			"address": "Jilguero y Golondrinas, entre Rio Tacubaya y Fabrica",
+			"latitude": 19.3975809149655,
+			"longitude": -99.19802599986451,
+			"stalls": 200
+		},
+		{
+			"id": "sedeco-6-163",
+			"name": "Maria G. Garcia de Ruiz",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Paraiso",
+			"address": "Camino Ant. a Santa Fe, entre Austriacos y Alemanes",
+			"latitude": 19.3894869149594,
+			"longitude": -99.2114689998559,
+			"stalls": 97
+		},
+		{
+			"id": "sedeco-7-43",
+			"name": "Melchor Muzquiz Zona",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "San Angel",
+			"address": "Av. Revolucion, entre Dr. Elguero y Melchor Musquiz",
+			"latitude": 19.343018915075497,
+			"longitude": -99.19123299994689,
+			"stalls": 327
+		},
+		{
+			"id": "sedeco-8-133",
+			"name": "Melchor Muzquiz (Flores)",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "San Angel",
+			"address": "Av. Revolucion, entre Av. de la Paz y Cracovia",
+			"latitude": 19.347189915080797,
+			"longitude": -99.1900529998751,
+			"stalls": 34
+		},
+		{
+			"id": "sedeco-9-369",
+			"name": "Molino de Santo Domingo",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Molino de Santo Domingo",
+			"address": "Av. Santa Lucia entre Balbina y San Martin Caballero",
+			"latitude": 19.394398914925695,
+			"longitude": -99.20837599992079,
+			"stalls": 94
+		},
+		{
+			"id": "sedeco-10-181",
+			"name": "Olivar del Conde",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Olivar del Conde",
+			"address": "Agustin Lara, entre Ernesto P. Uruchurto y Av. Santa Lucia",
+			"latitude": 19.3720199150436,
+			"longitude": -99.2140369998879,
+			"stalls": 188
+		},
+		{
+			"id": "sedeco-11-234",
+			"name": "Panteon Jardin (Flores)",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Flor de Maria",
+			"address": "Clzda. del Desierto de los Leones y Flor de Maria",
+			"latitude": 19.3479539151244,
+			"longitude": -99.20796699987928,
+			"stalls": 14
+		},
+		{
+			"id": "sedeco-12-266",
+			"name": "Puente Colorado",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Puente Colorado",
+			"address": "Rio Chico y Rio Nazas",
+			"latitude": 19.3471639151166,
+			"longitude": -99.23161099987982,
+			"stalls": 43
+		},
+		{
+			"id": "sedeco-13-162",
+			"name": "Santa Fe",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Santa Fe Casco",
+			"address": "Vasco de Quiroga, entre Corregidora y Primavera",
+			"latitude": 19.381936914968698,
+			"longitude": -99.24041899987289,
+			"stalls": 177
+		},
+		{
+			"id": "sedeco-14-31",
+			"name": "Santa Maria Nonoalco",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Santa María Nonoalco",
+			"address": "Alejandro Allori y Francisco Girardon",
+			"latitude": 19.3797119150095,
+			"longitude": -99.19300499986039,
+			"stalls": 106
+		},
+		{
+			"id": "sedeco-15-48",
+			"name": "Seis de Enero de 1915",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Molino de Rosas",
+			"address": "Av. del Rosal, entre Rosa Roja y Rosa Negra",
+			"latitude": 19.372219914986598,
+			"longitude": -99.19978599988498,
+			"stalls": 116
+		},
+		{
+			"id": "sedeco-16-67",
+			"name": "Tizapan",
+			"borough": "Álvaro Obregón",
+			"neighborhood": "Progreso Tizapan",
+			"address": "Frontera y San Luis Potosi",
+			"latitude": 19.3413599150945,
+			"longitude": -99.19783099990659,
+			"stalls": 128
+		},
+		{
+			"id": "sedeco-17-125",
+			"name": "Arenal",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Arenal",
+			"address": "Alamo y Calle 6 entre Olivo y Calle 6",
+			"latitude": 19.4662709147299,
+			"longitude": -99.1507149999522,
+			"stalls": 198
+		},
+		{
+			"id": "sedeco-18-35",
+			"name": "Azcapotzalco",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Azcapotzalco",
+			"address": "Av. Azcapotzalco entre Esperanza y Rayon",
+			"latitude": 19.482871914660596,
+			"longitude": -99.1854389999357,
+			"stalls": 546
+		},
+		{
+			"id": "sedeco-19-167",
+			"name": "Benito Juarez",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Sindicato Mexicano de Electricistas",
+			"address": "Av. Rabaul entre Norte 81 y Norte 79",
+			"latitude": 19.4757259146915,
+			"longitude": -99.1768029998673,
+			"stalls": 123
+		},
+		{
+			"id": "sedeco-20-46",
+			"name": "Claveria",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Claveria",
+			"address": "Irapuato y Claveria S/N",
+			"latitude": 19.4650029147353,
+			"longitude": -99.1811519999041,
+			"stalls": 98
+		},
+		{
+			"id": "sedeco-21-138",
+			"name": "Cosmopolita",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Potrero del Llano",
+			"address": "Av. Ceylan Esq. Islas Aleutianas",
+			"latitude": 19.4752229146679,
+			"longitude": -99.1617959998909,
+			"stalls": 135
+		},
+		{
+			"id": "sedeco-22-227",
+			"name": "Jardin 23 de Abril",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Ampliaciòn San Pedro Xalpa",
+			"address": "Av. 23 de Abril y Liberato Lara, entre Adrian Castrejon y Joaquin Amaro",
+			"latitude": 19.482363914682498,
+			"longitude": -99.2153219998567,
+			"stalls": 154
+		},
+		{
+			"id": "sedeco-23-228",
+			"name": "Jardin Fortuna Nacional",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Ampliaciòn Petrolera",
+			"address": "Campo Fortuna Nacional, entre Campo Verde y Campo Tasajera",
+			"latitude": 19.4807519147001,
+			"longitude": -99.20517799993839,
+			"stalls": 71
+		},
+		{
+			"id": "sedeco-24-250",
+			"name": "Laminadores",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Trabajadores del Fierro",
+			"address": "Mineros Metalurgicos, entre Laminadores y Calles 8 y 9",
+			"latitude": 19.4803289146744,
+			"longitude": -99.1558689998838,
+			"stalls": 148
+		},
+		{
+			"id": "sedeco-25-143",
+			"name": "Nueva Santa Maria",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Nueva Santa Maria",
+			"address": "Clavelinas entre Membrillo, Begonias y Vid",
+			"latitude": 19.4643959146893,
+			"longitude": -99.16925999993079,
+			"stalls": 126
+		},
+		{
+			"id": "sedeco-26-142",
+			"name": "Obrero Popular",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Obrero Popular",
+			"address": "Norte 67 entre Poniente 54 y Sur 4",
+			"latitude": 19.4632329147605,
+			"longitude": -99.1735679998648,
+			"stalls": 125
+		},
+		{
+			"id": "sedeco-27-268",
+			"name": "Pantaco",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Hogar de los F.F.C.C.",
+			"address": "Av. Rabaul y Aduanas Pantaco",
+			"latitude": 19.4744329146892,
+			"longitude": -99.17122899994382,
+			"stalls": 41
+		},
+		{
+			"id": "sedeco-28-276",
+			"name": "Pasteros",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Pasteros",
+			"address": "Jacarandas entre Duraznos y Ciruelos",
+			"latitude": 19.4962039145911,
+			"longitude": -99.1974969998792,
+			"stalls": 122
+		},
+		{
+			"id": "sedeco-29-126",
+			"name": "Prohogar",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Prohogar",
+			"address": "Calle 14 S/N entre Calles 19 y 21",
+			"latitude": 19.4758479147204,
+			"longitude": -99.1535589998854,
+			"stalls": 641
+		},
+		{
+			"id": "sedeco-30-247",
+			"name": "Providencia",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Providencia",
+			"address": "Calle Lucio Blanco, entre Francisco I. Madero y Venustiano Carranza",
+			"latitude": 19.4914999146174,
+			"longitude": -99.2136319999216,
+			"stalls": 143
+		},
+		{
+			"id": "sedeco-31-177",
+			"name": "Reynosa Tamaulipas",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Reynosa Tamaulipas",
+			"address": "Refineria Minatitlan y Campo Corona",
+			"latitude": 19.49214,
+			"longitude": -99.183927,
+			"stalls": 216
+		},
+		{
+			"id": "sedeco-32-224",
+			"name": "San Juan Tlihuaca",
+			"borough": "Azcapotzalco",
+			"neighborhood": "San Juan Tlihuaca",
+			"address": "San Juan Tlihuaca y Fortuna Zua Zua",
+			"latitude": 19.4929589145991,
+			"longitude": -99.2033809999369,
+			"stalls": 168
+		},
+		{
+			"id": "sedeco-33-137",
+			"name": "Santa Lucia",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Santa Lucia",
+			"address": "Av. Santa Lucia entre Centeotl y Acatl",
+			"latitude": 19.4764169146971,
+			"longitude": -99.1963989998963,
+			"stalls": 150
+		},
+		{
+			"id": "sedeco-34-194",
+			"name": "Tlatilco",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Tlatilco",
+			"address": "Orquidea 35, entre Av. Jardin y Av. Tlatilco",
+			"latitude": 19.4620539147693,
+			"longitude": -99.16259499989731,
+			"stalls": 155
+		},
+		{
+			"id": "sedeco-35-141",
+			"name": "Victoria de las Democracias",
+			"borough": "Azcapotzalco",
+			"neighborhood": "Victoria de las Democracias",
+			"address": "Toronjil y Perejil, entre Pimienta y Mejorana",
+			"latitude": 19.4675909147463,
+			"longitude": -99.163066999883,
+			"stalls": 177
+		},
+		{
+			"id": "sedeco-36-27",
+			"name": "Alamos",
+			"borough": "Benito Juárez",
+			"neighborhood": "Alamos",
+			"address": "Bolivar, entre Cadiz, Galicia y Segovia",
+			"latitude": 19.3986239149026,
+			"longitude": -99.1440389999152,
+			"stalls": 269
+		},
+		{
+			"id": "sedeco-37-113",
+			"name": "Independencia",
+			"borough": "Benito Juárez",
+			"neighborhood": "Independencia",
+			"address": "Zempoala, entre Angel Urraza y Serafin Olarte",
+			"latitude": 19.3800969150079,
+			"longitude": -99.1502589999583,
+			"stalls": 226
+		},
+		{
+			"id": "sedeco-38-59",
+			"name": "La Moderna",
+			"borough": "Benito Juárez",
+			"neighborhood": "La Moderna",
+			"address": "Jorge Washington S/n., entre Jesus Urueta y Horacio Nelson",
+			"latitude": 19.394120914979,
+			"longitude": -99.1340149999639,
+			"stalls": 181
+		},
+		{
+			"id": "sedeco-39-29",
+			"name": "Lago",
+			"borough": "Benito Juárez",
+			"neighborhood": "Nativitas",
+			"address": "Elisa, entre Don Juan y Don Luis",
+			"latitude": 19.3807649149516,
+			"longitude": -99.13889799995428,
+			"stalls": 103
+		},
+		{
+			"id": "sedeco-40-90",
+			"name": "Lazaro Cardenas(Del Valle)",
+			"borough": "Benito Juárez",
+			"neighborhood": "Del Valle",
+			"address": "Pedro Romero de Terreros Esq. Adolfo Prieto, entre Mier y Pesado y Av. Coyoacan",
+			"latitude": 19.395641914949,
+			"longitude": -99.16618899987128,
+			"stalls": 440
+		},
+		{
+			"id": "sedeco-41-76",
+			"name": "Mixcoac",
+			"borough": "Benito Juárez",
+			"neighborhood": "Mixcoac",
+			"address": "Av. Revolucion, entre Tiziano y Molinos",
+			"latitude": 19.3729109150291,
+			"longitude": -99.18857999991529,
+			"stalls": 476
+		},
+		{
+			"id": "sedeco-42-201",
+			"name": "Portales Anexo",
+			"borough": "Benito Juárez",
+			"neighborhood": "Portales",
+			"address": "Libertad y Montes de Oca",
+			"latitude": 19.3727449149849,
+			"longitude": -99.1441189999664,
+			"stalls": 125
+		},
+		{
+			"id": "sedeco-43-30",
+			"name": "Portales Zona",
+			"borough": "Benito Juárez",
+			"neighborhood": "Portales",
+			"address": "Calz. Santa Cruz, entre 5 de Febrero y Libertad",
+			"latitude": 19.371725915016498,
+			"longitude": -99.1435159999179,
+			"stalls": 599
+		},
+		{
+			"id": "sedeco-44-112",
+			"name": "Postal Anexo",
+			"borough": "Benito Juárez",
+			"neighborhood": "Ahorro Postal",
+			"address": "Ahorro Postal entre Castilla y Lerida",
+			"latitude": 19.3891529149436,
+			"longitude": -99.143873999963,
+			"stalls": 49
+		},
+		{
+			"id": "sedeco-45-111",
+			"name": "Postal Zona",
+			"borough": "Benito Juárez",
+			"neighborhood": "Ahorro Postal",
+			"address": "Ahorro Postal No 345, entre Castilla y Tuy",
+			"latitude": 19.3894079149978,
+			"longitude": -99.14428399989272,
+			"stalls": 247
+		},
+		{
+			"id": "sedeco-46-49",
+			"name": "Primero de Diciembre",
+			"borough": "Benito Juárez",
+			"neighborhood": "Narvarte",
+			"address": "Yacatas, Uxmal y Cda. Uxmal",
+			"latitude": 19.3991939149627,
+			"longitude": -99.15462099994639,
+			"stalls": 244
+		},
+		{
+			"id": "sedeco-47-97",
+			"name": "San Pedro de los Pinos",
+			"borough": "Benito Juárez",
+			"neighborhood": "San Pedro de los Pinos",
+			"address": "Av. 2, entre Calle 7 y Calle 9",
+			"latitude": 19.3918469149439,
+			"longitude": -99.18351899994767,
+			"stalls": 192
+		},
+		{
+			"id": "sedeco-48-175",
+			"name": "Santa Cruz Atoyac",
+			"borough": "Benito Juárez",
+			"neighborhood": "Santa Cruz Atoyac",
+			"address": "Av. Cuauhtemoc, entre Cjon. Misericordia y Tenayuca",
+			"latitude": 19.3702299149861,
+			"longitude": -99.16092299990306,
+			"stalls": 101
+		},
+		{
+			"id": "sedeco-49-119",
+			"name": "Santa Maria Nativitas",
+			"borough": "Benito Juárez",
+			"neighborhood": "Niños Heroes de Chapultepec",
+			"address": "Eje Centraly Av. Niños Heroes",
+			"latitude": 19.3881249149619,
+			"longitude": -99.14730899989858,
+			"stalls": 97
+		},
+		{
+			"id": "sedeco-50-122",
+			"name": "Tlacoquemecatl",
+			"borough": "Benito Juárez",
+			"neighborhood": "Del Valle",
+			"address": "Patricio Sanz, entre Miguel Laurent y San Francisco",
+			"latitude": 19.3770199150374,
+			"longitude": -99.17420899986429,
+			"stalls": 109
+		},
+		{
+			"id": "sedeco-51-47",
+			"name": "Veinticuatro de Agosto",
+			"borough": "Benito Juárez",
+			"neighborhood": "Narvarte",
+			"address": "Anaxagoras, entre Luz Saviñon y Torres Adalid",
+			"latitude": 19.3901209149804,
+			"longitude": -99.1575659998904,
+			"stalls": 265
+		},
+		{
+			"id": "sedeco-52-237",
+			"name": "Ajusco Moctezuma",
+			"borough": "Coyoacán",
+			"neighborhood": "Ajusco",
+			"address": "Av. Coras y Nezahalpilli, entre Moctezuma y San Guillermo",
+			"latitude": 19.3130269152524,
+			"longitude": -99.16232499992148,
+			"stalls": 232
+		},
+		{
+			"id": "sedeco-53-229",
+			"name": "Ajusco Montserrat (La Bola)",
+			"borough": "Coyoacán",
+			"neighborhood": "Ajusco",
+			"address": "Totonacas Ixtlixochitl (La Bola)",
+			"latitude": 19.323816915154698,
+			"longitude": -99.1574639999317,
+			"stalls": 233
+		},
+		{
+			"id": "sedeco-54-180",
+			"name": "Avante",
+			"borough": "Coyoacán",
+			"neighborhood": "Avante",
+			"address": "Av. del Parque y Retorno 50 S/N",
+			"latitude": 19.3261629151942,
+			"longitude": -99.13493299989,
+			"stalls": 101
+		},
+		{
+			"id": "sedeco-55-414",
+			"name": "Bazar del Artesano Mexicano",
+			"borough": "Coyoacán",
+			"neighborhood": "Villa Coyoacán",
+			"address": "Calle Felipe Carrillo Puerto No 25",
+			"latitude": 19.3501729150716,
+			"longitude": -99.1634649998993,
+			"stalls": 550
+		},
+		{
+			"id": "sedeco-56-303",
+			"name": "Carmen Serdan",
+			"borough": "Coyoacán",
+			"neighborhood": "Carmen Serdan",
+			"address": "Manuela Medina S/n. Hermanas Gonzalez y Gertrudis Bocanegra",
+			"latitude": 19.3203469151837,
+			"longitude": -99.1060589999136,
+			"stalls": 116
+		},
+		{
+			"id": "sedeco-57-171",
+			"name": "Churubusco",
+			"borough": "Coyoacán",
+			"neighborhood": "Heroes del 47",
+			"address": "Martires Irlandeses, entre Juan Aguilar y Lopez y Paz Montes de Oca",
+			"latitude": 19.3497769150679,
+			"longitude": -99.14706199987748,
+			"stalls": 157
+		},
+		{
+			"id": "sedeco-58-347",
+			"name": "Copilco el Alto",
+			"borough": "Coyoacán",
+			"neighborhood": "Pedregal Santo Domingo",
+			"address": "Av.anacahuitla y Ecuinapa S/N",
+			"latitude": 19.3318099151563,
+			"longitude": -99.17068499986549,
+			"stalls": 68
+		},
+		{
+			"id": "sedeco-59-89",
+			"name": "Coyoacan",
+			"borough": "Coyoacán",
+			"neighborhood": "Del Carmen Coyoacan",
+			"address": "Xicotencatl, entre Malitzin y Allende",
+			"latitude": 19.3527349151137,
+			"longitude": -99.1614979999229,
+			"stalls": 464
+		},
+		{
+			"id": "sedeco-60-259",
+			"name": "Educacion Petrolera",
+			"borough": "Coyoacán",
+			"neighborhood": "Educacion Petrolera",
+			"address": "Avenida 3 y Avenida 5",
+			"latitude": 19.3363029151356,
+			"longitude": -99.1318449998913,
+			"stalls": 78
+		},
+		{
+			"id": "sedeco-61-155",
+			"name": "El Reloj",
+			"borough": "Coyoacán",
+			"neighborhood": "El Reloj",
+			"address": "Cal.caliz y Primavera,Cda de Caliz",
+			"latitude": 19.3186839151563,
+			"longitude": -99.14053199992131,
+			"stalls": 90
+		},
+		{
+			"id": "sedeco-62-412",
+			"name": "El Verde",
+			"borough": "Coyoacán",
+			"neighborhood": "Unidad C.T.M.",
+			"address": "Rosario Castellanos y Dolores Guerrero",
+			"latitude": 19.3146639151827,
+			"longitude": -99.10391899991438,
+			"stalls": 176
+		},
+		{
+			"id": "sedeco-63-319",
+			"name": "Emiliano Zapata",
+			"borough": "Coyoacán",
+			"neighborhood": "U.H. Emiliano Zapata",
+			"address": "Plan de Ayala y Anenecuilco",
+			"latitude": 19.3164129152058,
+			"longitude": -99.10977399998158,
+			"stalls": 47
+		},
+		{
+			"id": "sedeco-64-368",
+			"name": "Hermosillo",
+			"borough": "Coyoacán",
+			"neighborhood": "Hermosillo",
+			"address": "Amacuzac Esq. Quinceo",
+			"latitude": 19.3459929150719,
+			"longitude": -99.1284289998923,
+			"stalls": 45
+		},
+		{
+			"id": "sedeco-65-300",
+			"name": "Los Reyes Coyoacan",
+			"borough": "Coyoacán",
+			"neighborhood": "Pedregal Santo Domingo",
+			"address": "Basalto y Cantera",
+			"latitude": 19.3335259151043,
+			"longitude": -99.1579439998844,
+			"stalls": 104
+		},
+		{
+			"id": "sedeco-66-311",
+			"name": "Margarita Maza de Juarez",
+			"borough": "Coyoacán",
+			"neighborhood": "U.H. Alianza Popular",
+			"address": "Oriental , entre Tepetlapa y Torre Eiffel",
+			"latitude": 19.3130479152527,
+			"longitude": -99.1145999999778,
+			"stalls": 102
+		},
+		{
+			"id": "sedeco-67-130",
+			"name": "Prado Churubusco",
+			"borough": "Coyoacán",
+			"neighborhood": "Prado Churubusco",
+			"address": "Osa Menor entre Orion y Pegaso",
+			"latitude": 19.3540979150673,
+			"longitude": -99.12597499996998,
+			"stalls": 117
+		},
+		{
+			"id": "sedeco-68-199",
+			"name": "Ruiz Cortinez (La Cruz)",
+			"borough": "Coyoacán",
+			"neighborhood": "Adolfo Ruiz Cortinez",
+			"address": "Tepetlapa entre Canazoc y Tepepehu",
+			"latitude": 19.3187239152148,
+			"longitude": -99.1513459999257,
+			"stalls": 95
+		},
+		{
+			"id": "sedeco-69-236",
+			"name": "San Francisco Culhuacan",
+			"borough": "Coyoacán",
+			"neighborhood": "San Francisco Culhuacan",
+			"address": "Heroica Escuela Naval Militar # 51, entre Av. Taxqueña y Ejido San Antonio Tomatlan",
+			"latitude": 19.3360439151346,
+			"longitude": -99.1233089999256,
+			"stalls": 235
+		},
+		{
+			"id": "sedeco-70-154",
+			"name": "Santa Ursula Coapa (Pescaditos)",
+			"borough": "Coyoacán",
+			"neighborhood": "Santa Ursula Coapa",
+			"address": "San Gonzalo Mz. 933 Lt. 2, entre San Benjamin y San Castulo",
+			"latitude": 19.311773915243595,
+			"longitude": -99.15033699989431,
+			"stalls": 268
+		},
+		{
+			"id": "sedeco-71-301",
+			"name": "Santo Domingo las Rosas",
+			"borough": "Coyoacán",
+			"neighborhood": "Pedregal Santo Domingo",
+			"address": "Av. Papalotl entre Escuinapa y Canahutli",
+			"latitude": 19.3309569151575,
+			"longitude": -99.1629299998788,
+			"stalls": 105
+		},
+		{
+			"id": "sedeco-72-340",
+			"name": "Santo Domingo los Reyes",
+			"borough": "Coyoacán",
+			"neighborhood": "Pedregal Santo Domingo",
+			"address": "Zihuatlan No 25 entre Pascle y Ahuejote",
+			"latitude": 19.319692915161,
+			"longitude": -99.16877199989528,
+			"stalls": 35
+		},
+		{
+			"id": "sedeco-73-157",
+			"name": "Xotepingo",
+			"borough": "Coyoacán",
+			"neighborhood": "Ciudad Jardin",
+			"address": "Las Rosas y Noche Buena",
+			"latitude": 19.3380869151296,
+			"longitude": -99.14455199993918,
+			"stalls": 124
+		},
+		{
+			"id": "sedeco-74--394",
+			"name": "Contadero",
+			"borough": "Cuajimalpa",
+			"neighborhood": "Contadero",
+			"address": "16 de Septiembre S/n. entre Veracruz y Arteaga Salazar",
+			"latitude": 19.348248,
+			"longitude": -99.300662,
+			"stalls": 78
+		},
+		{
+			"id": "sedeco-75-37",
+			"name": "Cuajimalpa",
+			"borough": "Cuajimalpa",
+			"neighborhood": "Pueblo de Cuajimalpa",
+			"address": "Av. Veracruz y Melchor Ocampo",
+			"latitude": 19.3555739150253,
+			"longitude": -99.29931799982799,
+			"stalls": 128
+		},
+		{
+			"id": "sedeco-76--378",
+			"name": "Huizachito",
+			"borough": "Cuajimalpa",
+			"neighborhood": "Huizachito la Palma",
+			"address": "Camino a Huizachitos/n, Noche de Paz y Echanove",
+			"latitude": 19.3712989150364,
+			"longitude": -99.2805909998355,
+			"stalls": 8
+		},
+		{
+			"id": "sedeco-77-262",
+			"name": "Rosa Torres",
+			"borough": "Cuajimalpa",
+			"neighborhood": "San Jose de los Cedros",
+			"address": "Av. San Jose de los Cedros Esq, Sauce",
+			"latitude": 19.3699099149978,
+			"longitude": -99.28888899987422,
+			"stalls": 159
+		},
+		{
+			"id": "sedeco-78-258",
+			"name": "San Mateo Tlaltenango",
+			"borough": "Cuajimalpa",
+			"neighborhood": "San Mateo Tlaltenango",
+			"address": "Mina y Cda. de Mina S/N",
+			"latitude": 19.3422729151139,
+			"longitude": -99.2824659998128,
+			"stalls": 32
+		},
+		{
+			"id": "sedeco-79-83",
+			"name": "Abelardo L. Rodriguez (Coronas)",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Rodriguez Puebla,Colombia y Callejon de Giron",
+			"latitude": 19.4378159148041,
+			"longitude": -99.1282919999385,
+			"stalls": 151
+		},
+		{
+			"id": "sedeco-80-16",
+			"name": "Abelardo L. Rodriguez (Zona)",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Rep. de Venezuela No 42, entre Rodriguez Puebla y el Carmen",
+			"latitude": 19.437231914799195,
+			"longitude": -99.1279519999272,
+			"stalls": 246
+		},
+		{
+			"id": "sedeco-81-17",
+			"name": "Beethoven",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Exhipodromo de Peralvillo",
+			"address": "Beethoven, Adelina Patt y Mozart",
+			"latitude": 19.4594099147699,
+			"longitude": -99.1300999999056,
+			"stalls": 792
+		},
+		{
+			"id": "sedeco-82-28",
+			"name": "Bugambilia",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Santa Maria la Ribera",
+			"address": "Bugambilia, Mariano Azuela y Flores Magon",
+			"latitude": 19.4535699147901,
+			"longitude": -99.1528449999245,
+			"stalls": 201
+		},
+		{
+			"id": "sedeco-83-158",
+			"name": "Colima",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Roma Norte",
+			"address": "Colima 397, Cp 6700",
+			"latitude": 19.4175497957655,
+			"longitude": -99.17090851048158,
+			"stalls": 52
+		},
+		{
+			"id": "sedeco-84-98",
+			"name": "Cuauhtemoc",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Cuauhtemoc",
+			"address": "Lerma, Tigris y Danubio",
+			"latitude": 19.4296849148326,
+			"longitude": -99.1668889999316,
+			"stalls": 85
+		},
+		{
+			"id": "sedeco-85-10",
+			"name": "Dos de Abril",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Pensador Mexicano y 2 de Abril",
+			"latitude": 19.4384179148397,
+			"longitude": -99.14161499993098,
+			"stalls": 128
+		},
+		{
+			"id": "sedeco-86-114",
+			"name": "Francisco Sarabia",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Exhipodromo de Peralvillo",
+			"address": "Mascagni,Rossini y Bach",
+			"latitude": 19.4579619147737,
+			"longitude": -99.1373119998926,
+			"stalls": 119
+		},
+		{
+			"id": "sedeco-87-91",
+			"name": "Hidalgo Anexo",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Doctores",
+			"address": "Dr. Barragan, entre Dr. Balmis y Dr. Olvera",
+			"latitude": 19.4147029148611,
+			"longitude": -99.1457409999253,
+			"stalls": 428
+		},
+		{
+			"id": "sedeco-88-18",
+			"name": "Hidalgo Zona",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Doctores",
+			"address": "Dr. Barragan, entre Dr. Balmis y Dr. Arce",
+			"latitude": 19.4138489149008,
+			"longitude": -99.14609899996279,
+			"stalls": 975
+		},
+		{
+			"id": "sedeco-89-13",
+			"name": "Insurgentes",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Juárez",
+			"address": "Londres 154, entre Amberes y Florencia",
+			"latitude": 19.424334914871896,
+			"longitude": -99.1654839999306,
+			"stalls": 225
+		},
+		{
+			"id": "sedeco-90-96",
+			"name": "Isabel la Catolica",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Algarin",
+			"address": "Isabel la Catolica S/N, entre Hernandez Davalos y Eje 3 Sur Peon Contreras",
+			"latitude": 19.4070109148879,
+			"longitude": -99.139323999889,
+			"stalls": 165
+		},
+		{
+			"id": "sedeco-91-8",
+			"name": "Juarez",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Juárez",
+			"address": "Av. Chapultepec,entre Turin y Abraham Gonzalez",
+			"latitude": 19.4261399148196,
+			"longitude": -99.1545829998932,
+			"stalls": 454
+		},
+		{
+			"id": "sedeco-92-19",
+			"name": "La Dalia",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Santa Maria la Ribera",
+			"address": "Fresno No 225, entre Manuel Carpio y Eligio Ancona",
+			"latitude": 19.452211914723698,
+			"longitude": -99.1600919998741,
+			"stalls": 421
+		},
+		{
+			"id": "sedeco-93-1",
+			"name": "Lagunilla Ropa y Telas",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Comonfort, Ecuador y Allende",
+			"latitude": 19.443167914838696,
+			"longitude": -99.1363229998832,
+			"stalls": 1043
+		},
+		{
+			"id": "sedeco-94-4",
+			"name": "Lagunilla San Camilito",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Ecuador, Honduras, San Camilito",
+			"latitude": 19.4419789148328,
+			"longitude": -99.1390319999039,
+			"stalls": 75
+		},
+		{
+			"id": "sedeco-95-3",
+			"name": "Lagunilla Varios",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Allende Esq. Juan Alvarez",
+			"latitude": 19.4418479147983,
+			"longitude": -99.1366099999747,
+			"stalls": 344
+		},
+		{
+			"id": "sedeco-96-2",
+			"name": "Lagunilla Zona",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Comonfort y Rayon",
+			"latitude": 19.4440279147917,
+			"longitude": -99.1346569998966,
+			"stalls": 573
+		},
+		{
+			"id": "sedeco-97-5",
+			"name": "Martinez de la Torre (Anexo)",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Guerrero",
+			"address": "Zarco y Eje 1 Norte",
+			"latitude": 19.4454699147809,
+			"longitude": -99.145388999938,
+			"stalls": 339
+		},
+		{
+			"id": "sedeco-98-7",
+			"name": "Martinez de la Torre (Zona)",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Guerrero",
+			"address": "Eje Uno Norte Mosqueta y Degollado, entre Zarco y Soto",
+			"latitude": 19.445211914769096,
+			"longitude": -99.14429399995029,
+			"stalls": 600
+		},
+		{
+			"id": "sedeco-99-20",
+			"name": "Melchor Ocampo",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Roma",
+			"address": "Campeche, entre Medellin y Monterrey",
+			"latitude": 19.4104079149097,
+			"longitude": -99.1634989999253,
+			"stalls": 517
+		},
+		{
+			"id": "sedeco-100-108",
+			"name": "Merced Mixcalco",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Circunvalacion S/N entre Mixcalco y Guatemala",
+			"latitude": 19.4343809148364,
+			"longitude": -99.12510599990729,
+			"stalls": 920
+		},
+		{
+			"id": "sedeco-101-153",
+			"name": "Michoacan",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Hipodromo Condesa",
+			"address": "Tamaulipas y Michoacan, entre Vicente Suarez y Atlixco",
+			"latitude": 19.4113269148812,
+			"longitude": -99.1744599998693,
+			"stalls": 35
+		},
+		{
+			"id": "sedeco-102-24",
+			"name": "Morelia",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Doctores",
+			"address": "Dr. Vertiz y Federico Gomez Santos",
+			"latitude": 19.4085639148696,
+			"longitude": -99.1497949999327,
+			"stalls": 156
+		},
+		{
+			"id": "sedeco-103-74",
+			"name": "Palacio de las Flores",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Luis Moya y Ernesto Pugibet",
+			"latitude": 19.4297779148449,
+			"longitude": -99.1460589999637,
+			"stalls": 133
+		},
+		{
+			"id": "sedeco-104-363",
+			"name": "Pasaje Chapultepec",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Col Cuauhtémoc",
+			"address": "Reforma con Rodano y Lieja",
+			"latitude": 19.4228258996355,
+			"longitude": -99.1750076016043,
+			"stalls": 45
+		},
+		{
+			"id": "sedeco-105-216",
+			"name": "Paulino Navarro",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Paulino Navarro",
+			"address": "Calz. de la Viga y Av. del Taller",
+			"latitude": 19.4124789149093,
+			"longitude": -99.1283669999274,
+			"stalls": 110
+		},
+		{
+			"id": "sedeco-106-66",
+			"name": "Pequeño Comercio",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Obrera",
+			"address": "5 de Febrero No 161 y Diagonal 20 de Noviembre",
+			"latitude": 19.421562431411,
+			"longitude": -99.1360421160401,
+			"stalls": 84
+		},
+		{
+			"id": "sedeco-107-6",
+			"name": "San Cosme",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "San Rafael",
+			"address": "Ribera de San Cosme y Gabino Barreda, entre Altamirano y Icazbaleta",
+			"latitude": 19.44182491477,
+			"longitude": -99.16225399995967,
+			"stalls": 533
+		},
+		{
+			"id": "sedeco-108-110",
+			"name": "San Joaquin (Anexo)",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Peralvillo",
+			"address": "Elorduy,Schubert y Lizt",
+			"latitude": 19.4619769147682,
+			"longitude": -99.139066999888,
+			"stalls": 275
+		},
+		{
+			"id": "sedeco-109-22",
+			"name": "San Joaquin Zona (Peralvillo)",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Peralvillo",
+			"address": "Ernesto Elorduy, entre Lizt y Shubert",
+			"latitude": 19.4626899147492,
+			"longitude": -99.1393239998839,
+			"stalls": 477
+		},
+		{
+			"id": "sedeco-110-78",
+			"name": "San Juan Arcos de Belem",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Arcos de Belem y Lopez, entre Eje Central y Lopez",
+			"latitude": 19.4274179148053,
+			"longitude": -99.1425879999691,
+			"stalls": 399
+		},
+		{
+			"id": "sedeco-111-86",
+			"name": "San Juan Curiosidades",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Ayuntamiento, Aranda y Buen Tono",
+			"latitude": 19.4301749148556,
+			"longitude": -99.14308499991058,
+			"stalls": 176
+		},
+		{
+			"id": "sedeco-112-77",
+			"name": "San Juan Pugibet",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Enrnesto Pugibet, entre Luis Moya y Buen Tono",
+			"latitude": 19.4300359148201,
+			"longitude": -99.14460799988062,
+			"stalls": 361
+		},
+		{
+			"id": "sedeco-113-9",
+			"name": "San Lucas",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Centro",
+			"address": "Escuela Medico Militar, Cjon. del Hormiguero y Cjon. de San Mguel",
+			"latitude": 19.4249439148728,
+			"longitude": -99.13109799988712,
+			"stalls": 254
+		},
+		{
+			"id": "sedeco-114-23",
+			"name": "Tepito Fierros Viejos",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Morelos",
+			"address": "Tenochtitlan , Matamoros y Toltecas",
+			"latitude": 19.4472069147458,
+			"longitude": -99.12847699994352,
+			"stalls": 661
+		},
+		{
+			"id": "sedeco-115-60",
+			"name": "Tepito Ropa y Telas (Granaditas)",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Morelos",
+			"address": "Eje 1 Norte y Aztecas, entre Argentina y Costa Rica",
+			"latitude": 19.442649914783797,
+			"longitude": -99.1292899999642,
+			"stalls": 709
+		},
+		{
+			"id": "sedeco-116-36",
+			"name": "Tepito Varios",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Morelos",
+			"address": "Matamoros, Toltecas y Rivero",
+			"latitude": 19.4471239148274,
+			"longitude": -99.12733199995611,
+			"stalls": 562
+		},
+		{
+			"id": "sedeco-117-14",
+			"name": "Tepito Zona",
+			"borough": "Cuauhtémoc",
+			"neighborhood": "Morelos",
+			"address": "Toltecas, Bartolome de las Casas y Matamoros",
+			"latitude": 19.4464179148073,
+			"longitude": -99.1274529998925,
+			"stalls": 522
+		},
+		{
+			"id": "sedeco-118-366",
+			"name": "Alfredo Robles Dominguez",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Guadalupe Insurgentes",
+			"address": "Alfredo Robles Dominguez e Insurgentes Norte",
+			"latitude": 19.4712229146801,
+			"longitude": -99.13569499995789,
+			"stalls": 61
+		},
+		{
+			"id": "sedeco-119-116",
+			"name": "Ampliacion Casas Aleman",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Ampliación Casas Alemán",
+			"address": "Puerto Tampico y Puerto Acapulco, Puerto Manzanillo y Cda . Puerto Acapulco",
+			"latitude": 19.4763089147324,
+			"longitude": -99.0838319999284,
+			"stalls": 192
+		},
+		{
+			"id": "sedeco-120-277",
+			"name": "Ampliacion Gabriel Hernandez",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Ampliación Gabriel Hernandez",
+			"address": "Eva Samano de Lopez Mateos y Rodolfo Mendez",
+			"latitude": 19.5058609146176,
+			"longitude": -99.09971599995369,
+			"stalls": 78
+		},
+		{
+			"id": "sedeco-121-161",
+			"name": "Bondojito",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Bondojito",
+			"address": "Henry Ford y Norte 72a",
+			"latitude": 19.4657169147037,
+			"longitude": -99.1057559999668,
+			"stalls": 181
+		},
+		{
+			"id": "sedeco-122-272",
+			"name": "Campestre Aragon",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Campestre Aragón",
+			"address": "Calle Esfuerzo\"a\" Esq. Camino Central Sur",
+			"latitude": 19.4859219146801,
+			"longitude": -99.0782099999374,
+			"stalls": 137
+		},
+		{
+			"id": "sedeco-123-50",
+			"name": "Carrera Lardizabal",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Constitucion de la Republica",
+			"address": "Luis de la Rosa y Leon Guzman",
+			"latitude": 19.4825229146568,
+			"longitude": -99.0997109999362,
+			"stalls": 131
+		},
+		{
+			"id": "sedeco-124-404",
+			"name": "Cuatro de Febrero",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Ampliacion Gabriel Hernandez",
+			"address": "Rodolfo Mendez y Periferico",
+			"latitude": 19.5060809145784,
+			"longitude": -99.09110066658799,
+			"stalls": 120
+		},
+		{
+			"id": "sedeco-125-405",
+			"name": "Cuautepec",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Cuautepec",
+			"address": "5 de Mayo y Francisco Villa Esq. 18 de Marzo",
+			"latitude": 19.5494169144818,
+			"longitude": -99.1429079999118,
+			"stalls": 74
+		},
+		{
+			"id": "sedeco-126-338",
+			"name": "Cuchilla del Tesoro",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Cuchilla del Tesoro",
+			"address": "Av. Cuhilla del Tesoro y Av. del Parque",
+			"latitude": 19.447616914809597,
+			"longitude": -99.0574229999441,
+			"stalls": 128
+		},
+		{
+			"id": "sedeco-127-56",
+			"name": "Diez de Mayo",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Nueva Tenochtitlan",
+			"address": "Oriente 87, Norte 84 y Oriente 89",
+			"latitude": 19.4561979147266,
+			"longitude": -99.1046859999911,
+			"stalls": 390
+		},
+		{
+			"id": "sedeco-128-57",
+			"name": "Emiliano Zapata",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Emiliano Zapata",
+			"address": "Oriente 95 y Norte 60",
+			"latitude": 19.46313,
+			"longitude": -99.113543,
+			"stalls": 301
+		},
+		{
+			"id": "sedeco-129-54",
+			"name": "Estrella",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Estrella",
+			"address": "Joyas entre Opalo y Escuela",
+			"latitude": 19.475637914652,
+			"longitude": -99.11583599998478,
+			"stalls": 124
+		},
+		{
+			"id": "sedeco-130-156",
+			"name": "Fernando Casas Aleman",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Cerro Prieto",
+			"address": "Rublos, Cairo y Pesetas",
+			"latitude": 19.4526849147654,
+			"longitude": -99.09727799994387,
+			"stalls": 222
+		},
+		{
+			"id": "sedeco-131-410",
+			"name": "Ferroplaza",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Aragón la Villa",
+			"address": "Calle Alberto Herrera, entre 5 de Febero y Juan Bernardino",
+			"latitude": 19.4817339146654,
+			"longitude": -99.11617699991078,
+			"stalls": 144
+		},
+		{
+			"id": "sedeco-132-69",
+			"name": "Gabriel Hernandez",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Gabriel Hernandez",
+			"address": "Av. Centenario y Cerrito",
+			"latitude": 19.5010649146128,
+			"longitude": -99.0950519999092,
+			"stalls": 214
+		},
+		{
+			"id": "sedeco-133-58",
+			"name": "Gertrudis Sanchez",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Gertrudis Sanchez",
+			"address": "Norte 82b Esq. Henry Ford, entre Norte 84 y Norte 82",
+			"latitude": 19.4640839147392,
+			"longitude": -99.101212999978,
+			"stalls": 215
+		},
+		{
+			"id": "sedeco-134-160",
+			"name": "Juan Gonzalez Romero",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Gonzalez Romero",
+			"address": "Av. de las Flores y Calle Gloria, entre Madre Selva y Alcatraz",
+			"latitude": 19.5064369145568,
+			"longitude": -99.0900489999289,
+			"stalls": 201
+		},
+		{
+			"id": "sedeco-135--366",
+			"name": "Lindavista Vallejo Patera",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Lindavista Vallejo",
+			"address": "Av. Poniente 152 entre Av. 100mts. y Vallejo",
+			"latitude": 19.5011739146191,
+			"longitude": -99.1528319999516,
+			"stalls": 86
+		},
+		{
+			"id": "sedeco-136-330",
+			"name": "Ma. Esther Zuno de Echeverria",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Villa Gustavo A. Madero",
+			"address": "Aquiles Serdan y Fray Juan de Zumarraga",
+			"latitude": 19.4832679146295,
+			"longitude": -99.11712599996679,
+			"stalls": 90
+		},
+		{
+			"id": "sedeco-137-193",
+			"name": "Magdalena de las Salinas (Nueva Vallejo)",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Nueva Vallejo",
+			"address": "Poniente 122, entre Norte 19a Norte 21 y Pte 126",
+			"latitude": 19.4851229146364,
+			"longitude": -99.14871699993269,
+			"stalls": 86
+		},
+		{
+			"id": "sedeco-138-117",
+			"name": "Martin Carrera",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Martin Carrera",
+			"address": "V. Guerrero y Jose J. Herrera",
+			"latitude": 19.4870619146704,
+			"longitude": -99.1069769999726,
+			"stalls": 241
+		},
+		{
+			"id": "sedeco-139-127",
+			"name": "Maximino Avila Camacho",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "M. Avila Camacho",
+			"address": "Pponiente 112, Norte 1b y Norte 1c",
+			"latitude": 19.4759409146502,
+			"longitude": -99.137875999959,
+			"stalls": 130
+		},
+		{
+			"id": "sedeco-140-145",
+			"name": "Panamericana",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Panamericana",
+			"address": "Poniente 122 y Norte 9",
+			"latitude": 19.477612914654696,
+			"longitude": -99.1453989998984,
+			"stalls": 430
+		},
+		{
+			"id": "sedeco-141-242",
+			"name": "Pradera",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "La Pradera",
+			"address": "Malinche y Popocatepetl",
+			"latitude": 19.4756779146795,
+			"longitude": -99.06754799993199,
+			"stalls": 106
+		},
+		{
+			"id": "sedeco-142-354",
+			"name": "Primero de Septiembre",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Vallejo",
+			"address": "Borodin, Clave y Puccini",
+			"latitude": 19.4664909147518,
+			"longitude": -99.1346109999643,
+			"stalls": 244
+		},
+		{
+			"id": "sedeco-143-73",
+			"name": "Progreso Nacional",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Progreso Nacional",
+			"address": "Calle 28 entre Calle 11 y Calle 12",
+			"latitude": 19.521871914552097,
+			"longitude": -99.1588239999529,
+			"stalls": 274
+		},
+		{
+			"id": "sedeco-145-185",
+			"name": "Pueblo de San Juan de Aragon",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Pueblo San Juan de Aragón",
+			"address": "Rio Guadalupe, Jardin Revolucion y J. M. Morelos",
+			"latitude": 19.4687059147439,
+			"longitude": -99.0842109999478,
+			"stalls": 64
+		},
+		{
+			"id": "sedeco-146-45",
+			"name": "Ramon Corona",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Industrial",
+			"address": "Constancia S/N, entre Rio Blanco y Necaxa",
+			"latitude": 19.4771019146864,
+			"longitude": -99.12449199993432,
+			"stalls": 458
+		},
+		{
+			"id": "sedeco-147-53",
+			"name": "Rio Blanco",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Martires de Río Blanco",
+			"address": "Congreso de la Union, entre Oriente 95 y Oriente 91",
+			"latitude": 19.461599914753197,
+			"longitude": -99.11260099994819,
+			"stalls": 454
+		},
+		{
+			"id": "sedeco-148-62",
+			"name": "Salvado Diaz Miron",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Salvador Díaz Mirón",
+			"address": "Norte 66a, Oriente 155 y Norte 66",
+			"latitude": 19.4878659146329,
+			"longitude": -99.0993029999574,
+			"stalls": 150
+		},
+		{
+			"id": "sedeco-149-188",
+			"name": "San Bartolo Atepehuacan",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Bartolo Atepehuacan",
+			"address": "Av. Montevideo No 500 entre Calle Loma y Mandujano",
+			"latitude": 19.4917859146433,
+			"longitude": -99.14061399992352,
+			"stalls": 159
+		},
+		{
+			"id": "sedeco-150-205",
+			"name": "San Felipe de Jesus",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Felipe de Jesús",
+			"address": "Hidalgo entre Tamazula y Apatzingan",
+			"latitude": 19.4935729146315,
+			"longitude": -99.076559999918,
+			"stalls": 269
+		},
+		{
+			"id": "sedeco-151-121",
+			"name": "San Juan de Aragon Unidad I",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Juan de Aragón Unidad 1",
+			"address": "Av. 517 y 521",
+			"latitude": 19.4597059147564,
+			"longitude": -99.0917499999538,
+			"stalls": 193
+		},
+		{
+			"id": "sedeco-152-218",
+			"name": "San Juan de Aragon Unidad 2",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Juan de Aragón Unidad 2",
+			"address": "Av. 506, 553 y 549",
+			"latitude": 19.4539619148049,
+			"longitude": -99.08561299993248,
+			"stalls": 108
+		},
+		{
+			"id": "sedeco-153-219",
+			"name": "San Juan de Aragon Unidad 3",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Juan de Aragón Unidad 3",
+			"address": "Av. 606, 597 y 595",
+			"latitude": 19.4517999147892,
+			"longitude": -99.07174999993002,
+			"stalls": 232
+		},
+		{
+			"id": "sedeco-154-336",
+			"name": "San Juan de Aragon Unidad 4 y 5",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Juan de Aragón Unidad 4 y 5",
+			"address": "Calle 625 y Calle 623 entre Calle 604 y Calle 606",
+			"latitude": 19.453577914731895,
+			"longitude": -99.06506199999302,
+			"stalls": 169
+		},
+		{
+			"id": "sedeco-155-339",
+			"name": "San Juan de Aragon Unidad 6",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Juan de Aragón Unidad 6",
+			"address": "Av. 506, 553 y 549",
+			"latitude": 19.4664889146971,
+			"longitude": -99.065753999952,
+			"stalls": 190
+		},
+		{
+			"id": "sedeco-156-204",
+			"name": "San Juan de Aragon Unidad 7",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Juan de Aragón Unidad 7",
+			"address": "Av. 414, entre 481 y 483",
+			"latitude": 19.4701709147167,
+			"longitude": -99.07544999992359,
+			"stalls": 190
+		},
+		{
+			"id": "sedeco-157-329",
+			"name": "San Pedro el Chico",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Pedro el Chico",
+			"address": "Av.talisman y Norte 94",
+			"latitude": 19.4678769146793,
+			"longitude": -99.0956659999163,
+			"stalls": 51
+		},
+		{
+			"id": "sedeco-158-189",
+			"name": "San Pedro Zacatenco",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "San Pedro Zacatenco",
+			"address": "La Rioja y Manizales, entre Manizales y Ramiriqui",
+			"latitude": 19.5056279145591,
+			"longitude": -99.12505199993738,
+			"stalls": 111
+		},
+		{
+			"id": "sedeco-159-221",
+			"name": "Santa Isabel Tola",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Sta. Isabel Tola",
+			"address": "Cuauhtemoc y Cacama",
+			"latitude": 19.4988129146373,
+			"longitude": -99.11679199998241,
+			"stalls": 67
+		},
+		{
+			"id": "sedeco-160-176",
+			"name": "Santa Maria Ticoman",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Barrio la Lagunilla",
+			"address": "Av. 21 de Marzo y Calle 1810",
+			"latitude": 19.5163179145471,
+			"longitude": -99.1333049999515,
+			"stalls": 119
+		},
+		{
+			"id": "sedeco-161-164",
+			"name": "Santa Rosa",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Santa Rosa",
+			"address": "Calle 26 , entre Calle 28a y Calz. Vallejo",
+			"latitude": 19.5245939145766,
+			"longitude": -99.1686969999498,
+			"stalls": 167
+		},
+		{
+			"id": "sedeco-162-171",
+			"name": "Tres Estrellas",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Heroes del 47",
+			"address": "Martires Irlandeses, entre Juan Aguilar y Lopez y Paz Montes de Oca",
+			"latitude": 19.471113914744297,
+			"longitude": -99.11107799993118,
+			"stalls": 122
+		},
+		{
+			"id": "sedeco-163-70",
+			"name": "Vasco de Quiroga",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Vasco de Quiroga",
+			"address": "Bartolome de Olmedo y Fray Juan de Padilla",
+			"latitude": 19.4945639146654,
+			"longitude": -99.09493399997,
+			"stalls": 212
+		},
+		{
+			"id": "sedeco-164-302",
+			"name": "Veinticinco de Julio",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Veinticinco de Julio",
+			"address": "Ejido y Canal de Desague, entre Canal y Cuauhtemoc",
+			"latitude": 19.4961399146689,
+			"longitude": -99.0826199999298,
+			"stalls": 249
+		},
+		{
+			"id": "sedeco-165-365",
+			"name": "24 de Septiembre",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "U.H. Pradera",
+			"address": "Ret. Trebol Tulla y Pitacanto",
+			"latitude": 19.474659,
+			"longitude": -99.062943,
+			"stalls": 78
+		},
+		{
+			"id": "sedeco-166-123",
+			"name": "Vicente Guerrero (Nueva Atzacoalco)",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Nueva Atzacoalco",
+			"address": "Calle 314 entre Calle 311 y 313",
+			"latitude": 19.5015429146114,
+			"longitude": -99.08543899998578,
+			"stalls": 386
+		},
+		{
+			"id": "sedeco-167-81",
+			"name": "Villa Comidas (Viejo)",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Gustavo A. Madero",
+			"address": "5 de Febrero entre Echeverria y Pedro Maria Anaya",
+			"latitude": 19.484754914651095,
+			"longitude": -99.11318899995078,
+			"stalls": 209
+		},
+		{
+			"id": "sedeco-168-34",
+			"name": "Villa Zona",
+			"borough": "Gustavo A. Madero",
+			"neighborhood": "Gustavo A. Madero",
+			"address": "5 de Febrero entre Matamoros e Iturbide",
+			"latitude": 19.483863914626898,
+			"longitude": -99.11524099995918,
+			"stalls": 938
+		},
+		{
+			"id": "sedeco-169-87",
+			"name": "Agricola Oriental",
+			"borough": "Iztacalco",
+			"neighborhood": "Agrícola Oriental",
+			"address": "Oriente 237, Sur 16 y Sur 12 Rojo Gomez",
+			"latitude": 19.3952369149747,
+			"longitude": -99.07527800000119,
+			"stalls": 344
+		},
+		{
+			"id": "sedeco-170-206",
+			"name": "Apatlaco",
+			"borough": "Iztacalco",
+			"neighborhood": "Benito Juárez",
+			"address": "Av. Apatlaco S/n. entre Galeana y la Viga",
+			"latitude": 19.3826419149948,
+			"longitude": -99.11938199995079,
+			"stalls": 131
+		},
+		{
+			"id": "sedeco-171-135",
+			"name": "Bramadero",
+			"borough": "Iztacalco",
+			"neighborhood": "Ramos Millas",
+			"address": "Sur 163, Ote. 108 y Ote. 110",
+			"latitude": 19.391049914931298,
+			"longitude": -99.09473999991829,
+			"stalls": 278
+		},
+		{
+			"id": "sedeco-172-334",
+			"name": "Ejidos de la Magdalena Mixhuca",
+			"borough": "Iztacalco",
+			"neighborhood": "Ejido Magdalena Mixihuca",
+			"address": "Hortaliza y Trigo S/N entre The y Ote. 106",
+			"latitude": 19.3922409149823,
+			"longitude": -99.089209999926,
+			"stalls": 104
+		},
+		{
+			"id": "sedeco-173-255",
+			"name": "El Rodeo",
+			"borough": "Iztacalco",
+			"neighborhood": "El Rodeo",
+			"address": "Ernesto P. Uruchurtu y Calle 28",
+			"latitude": 19.3919449149642,
+			"longitude": -99.08543999995699,
+			"stalls": 68
+		},
+		{
+			"id": "sedeco-174-38",
+			"name": "Iztacalco",
+			"borough": "Iztacalco",
+			"neighborhood": "Barrio la Asunción",
+			"address": "Calz. de la Viga Esq. Tezonle, entre Av. San Miguel",
+			"latitude": 19.3896579149834,
+			"longitude": -99.1216479999159,
+			"stalls": 102
+		},
+		{
+			"id": "sedeco-175-352",
+			"name": "Jose Lopez Portillo",
+			"borough": "Iztacalco",
+			"neighborhood": "Pantitlán",
+			"address": "Av. Central, entre Av. Norte y Eje Uno Norte",
+			"latitude": 19.4117249148614,
+			"longitude": -99.0683479999189,
+			"stalls": 352
+		},
+		{
+			"id": "sedeco-176-134",
+			"name": "Juventino Rosas",
+			"borough": "Iztacalco",
+			"neighborhood": "Juventino Rosas",
+			"address": "Sur 117b Esq. Av. del Recreo, entre 117b y 117",
+			"latitude": 19.3933669149151,
+			"longitude": -99.1060749999204,
+			"stalls": 208
+		},
+		{
+			"id": "sedeco-177-147",
+			"name": "La Cruz",
+			"borough": "Iztacalco",
+			"neighborhood": "De la Cruz",
+			"address": "Calz. Coyuya y Av. Hidalgo",
+			"latitude": 19.4023379149414,
+			"longitude": -99.11736499992071,
+			"stalls": 249
+		},
+		{
+			"id": "sedeco-178-212",
+			"name": "Leandro Valle",
+			"borough": "Iztacalco",
+			"neighborhood": "Amp. Agricola Oriental",
+			"address": "Oriente 253, entre Sur 20 y Sur 22",
+			"latitude": 19.3885319149552,
+			"longitude": -99.0670409999356,
+			"stalls": 197
+		},
+		{
+			"id": "sedeco-179--109",
+			"name": "Militar Marte",
+			"borough": "Iztacalco",
+			"neighborhood": "Militar Marte",
+			"address": "Playa Azul y Playa Tabachines",
+			"latitude": 19.383031915008697,
+			"longitude": -99.1310999999182,
+			"stalls": 158
+		},
+		{
+			"id": "sedeco-180-118",
+			"name": "Pantitlan Calle 4",
+			"borough": "Iztacalco",
+			"neighborhood": "Pantitlán",
+			"address": "Calle 4, entre Av. Norte y Priv. de la Escuela",
+			"latitude": 19.411156914924096,
+			"longitude": -99.0622130000115,
+			"stalls": 271
+		},
+		{
+			"id": "sedeco-181-345",
+			"name": "San Miguel Iztacalco",
+			"borough": "Iztacalco",
+			"neighborhood": "Barrio San Miguel",
+			"address": "Eje 3 Ote. Fco del Paso y Troncoso Esq. Julio Garcia, entre Recreo y Bustamante",
+			"latitude": 19.3938449149547,
+			"longitude": -99.1143369999165,
+			"stalls": 90
+		},
+		{
+			"id": "sedeco-182-202",
+			"name": "Santa Anita",
+			"borough": "Iztacalco",
+			"neighborhood": "Viaducto Piedad",
+			"address": "Av. Andres Molina Enriquez, entre Santa Anita y Plutarco Elias Calles",
+			"latitude": 19.3985079149351,
+			"longitude": -99.12939499991698,
+			"stalls": 117
+		},
+		{
+			"id": "sedeco-183-139",
+			"name": "Tlacotal",
+			"borough": "Iztacalco",
+			"neighborhood": "Ramos Millan",
+			"address": "Av. 5, Ote. 100, entre Sur 125 y Av. 5",
+			"latitude": 19.3954749149516,
+			"longitude": -99.1027469999123,
+			"stalls": 273
+		},
+		{
+			"id": "sedeco-184-198",
+			"name": "Veinticuatro de Diciembre",
+			"borough": "Iztacalco",
+			"neighborhood": "Pantitlán",
+			"address": "Calle 7, entre Av. Puebla y Priv. del Valle",
+			"latitude": 19.4027279148982,
+			"longitude": -99.0585169999986,
+			"stalls": 203
+		},
+		{
+			"id": "sedeco-185-243",
+			"name": "Constituyentes de 1917",
+			"borough": "Iztapalapa",
+			"neighborhood": "Constitución de 1917",
+			"address": "Periferico S/N, entre Candico Aguilar y Antonio Hidalgo",
+			"latitude": 19.348715915115,
+			"longitude": -99.0594179999487,
+			"stalls": 184
+		},
+		{
+			"id": "sedeco-186-186",
+			"name": "Culhuacan",
+			"borough": "Iztapalapa",
+			"neighborhood": "Pueblo Culhuacan",
+			"address": "Av. Tlahuac Esq. Agustin de Iturvide, entre Independencia y Cal. Tazq.",
+			"latitude": 19.3377529151657,
+			"longitude": -99.10848399990049,
+			"stalls": 109
+		},
+		{
+			"id": "sedeco-187-131",
+			"name": "Escuadron 201",
+			"borough": "Iztapalapa",
+			"neighborhood": "Escuadron 201",
+			"address": "Rodolfo Usigli, entre Jose Espinoza Fuentes y Fausto Vega",
+			"latitude": 19.3624679150907,
+			"longitude": -99.1119899999236,
+			"stalls": 306
+		},
+		{
+			"id": "sedeco-188-291",
+			"name": "Francisco Villa",
+			"borough": "Iztapalapa",
+			"neighborhood": "Francisco Villa",
+			"address": "Felipe Angeles y Rodolfo Prieto",
+			"latitude": 19.337332915166,
+			"longitude": -99.05854399999319,
+			"stalls": 104
+		},
+		{
+			"id": "sedeco-189-239",
+			"name": "Guadalupe del Moral",
+			"borough": "Iztapalapa",
+			"neighborhood": "Guadalupe del Moral",
+			"address": "Agustin Melgar, entre Hidalgo y Guerrero",
+			"latitude": 19.371148914984698,
+			"longitude": -99.07652299997069,
+			"stalls": 118
+		},
+		{
+			"id": "sedeco-190-39",
+			"name": "Iztapalapa",
+			"borough": "Iztapalapa",
+			"neighborhood": "Barrio San Pablo",
+			"address": "Ayuntamiento e Hidalgo, entre Cuauhtemoc y Lerdo",
+			"latitude": 19.3603489150825,
+			"longitude": -99.09126699993038,
+			"stalls": 200
+		},
+		{
+			"id": "sedeco-191-294",
+			"name": "Jacarandas",
+			"borough": "Iztapalapa",
+			"neighborhood": "Jacarandas",
+			"address": "Manlio Fabio Altamirano entre Guillermo Gonzalez Camarena",
+			"latitude": 19.3470849150625,
+			"longitude": -99.0511419999262,
+			"stalls": 86
+		},
+		{
+			"id": "sedeco-192-230",
+			"name": "Juan de la Barrera",
+			"borough": "Iztapalapa",
+			"neighborhood": "Juan Escutia",
+			"address": "Coronel Benito S. Zenea, entre Pablo Garcia y Juan Enriquez",
+			"latitude": 19.3921959149421,
+			"longitude": -99.04409799998307,
+			"stalls": 174
+		},
+		{
+			"id": "sedeco-193-213",
+			"name": "La Purisima",
+			"borough": "Iztapalapa",
+			"neighborhood": "La Purisima",
+			"address": "Av. Hidalgo Esq. Quetzal",
+			"latitude": 19.3545669151148,
+			"longitude": -99.07437199995618,
+			"stalls": 121
+		},
+		{
+			"id": "sedeco-194-129",
+			"name": "Progreso del Sur",
+			"borough": "Iztapalapa",
+			"neighborhood": "Progreso del Sur",
+			"address": "Silos y Ganaderos, entre Granjeros y Ganaderos",
+			"latitude": 19.3504949151263,
+			"longitude": -99.1093349999447,
+			"stalls": 135
+		},
+		{
+			"id": "sedeco-195-120",
+			"name": "San Andres Tetepilco",
+			"borough": "Iztapalapa",
+			"neighborhood": "San Andrés Tetepilco",
+			"address": "Hueltaco y Normandia, entre A. Molina Enriquez y Emiliano Carraza",
+			"latitude": 19.372410915029597,
+			"longitude": -99.13010799990599,
+			"stalls": 207
+		},
+		{
+			"id": "sedeco-196-246",
+			"name": "San Jose Aculco",
+			"borough": "Iztapalapa",
+			"neighborhood": "Aculco Pueblo",
+			"address": "Churubusco y Veracruz, entre Cda. de Veracruz y Rio Churubusco",
+			"latitude": 19.3749149149676,
+			"longitude": -99.1027049999375,
+			"stalls": 121
+		},
+		{
+			"id": "sedeco-197--191",
+			"name": "San Juanico",
+			"borough": "Iztapalapa",
+			"neighborhood": "San Juanico Nextipan",
+			"address": "Dibujante S/N Esq. San Juanico, entre Vicente Guerrero",
+			"latitude": 19.3736949150138,
+			"longitude": -99.1197944443771,
+			"stalls": 108
+		},
+		{
+			"id": "sedeco-198-226",
+			"name": "San Lorenzo Tezonco",
+			"borough": "Iztapalapa",
+			"neighborhood": "Pueblo de San Lorenzo Tezonco",
+			"address": "Desposorios y Candelabros, entre Fco Javier Salazar y Echave Rioja",
+			"latitude": 19.3106319151919,
+			"longitude": -99.0719500000041,
+			"stalls": 196
+		},
+		{
+			"id": "sedeco-199-208",
+			"name": "San Lorenzo Xicotencatl",
+			"borough": "Iztapalapa",
+			"neighborhood": "San Lorenzo Xicotencatl",
+			"address": "Zacani y Trinidad, entre Zacani y Justina",
+			"latitude": 19.3833759149932,
+			"longitude": -99.0271979999847,
+			"stalls": 105
+		},
+		{
+			"id": "sedeco-200-200",
+			"name": "Santa Cruz Meyehualco",
+			"borough": "Iztapalapa",
+			"neighborhood": "Sta. Cruz Meyehualco",
+			"address": "Calle 55 S/n. entre Calle 4 y Calle 6",
+			"latitude": 19.3460649151001,
+			"longitude": -99.0440469999354,
+			"stalls": 146
+		},
+		{
+			"id": "sedeco-201-63",
+			"name": "Santa Maria Aztahuacan",
+			"borough": "Iztapalapa",
+			"neighborhood": "Pueblo Sta. Maria",
+			"address": "Av. Palmas No 17, entre Ejidos y Primavera e Hidalgo",
+			"latitude": 19.3497179150616,
+			"longitude": -99.0232679999829,
+			"stalls": 106
+		},
+		{
+			"id": "sedeco-202-128",
+			"name": "Sector Popular",
+			"borough": "Iztapalapa",
+			"neighborhood": "Sector Popular",
+			"address": "Sur 101a Esq. Alfonso Toro, entre Rio Churubusco y Sur 101",
+			"latitude": 19.3686489149901,
+			"longitude": -99.1193979999807,
+			"stalls": 221
+		},
+		{
+			"id": "sedeco-203-223",
+			"name": "Sifon",
+			"borough": "Iztapalapa",
+			"neighborhood": "Magdalena Atlazopa",
+			"address": "Av. Rosal y Santa Maria",
+			"latitude": 19.377550914978,
+			"longitude": -99.1107349999377,
+			"stalls": 156
+		},
+		{
+			"id": "sedeco-204-316",
+			"name": "Veinticuatro de Febrero",
+			"borough": "Iztapalapa",
+			"neighborhood": "Leyes de Reforma",
+			"address": "10 de Agosto de 1860 y 24 de Abril entre Batalla de Paso Ovejas",
+			"latitude": 19.2746429153042,
+			"longitude": -99.2254779999132,
+			"stalls": 124
+		},
+		{
+			"id": "sedeco-205--383",
+			"name": "Cerro del Judio",
+			"borough": "Magdalena Contreras",
+			"neighborhood": "Barrios Sierra",
+			"address": "Independencia Esq, San Bernabe",
+			"latitude": 19.3184939151528,
+			"longitude": -99.24567399991028,
+			"stalls": 91
+		},
+		{
+			"id": "sedeco-206-384",
+			"name": "Contreras la Cruz",
+			"borough": "Magdalena Contreras",
+			"neighborhood": "La Cruz Barrio de la Concepcion",
+			"address": "Alvaro Obregon S/n. entre Alvaro Obregon y Camino Reallos Pollitos",
+			"latitude": 19.3054809151912,
+			"longitude": -99.2345659999101,
+			"stalls": 96
+		},
+		{
+			"id": "sedeco-207-132",
+			"name": "Magdalena Contreras (La Loma)",
+			"borough": "Magdalena Contreras",
+			"neighborhood": "Barranca Seca",
+			"address": "Jose Moreno Salido S/n. entre Providencia y Fresno",
+			"latitude": 19.3054499151972,
+			"longitude": -99.2393359998651,
+			"stalls": 90
+		},
+		{
+			"id": "sedeco-208-261",
+			"name": "Tihuatlan",
+			"borough": "Magdalena Contreras",
+			"neighborhood": "San Jeronimo Aculco",
+			"address": "Tihuatlan S/n. entre Papaloapan y 19 de Agosto",
+			"latitude": 19.3180919152132,
+			"longitude": -99.22546599985579,
+			"stalls": 38
+		},
+		{
+			"id": "sedeco-209-170",
+			"name": "Turistico Magdalena",
+			"borough": "Magdalena Contreras",
+			"neighborhood": "Pueblo de la Magdalena",
+			"address": "Emilio Carranza S/n. Andador el Rosal y Emilio Carranza",
+			"latitude": 19.3025269152663,
+			"longitude": -99.2460789999017,
+			"stalls": 39
+		},
+		{
+			"id": "sedeco-210-124",
+			"name": "America",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "America",
+			"address": "Sur 128,Coronel Camacho y General Tola",
+			"latitude": 19.404915914896,
+			"longitude": -99.20198399993859,
+			"stalls": 307
+		},
+		{
+			"id": "sedeco-211-72",
+			"name": "Anahuac Anexo",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Tlaxpana",
+			"address": "Tlaloc y Atzayacatl, entre Tizoc y Tonatzin",
+			"latitude": 19.4402419148108,
+			"longitude": -99.1703179998651,
+			"stalls": 280
+		},
+		{
+			"id": "sedeco-212-11",
+			"name": "Anahuac Zona",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Tlaxpana",
+			"address": "Tlaloc y Atzayacatl, entre Netzahualpilli y Tonatzin",
+			"latitude": 19.4407549147708,
+			"longitude": -99.1699749999209,
+			"stalls": 412
+		},
+		{
+			"id": "sedeco-213-95",
+			"name": "Argentina",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Argentina",
+			"address": "Attlan y Lago Viedma S/n. entre Legaria y Viedma",
+			"latitude": 19.4525939147354,
+			"longitude": -99.2019329998804,
+			"stalls": 964
+		},
+		{
+			"id": "sedeco-214-85",
+			"name": "Dieciocho de Marzo",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Puebla",
+			"address": "Calle 69 y Av. 4, entre 65 y 67",
+			"latitude": 19.447242914779,
+			"longitude": -99.19452699990532,
+			"stalls": 335
+		},
+		{
+			"id": "sedeco-215-99",
+			"name": "Escandon",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Escandon",
+			"address": "Marti, Comercio y Agricultura",
+			"latitude": 19.4026649149682,
+			"longitude": -99.177414999882,
+			"stalls": 249
+		},
+		{
+			"id": "sedeco-216-55",
+			"name": "Granada",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Granada",
+			"address": "Lago Yuriria y Rio San Joaquin",
+			"latitude": 19.4418199147763,
+			"longitude": -99.19237599994419,
+			"stalls": 148
+		},
+		{
+			"id": "sedeco-217-100",
+			"name": "Ing. Gonzalo Peña Manterola (Cartagena)",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Tacubaya",
+			"address": "Luis Ruiz y Erasmo Cayetano Q.",
+			"latitude": 19.4028159149353,
+			"longitude": -99.1888939998622,
+			"stalls": 700
+		},
+		{
+			"id": "sedeco-218-93",
+			"name": "Lago Garda",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Anahuac",
+			"address": "Lago Garda, Lago Constanza y Lago Mayor",
+			"latitude": 19.450054914763097,
+			"longitude": -99.1860319998681,
+			"stalls": 319
+		},
+		{
+			"id": "sedeco-219-151",
+			"name": "Lago Gascasonica",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Huichapan",
+			"address": "Lago Gascasonica y Lago Esclavos",
+			"latitude": 19.4614329147134,
+			"longitude": -99.19190599991738,
+			"stalls": 374
+		},
+		{
+			"id": "sedeco-220-79",
+			"name": "Monte Athos",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Lomas de Chapultepec",
+			"address": "Monte Athos No 375, Esq. Everest",
+			"latitude": 19.419254914838998,
+			"longitude": -99.21474399991581,
+			"stalls": 63
+		},
+		{
+			"id": "sedeco-221-75",
+			"name": "Plutarco Elias Calles (El Chorrito)",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "San Miguel Chapultepec",
+			"address": "Melchor Muzquiz y Jose Cebalos, entre Parque Lira y Cda. Gob. Igancio Esteva",
+			"latitude": 19.4105929148584,
+			"longitude": -99.19031699988379,
+			"stalls": 361
+		},
+		{
+			"id": "sedeco-222-172",
+			"name": "Prado Norte",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Lomas de Chapultepec",
+			"address": "Prado Norte y Explanada",
+			"latitude": 19.4273469148737,
+			"longitude": -99.21244899987559,
+			"stalls": 122
+		},
+		{
+			"id": "sedeco-223-196",
+			"name": "Prado Sur",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Lomas de Chapultepec",
+			"address": "Monte Athos y Prado Sur 145",
+			"latitude": 19.4216409148873,
+			"longitude": -99.2092729999217,
+			"stalls": 23
+		},
+		{
+			"id": "sedeco-224-233",
+			"name": "San Isidro Anexo",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Reforma Social",
+			"address": "Acueducto y Sierra Santa Rosa",
+			"latitude": 19.4297209148214,
+			"longitude": -99.2216639998883,
+			"stalls": 38
+		},
+		{
+			"id": "sedeco-225-232",
+			"name": "San Isidro Zona",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Reforma Social",
+			"address": "Av. Sta Rosa entre Calle 11 y Calle 12",
+			"latitude": 19.429846914816896,
+			"longitude": -99.2207679998417,
+			"stalls": 51
+		},
+		{
+			"id": "sedeco-226-32",
+			"name": "Tacuba",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Pueblo de Tacuba",
+			"address": "Cal. Mexico Tacuba Ygolfo de Mexico",
+			"latitude": 19.4581099147571,
+			"longitude": -99.1866569999088,
+			"stalls": 1231
+		},
+		{
+			"id": "sedeco-227-33",
+			"name": "Tacubaya",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Tacubaya",
+			"address": "Heroes de 1810 y Becerra",
+			"latitude": 19.3986719149719,
+			"longitude": -99.1871939998737,
+			"stalls": 512
+		},
+		{
+			"id": "sedeco-228-94",
+			"name": "Zacatito",
+			"borough": "Miguel Hidalgo",
+			"neighborhood": "Argentina Poniente",
+			"address": "Sanctorum y Cjon. de Zacatito, entre Rio Yapura y Tlacotalpan",
+			"latitude": 19.4579709147886,
+			"longitude": -99.2077499999366,
+			"stalls": 182
+		},
+		{
+			"id": "sedeco-229-40",
+			"name": "Benito Juarez (Milpa Alta)",
+			"borough": "Milpa Alta",
+			"neighborhood": "Villa Milpa Alta",
+			"address": "Yucatan Esq. Constitucion, entre Constitucion , Michoacan y Queretaro",
+			"latitude": 19.1914829156277,
+			"longitude": -99.0213549999946,
+			"stalls": 207
+		},
+		{
+			"id": "sedeco-230-395",
+			"name": "Benito Juarez (Anexo)",
+			"borough": "Milpa Alta",
+			"neighborhood": "Villa Milpa Alta",
+			"address": "Av. Yucatan Esq. Michoacan S/N, entre Jalisco y Michoacan",
+			"latitude": 19.192161915553495,
+			"longitude": -99.0213200000187,
+			"stalls": 207
+		},
+		{
+			"id": "sedeco-231-322",
+			"name": "San Antonio Tecomitl",
+			"borough": "Milpa Alta",
+			"neighborhood": "Pueblo San Antonio",
+			"address": "Av. Morelos y 5 de Mayo",
+			"latitude": 19.217280915475296,
+			"longitude": -98.9895929999595,
+			"stalls": 83
+		},
+		{
+			"id": "sedeco-232-408",
+			"name": "San Bartolome Xicomulco",
+			"borough": "Milpa Alta",
+			"neighborhood": "Pueblo San Antonio Tecomitl",
+			"address": "Av. 5 de Mayo Oriente, entre Matamoros y Prolongación Ignacio Zaragoza",
+			"latitude": 19.2053682006395,
+			"longitude": -99.07012999625302,
+			"stalls": 61
+		},
+		{
+			"id": "sedeco-233-323",
+			"name": "San Pablo Oztotepec",
+			"borough": "Milpa Alta",
+			"neighborhood": "Pueblo San Pablo",
+			"address": "Guerrero, entre Hidalgo y Galeana",
+			"latitude": 19.1847929156425,
+			"longitude": -99.07142099998309,
+			"stalls": 74
+		},
+		{
+			"id": "sedeco-234-182",
+			"name": "San Pedro Atocpan",
+			"borough": "Milpa Alta",
+			"neighborhood": "Pueblo San Atocpan",
+			"address": "Fco. I. Madero, entre Teutli y V. Carranza",
+			"latitude": 19.2014789155255,
+			"longitude": -99.05029400001531,
+			"stalls": 20
+		},
+		{
+			"id": "sedeco-235-244",
+			"name": "San Salvador Cuauhtenco (Doce de Octubre",
+			"borough": "Milpa Alta",
+			"neighborhood": "Pueblo San Salvador Cuauhtenco",
+			"address": "Av. Morelos S/N , entre Jalapa y Guerrero",
+			"latitude": 19.192184915618896,
+			"longitude": -99.089509999946,
+			"stalls": 23
+		},
+		{
+			"id": "sedeco-236-382",
+			"name": "Santa Ana Tlacotenco",
+			"borough": "Milpa Alta",
+			"neighborhood": "Pueblo Santa Ana Tlacotenco",
+			"address": "Cuauhtemoc y Francisco I. Madero",
+			"latitude": 19.1761089156732,
+			"longitude": -98.99825099998542,
+			"stalls": 19
+		},
+		{
+			"id": "sedeco-237-394",
+			"name": "Villa Milpa Alta (Mercado Antojitos)",
+			"borough": "Milpa Alta",
+			"neighborhood": "Villa Milpa Alta",
+			"address": "Queretaro y Yucatan",
+			"latitude": 19.19185591558,
+			"longitude": -99.0213370000245,
+			"stalls": 23
+		},
+		{
+			"id": "sedeco-238-252",
+			"name": "Abraham del Llano (Nopalera)",
+			"borough": "Tláhuac",
+			"neighborhood": "La Nopalera",
+			"address": "Amado Nervo, Emiliano Zapata e Independencia",
+			"latitude": 19.2965879152625,
+			"longitude": -99.0542179999633,
+			"stalls": 87
+		},
+		{
+			"id": "sedeco-239-356",
+			"name": "Agricola Metropolitana (Felipe Astorga Ochoa)",
+			"borough": "Tláhuac",
+			"neighborhood": "Agricola Metropolitana",
+			"address": "Calle Zoyate , entre Nardo y Violeta",
+			"latitude": 19.2898029152734,
+			"longitude": -99.0529760000028,
+			"stalls": 44
+		},
+		{
+			"id": "sedeco-240-1001",
+			"name": "Ampliacion Selene",
+			"borough": "Tláhuac",
+			"neighborhood": "Ampliacion Selene",
+			"address": "Mar de los Vapores",
+			"latitude": 19.2848739153092,
+			"longitude": -98.99501700004258,
+			"stalls": 71
+		},
+		{
+			"id": "sedeco-241-41",
+			"name": "Central de Tlahuac",
+			"borough": "Tláhuac",
+			"neighborhood": "San Pedro Tlahuac",
+			"address": "Av. Tlahuac-Chalco S/n. entre Emiliano Zapata y Severiano Ceniceros",
+			"latitude": 19.2685739153725,
+			"longitude": -99.0047989999948,
+			"stalls": 148
+		},
+		{
+			"id": "sedeco-242-359",
+			"name": "Del Mar",
+			"borough": "Tláhuac",
+			"neighborhood": "Del Mar",
+			"address": "Tiburon , Camaron y Sirena",
+			"latitude": 19.2871039152597,
+			"longitude": -99.05989099998841,
+			"stalls": 111
+		},
+		{
+			"id": "sedeco-243-373",
+			"name": "Emiliano Zapata (Tetelco)",
+			"borough": "Milpa Alta",
+			"neighborhood": "San Nicolas Tetelco",
+			"address": "Av. Morelos y Puebla",
+			"latitude": 19.2090749154979,
+			"longitude": -98.9701280000204,
+			"stalls": 24
+		},
+		{
+			"id": "sedeco-244-411",
+			"name": "La Estacion",
+			"borough": "Tláhuac",
+			"neighborhood": "La Estacion",
+			"address": "Pino Suarez S/N entre Bellas Artes y San Rafael Atlixco",
+			"latitude": 19.3097100861793,
+			"longitude": -99.0435490833876,
+			"stalls": 70
+		},
+		{
+			"id": "sedeco-245-253",
+			"name": "Los Olivos",
+			"borough": "Tláhuac",
+			"neighborhood": "Los Olivos",
+			"address": "Jose Lugo y Ruiz Cortinez",
+			"latitude": 19.2968179152353,
+			"longitude": -99.06170899998878,
+			"stalls": 94
+		},
+		{
+			"id": "sedeco-246-254",
+			"name": "Miguel Hidalgo",
+			"borough": "Tláhuac",
+			"neighborhood": "Miguel Hidalgo",
+			"address": "Fco. I. Madero y Lucas Marencio",
+			"latitude": 19.2934729152788,
+			"longitude": -99.046327999986,
+			"stalls": 48
+		},
+		{
+			"id": "sedeco-246-289",
+			"name": "Miguel Hidalgo",
+			"borough": "Tlalpan",
+			"neighborhood": "Miguel Hidalgo",
+			"address": "Corregidora S/N y Michoacan",
+			"latitude": 19.2876709153284,
+			"longitude": -99.1847069999256,
+			"stalls": 72
+		},
+		{
+			"id": "sedeco-247-178",
+			"name": "Mixquic",
+			"borough": "Tláhuac",
+			"neighborhood": "San Andres Mixquic",
+			"address": "Av. Independencia, 20 de Noviembre y Canal Seco",
+			"latitude": 19.2238759154563,
+			"longitude": -98.9618160000005,
+			"stalls": 102
+		},
+		{
+			"id": "sedeco-248-371",
+			"name": "San Jose",
+			"borough": "Tláhuac",
+			"neighborhood": "San Jose",
+			"address": "Agustin Lara S/n. entre Juventino Rosas y Guadalupe Trigo",
+			"latitude": 19.275872915300596,
+			"longitude": -98.9960810000167,
+			"stalls": 48
+		},
+		{
+			"id": "sedeco-249-179",
+			"name": "San Juan Ixtayopan",
+			"borough": "Tláhuac",
+			"neighborhood": "San Juan Ixtayopan",
+			"address": "Vicene Guerrero y Emiliano Zapata",
+			"latitude": 19.2440099154641,
+			"longitude": -98.99502399998948,
+			"stalls": 79
+		},
+		{
+			"id": "sedeco-250-358",
+			"name": "Santa Catarina",
+			"borough": "Tláhuac",
+			"neighborhood": "Santa Catarina Yecahuizotl",
+			"address": "Pipila, entre Emiliano Zapata y Concepcion",
+			"latitude": 19.3129049151885,
+			"longitude": -98.96629200001472,
+			"stalls": 51
+		},
+		{
+			"id": "sedeco-251-248",
+			"name": "Santa Cecilia",
+			"borough": "Tláhuac",
+			"neighborhood": "Santa Cecilia",
+			"address": "Calle Carlos Espinosa de los Monterosy Mercedes Caraza",
+			"latitude": 19.2784229152825,
+			"longitude": -99.0058869999864,
+			"stalls": 61
+		},
+		{
+			"id": "sedeco-252-372",
+			"name": "Selene",
+			"borough": "Tláhuac",
+			"neighborhood": "Selene",
+			"address": "Oceano de las Tempestades, Mar de las Crisis y Montes Apeninos",
+			"latitude": 19.2888869152704,
+			"longitude": -99.0059730000075,
+			"stalls": 112
+		},
+		{
+			"id": "sedeco-253-1002",
+			"name": "Tipico Regional",
+			"borough": "Tláhuac",
+			"neighborhood": "San Pedro Tlahuac",
+			"address": "Calz. Tulyehualco y Av. Gral. Severiano Ceniceros",
+			"latitude": 19.2685769153529,
+			"longitude": -99.0048330000259,
+			"stalls": 26
+		},
+		{
+			"id": "sedeco-254-211",
+			"name": "Tlaltenco (San Francisco)",
+			"borough": "Tláhuac",
+			"neighborhood": "San Fco. Tlaltenco",
+			"address": "Carlos A. Vidal entre Plan de Ayutla y Quintana Roo",
+			"latitude": 19.2957259152827,
+			"longitude": -99.0148659999646,
+			"stalls": 117
+		},
+		{
+			"id": "sedeco-255-374",
+			"name": "Zapotitla",
+			"borough": "Tláhuac",
+			"neighborhood": "Zapotitla",
+			"address": "Salvador Diaz Miron Esq. Cecilio Acosta",
+			"latitude": 19.3126769152251,
+			"longitude": -99.03817799993841,
+			"stalls": 104
+		},
+		{
+			"id": "sedeco-256-192",
+			"name": "Zapotitlan",
+			"borough": "Tláhuac",
+			"neighborhood": "La Conchita Zapotitlan",
+			"address": "Francisco Jimenez entre Emiliano Apata y Av. Tlahuac",
+			"latitude": 19.294844915298597,
+			"longitude": -99.0366829999625,
+			"stalls": 67
+		},
+		{
+			"id": "sedeco-257-274",
+			"name": "Artesanias Vasco de Quiroga",
+			"borough": "Tlalpan",
+			"neighborhood": "Peña Pobre",
+			"address": "Insurgentes y Camino a Sta Teresa",
+			"latitude": 19.2952839152602,
+			"longitude": -99.1849219999327,
+			"stalls": 132
+		},
+		{
+			"id": "sedeco-258-251",
+			"name": "Comidas Huipulco",
+			"borough": "Tlalpan",
+			"neighborhood": "Huipulco",
+			"address": "Tlalpan, San Lorenzo y Acueducto",
+			"latitude": 19.3025269152063,
+			"longitude": -99.1464599999705,
+			"stalls": 23
+		},
+		{
+			"id": "sedeco-259-256",
+			"name": "Dr. y Gral Jose Gonzalez Varela",
+			"borough": "Tlalpan",
+			"neighborhood": "San Pedro Martir",
+			"address": "Calle del Rosal, entre 5 de Mayo y Azucena",
+			"latitude": 19.2653179153687,
+			"longitude": -99.16932499992,
+			"stalls": 58
+		},
+		{
+			"id": "sedeco-260-286",
+			"name": "Flores San Fernando",
+			"borough": "Tlalpan",
+			"neighborhood": "Tlalpan",
+			"address": "Calz. de Talpan , entre San Francisco y Allende",
+			"latitude": 19.2897089152487,
+			"longitude": -99.16225399996259,
+			"stalls": 76
+		},
+		{
+			"id": "sedeco-261-267",
+			"name": "Fuentes Brotantes",
+			"borough": "Tlalpan",
+			"neighborhood": "Fuentes Brotantes",
+			"address": "Parque Nacional y Fuentes Brotantes",
+			"latitude": 19.284410915326795,
+			"longitude": -99.18139499992648,
+			"stalls": 26
+		},
+		{
+			"id": "sedeco-262-393",
+			"name": "Hueso Periferico",
+			"borough": "Tlalpan",
+			"neighborhood": "Granjas Coapa",
+			"address": "Calzada del Hueso 1079, entre Fresales y Canal Nacional",
+			"latitude": 19.2995419152278,
+			"longitude": -99.10287799994141,
+			"stalls": 102
+		},
+		{
+			"id": "sedeco-263-282",
+			"name": "Isidro Fabela",
+			"borough": "Tlalpan",
+			"neighborhood": "Isidro Fabela",
+			"address": "Primera Norte y 4a Poniente",
+			"latitude": 19.3004849152081,
+			"longitude": -99.17743799989461,
+			"stalls": 60
+		},
+		{
+			"id": "sedeco-264-391",
+			"name": "Jose Maria Morelos y Pavon",
+			"borough": "Tlalpan",
+			"neighborhood": "Tenorios",
+			"address": "Cda. Don Refugio y Cacahuatales, entre Tenorios y Calz. del Hueso",
+			"latitude": 19.2977949152292,
+			"longitude": -99.11843399989418,
+			"stalls": 56
+		},
+		{
+			"id": "sedeco-265-42",
+			"name": "La Paz",
+			"borough": "Tlalpan",
+			"neighborhood": "Tlalpan",
+			"address": "Plaza de la Constitucion S/n. entre Gpe. Victoria y Congreso",
+			"latitude": 19.287988915247997,
+			"longitude": -99.16710199993528,
+			"stalls": 141
+		},
+		{
+			"id": "sedeco-266-265",
+			"name": "Lazaro Cardenas",
+			"borough": "Tlalpan",
+			"neighborhood": "Lazaro Cardenas",
+			"address": "Acoxpa y Federacion Mexicana de Futbol, entre Lagunas y Necaxa",
+			"latitude": 19.2977399152856,
+			"longitude": -99.1389299998927,
+			"stalls": 72
+		},
+		{
+			"id": "sedeco-268-1011",
+			"name": "Mirador",
+			"borough": "Tlalpan",
+			"neighborhood": "Lomas de Padierna",
+			"address": "Popolnah Esq. Bekal, entre Bekal y Tekit",
+			"latitude": 19.2949639152646,
+			"longitude": -99.22614499990638,
+			"stalls": 90
+		},
+		{
+			"id": "sedeco-269-392",
+			"name": "Plaza Mexicana del Sur",
+			"borough": "Tlalpan",
+			"neighborhood": "San Lorenzo Huipulco",
+			"address": "Acoxpa C/esq. Calz. de Tlalpan, entre Acoxpa y Calz. de Tlalpan",
+			"latitude": 19.3005519152727,
+			"longitude": -99.146041999959,
+			"stalls": 79
+		},
+		{
+			"id": "sedeco-270-285",
+			"name": "San Andres Totoltepec",
+			"borough": "Tlalpan",
+			"neighborhood": "San Andres Totoltepec",
+			"address": "16 de Septiembre S/n. entre Reforma y Rivapalacio",
+			"latitude": 19.2515179153999,
+			"longitude": -99.17230999989019,
+			"stalls": 51
+		},
+		{
+			"id": "sedeco-271-350",
+			"name": "San Nicolas Totolapan",
+			"borough": "Tlalpan",
+			"neighborhood": "Pedregal de San Nicolas",
+			"address": "Kantunil S/n. , entre Sinache y Chemax",
+			"latitude": 19.2919109152745,
+			"longitude": -99.236400999855,
+			"stalls": 32
+		},
+		{
+			"id": "sedeco-272-406",
+			"name": "Tlalcoligia",
+			"borough": "Tlalpan",
+			"neighborhood": "Tlalcoligia",
+			"address": "Tepehuanos y Otomies",
+			"latitude": 19.2750839153515,
+			"longitude": -99.17177199995129,
+			"stalls": 70
+		},
+		{
+			"id": "sedeco-273-320",
+			"name": "Torres de Padierna",
+			"borough": "Tlalpan",
+			"neighborhood": "Orres de Padierna",
+			"address": "Tixpehuatl Tixkokob, entre Seye y Sacalum",
+			"latitude": 19.2823359153184,
+			"longitude": -99.2282194443299,
+			"stalls": 58
+		},
+		{
+			"id": "sedeco-274-0.394",
+			"name": "Veinticuatro de Febrero",
+			"borough": "Tlalpan",
+			"neighborhood": "Lomas de Padierna Sur",
+			"address": "F.F. C.C. Cuernavaca, entre Tulun y Prol. Tekil",
+			"latitude": 19.274643,
+			"longitude": -99.225478,
+			"stalls": 53
+		},
+		{
+			"id": "sedeco-275-1012",
+			"name": "Veintiuno de Abril",
+			"borough": "Tlalpan",
+			"neighborhood": "Rincon del Mirador",
+			"address": "Hopelche, Xitle e Izamal",
+			"latitude": 19.2712189153359,
+			"longitude": -99.2238609999202,
+			"stalls": 65
+		},
+		{
+			"id": "sedeco-276-263",
+			"name": "Villa Coapa",
+			"borough": "Tlalpan",
+			"neighborhood": "Villa Coapa",
+			"address": "Av. Canal de Miramontes S/n. entre Av. Acoxpa y Caporal",
+			"latitude": 19.2920459152337,
+			"longitude": -99.12683799996229,
+			"stalls": 167
+		},
+		{
+			"id": "sedeco-277-209",
+			"name": "Adolfo Lopez Mateos",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Adolfo Lopez Mateos",
+			"address": "Eduardo Bustamante y Ernesto P. Uruchurtu",
+			"latitude": 19.4212129148573,
+			"longitude": -99.0727599999829,
+			"stalls": 211
+		},
+		{
+			"id": "sedeco-278-140",
+			"name": "Alvaro Obregon",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Alvaro Obregon",
+			"address": "Cucurpe y Roa Barcenas, entre Agiabanpo y Bacum",
+			"latitude": 19.4113669148934,
+			"longitude": -99.11786099992797,
+			"stalls": 211
+		},
+		{
+			"id": "sedeco-279-197",
+			"name": "Aquiles Serdan",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Aquiles Serdan",
+			"address": "Pequin y Puerto Arturo, entre Dinares y Esterlinas",
+			"latitude": 19.4471289147945,
+			"longitude": -99.0923209999584,
+			"stalls": 222
+		},
+		{
+			"id": "sedeco-280-283",
+			"name": "Arenal 4a Seccion",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Arenal 4a Seccion",
+			"address": "Xochitlan Norte y Xochitlan Sur",
+			"latitude": 19.4283179148216,
+			"longitude": -99.05646799996877,
+			"stalls": 199
+		},
+		{
+			"id": "sedeco-281-187",
+			"name": "Aviacion Civil",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Aviacion Civil",
+			"address": "Horacio Ruiz y Lindbergh",
+			"latitude": 19.4142079149074,
+			"longitude": -99.0777109999816,
+			"stalls": 124
+		},
+		{
+			"id": "sedeco-282-264",
+			"name": "Calzado la Central",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Felipe Angeles",
+			"address": "Cda. Aviadero entre Aluminio y Estaño",
+			"latitude": 19.4509769147361,
+			"longitude": -99.11250299996138,
+			"stalls": 172
+		},
+		{
+			"id": "sedeco-283-903",
+			"name": "Del Parque",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Del Parque",
+			"address": "Congreso de la Union S/N, Lorenzo Boturini y Nivel",
+			"latitude": 19.4161619148935,
+			"longitude": -99.12096799992659,
+			"stalls": 106
+		},
+		{
+			"id": "sedeco-284-203",
+			"name": "Emilio Carranza",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Morelos",
+			"address": "Imprenta y Jardineros",
+			"latitude": 19.4424049148151,
+			"longitude": -99.1187299999107,
+			"stalls": 126
+		},
+		{
+			"id": "sedeco-285-183",
+			"name": "Federal",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Federal",
+			"address": "Av. Universidad Nacional, entre Suprema Corte de Justicia y Educacion Publica",
+			"latitude": 19.4204039148416,
+			"longitude": -99.0893839999082,
+			"stalls": 103
+		},
+		{
+			"id": "sedeco-286-148",
+			"name": "Ignacio Zaragoza",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Ignacio Zaragoza",
+			"address": "Av.8, entre Calle 35 y Calle 39",
+			"latitude": 19.41254091491,
+			"longitude": -99.09144899996,
+			"stalls": 428
+		},
+		{
+			"id": "sedeco-287-65",
+			"name": "Jamaica Comidas",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Jamaica",
+			"address": "Congreso de la Union y Guillermo Prieto",
+			"latitude": 19.4067229148841,
+			"longitude": -99.1223729999551,
+			"stalls": 66
+		},
+		{
+			"id": "sedeco-288-235",
+			"name": "Jamaica Nuevo",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Jamaica",
+			"address": "Congreso de la Union, entre Guillermo Prieto y Morelos",
+			"latitude": 19.4077499148954,
+			"longitude": -99.12305699996548,
+			"stalls": 1312
+		},
+		{
+			"id": "sedeco-289-15",
+			"name": "Jamaica Zona",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Jamaica",
+			"address": "Congreso de la Union entre Morelos y la Viga",
+			"latitude": 19.408583914930496,
+			"longitude": -99.12278799991869,
+			"stalls": 562
+		},
+		{
+			"id": "sedeco-290-159",
+			"name": "Jardin Balbuena",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Jardin Balbuena",
+			"address": "Ret.27 de Genao Garcia, entre Ret.27 y Ret.29",
+			"latitude": 19.415715914884796,
+			"longitude": -99.10089699998478,
+			"stalls": 133
+		},
+		{
+			"id": "sedeco-291-381",
+			"name": "Lic. Octavio Senties",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "20 de Noviembre",
+			"address": "Floricultura y Electricistas, entre Grabados y Oficios",
+			"latitude": 19.4448849148248,
+			"longitude": -99.10780499992919,
+			"stalls": 40
+		},
+		{
+			"id": "sedeco-292-904",
+			"name": "Luis Preciado de la Torre",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Moctezuma",
+			"address": "Emilio Carranza y Luis Preciado de la Torre",
+			"latitude": 19.4283759148411,
+			"longitude": -99.10611299992,
+			"stalls": 132
+		},
+		{
+			"id": "sedeco-293-52",
+			"name": "Merced Ampudia",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Centro",
+			"address": "Av. Anillo de Circunvalacion No 4 y Cjon. Carretones",
+			"latitude": 19.4271899148727,
+			"longitude": -99.1252099999695,
+			"stalls": 151
+		},
+		{
+			"id": "sedeco-294-106",
+			"name": "Merced Anexo",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Centro",
+			"address": "Adolfo Gurrion Esq. Cabañas",
+			"latitude": 19.4244579148155,
+			"longitude": -99.124946999901,
+			"stalls": 186
+		},
+		{
+			"id": "sedeco-295-109",
+			"name": "Merced Banqueton",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Centro",
+			"address": "Rosario y Abraham Olvera Col.",
+			"latitude": 19.4261993206258,
+			"longitude": -99.12302840010598,
+			"stalls": 449
+		},
+		{
+			"id": "sedeco-296-104",
+			"name": "Merced Comidas",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Centro",
+			"address": "Calle Rosario 120, entre Gral. Anaya y Carretones",
+			"latitude": 19.4272999148909,
+			"longitude": -99.1228219999249,
+			"stalls": 218
+		},
+		{
+			"id": "sedeco-297-105",
+			"name": "Merced Flores",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Centro",
+			"address": "Anillo de Circunvalacion S/n. entre Plaza Carrizales y Rayon",
+			"latitude": 19.42606691489,
+			"longitude": -99.1250679999001,
+			"stalls": 110
+		},
+		{
+			"id": "sedeco-298-102",
+			"name": "Merced Nave Mayor",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Centro",
+			"address": "Rosario y Abraham Olvera",
+			"latitude": 19.426185914854997,
+			"longitude": -99.1238129999762,
+			"stalls": 4200
+		},
+		{
+			"id": "sedeco-299-101",
+			"name": "Merced Nave Menor",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Centro",
+			"address": "Rosario y Adolfo Gurrion",
+			"latitude": 19.4254879148229,
+			"longitude": -99.12267599992498,
+			"stalls": 647
+		},
+		{
+			"id": "sedeco-300-103",
+			"name": "Merced Paso a Desnivel",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Centro",
+			"address": "Rosario y Adolfo Gurrion Col. Merced Centro",
+			"latitude": 19.425589,
+			"longitude": -99.123394,
+			"stalls": 77
+		},
+		{
+			"id": "sedeco-301-241",
+			"name": "Merced Paso a Desnivel Gomez Pedraza",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Centro",
+			"address": "Rosario y Adolfo Gurrion Col. Merced Centro",
+			"latitude": 19.423712,
+			"longitude": -99.123459,
+			"stalls": 67
+		},
+		{
+			"id": "sedeco-302-409",
+			"name": "Minillas",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Amp. Michoacan",
+			"address": "Congreso de la Union y Canlal del Norte",
+			"latitude": 19.4502559147775,
+			"longitude": -99.1152469999066,
+			"stalls": 225
+		},
+		{
+			"id": "sedeco-303-21",
+			"name": "Moctezuma",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Moctezuma 2a Seccion",
+			"address": "Ote.154 y Ote.158 entre Norte 25 y Norte 21",
+			"latitude": 19.4322389147931,
+			"longitude": -99.097046999952,
+			"stalls": 526
+		},
+		{
+			"id": "sedeco-304-165",
+			"name": "Morelos",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Morelos",
+			"address": "Ing. Eduardo Molina entre Herreros y Hortelanos",
+			"latitude": 19.4398339148452,
+			"longitude": -99.11475499996108,
+			"stalls": 912
+		},
+		{
+			"id": "sedeco-305-901",
+			"name": "Nuevo San Lazaro",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Pueblo de la Magdalena Mixihuca",
+			"address": "Rio Frio No 261, entre 20 de Noviembre e Industria",
+			"latitude": 19.4074709149115,
+			"longitude": -99.11482799996598,
+			"stalls": 78
+		},
+		{
+			"id": "sedeco-306-238",
+			"name": "Pantitlan Arenal",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Pantitlan",
+			"address": "Av. Circunvalacion y Ernesto P. Uruchurtu",
+			"latitude": 19.423501914855695,
+			"longitude": -99.0650939999473,
+			"stalls": 143
+		},
+		{
+			"id": "sedeco-307-150",
+			"name": "Pensador Mexicano",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Pensador Mexicano",
+			"address": "Norte 172 S/n. Norte 174, entre Bolivares y Circ. Interior Rio Consulado",
+			"latitude": 19.4439509147831,
+			"longitude": -99.0869749999462,
+			"stalls": 156
+		},
+		{
+			"id": "sedeco-308-346",
+			"name": "Peñon de los Baños",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Peñon de los Baños",
+			"address": "Matamoros y Chimalhuacan",
+			"latitude": 19.4396119148026,
+			"longitude": -99.0849969999449,
+			"stalls": 101
+		},
+		{
+			"id": "sedeco-309-214",
+			"name": "Plan de Ayala Caracol",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Caracol",
+			"address": "Igncio Zaragoza y Francisco Villa",
+			"latitude": 19.4280679147984,
+			"longitude": -99.0695519999884,
+			"stalls": 96
+		},
+		{
+			"id": "sedeco-310-85",
+			"name": "Puebla",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Puebla",
+			"address": "Calle 69 y Av. 4, entre 65 y 67",
+			"latitude": 19.4102969149142,
+			"longitude": -99.08298399996852,
+			"stalls": 281
+		},
+		{
+			"id": "sedeco-311-26",
+			"name": "Romero Rubio",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Romero Rubio",
+			"address": "Canton, entre Marruecos y Persia",
+			"latitude": 19.443997914763,
+			"longitude": -99.0993729999838,
+			"stalls": 639
+		},
+		{
+			"id": "sedeco-312-278",
+			"name": "Santa Juanita",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "20 de Noviembre",
+			"address": "Oficios, entre Electricistas y Grabados",
+			"latitude": 19.4447869147882,
+			"longitude": -99.1080469999051,
+			"stalls": 107
+		},
+		{
+			"id": "sedeco-313-107",
+			"name": "Sonora",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Balbuena",
+			"address": "San Nicolas S/n. entre Calle Fray Servando T. de Mier y Calle Canal",
+			"latitude": 19.4222569148326,
+			"longitude": -99.1246359999701,
+			"stalls": 407
+		},
+		{
+			"id": "sedeco-314--108",
+			"name": "Sonora Anexo",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Merced Balbuena",
+			"address": "San Nicolas S/n. entre Calle Fray Servando T. de Mier y Calle Canal",
+			"latitude": 19.4217139148435,
+			"longitude": -99.1244429999205,
+			"stalls": 271
+		},
+		{
+			"id": "sedeco-315-240",
+			"name": "Unidad Kennedy",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Jardin Balbuena",
+			"address": "Ret. 5 de Zaragoza, entre Cecilio Robelo y Ribera Cambas",
+			"latitude": 19.4246679148681,
+			"longitude": -99.10862899994548,
+			"stalls": 182
+		},
+		{
+			"id": "sedeco-316-25",
+			"name": "Unidad Rastro",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Felipe Angeles",
+			"address": "Ing. Eduardo Molina entre Aluminio y Estaño",
+			"latitude": 19.4510339147807,
+			"longitude": -99.1105949999394,
+			"stalls": 717
+		},
+		{
+			"id": "sedeco-317-245",
+			"name": "Valle Gomez",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Valle Gomez",
+			"address": "Rio Conzulado , entre Proaño y Pozos",
+			"latitude": 19.4591189147012,
+			"longitude": -99.1217739999172,
+			"stalls": 203
+		},
+		{
+			"id": "sedeco-318-174",
+			"name": "Veinte de Abril",
+			"borough": "Venustiano Carranza",
+			"neighborhood": "Moctezuma 1a Seccion",
+			"address": "Oriente 168 entre Oriente 170 y Norte 13",
+			"latitude": 19.427622914881,
+			"longitude": -99.0976429999304,
+			"stalls": 272
+		},
+		{
+			"id": "sedeco-319-383",
+			"name": "Ahualapa",
+			"borough": "Xochimilco",
+			"neighborhood": "Sta. Cruz Acalpixca",
+			"address": "Cuauhtemoc, Insurgentes y Plaza Principal",
+			"latitude": 19.247118915424696,
+			"longitude": -99.07044199994068,
+			"stalls": 33
+		},
+		{
+			"id": "sedeco-320-379",
+			"name": "Ampliacion San Marcos",
+			"borough": "Xochimilco",
+			"neighborhood": "Amp. San Marcos Norte",
+			"address": "Tepozanes 56",
+			"latitude": 19.268997915352,
+			"longitude": -99.1134529999518,
+			"stalls": 91
+		},
+		{
+			"id": "sedeco-321--382",
+			"name": "Ampliacion Tepepan",
+			"borough": "Xochimilco",
+			"neighborhood": "Ampliacion Tepepan",
+			"address": "Av. las Torres y Camino Real al Ajusco",
+			"latitude": 19.266354915328,
+			"longitude": -99.13361899995859,
+			"stalls": 60
+		},
+		{
+			"id": "sedeco-322-380",
+			"name": "Guadalupe I. Ramirez",
+			"borough": "Xochimilco",
+			"neighborhood": "Barrio San Juan",
+			"address": "Guadalupe I. Ramirez y Pedro Ramirez del Castillo",
+			"latitude": 19.2640899153828,
+			"longitude": -99.1053769999163,
+			"stalls": 25
+		},
+		{
+			"id": "sedeco-323-115",
+			"name": "Nativitas",
+			"borough": "Xochimilco",
+			"neighborhood": "Nativitas",
+			"address": "Embarcadero y Mercado",
+			"latitude": 19.2506319153693,
+			"longitude": -99.09427899994192,
+			"stalls": 296
+		},
+		{
+			"id": "sedeco-324-190",
+			"name": "San Gregorio Atlapulco",
+			"borough": "Xochimilco",
+			"neighborhood": "San Gregorio Atlapulco",
+			"address": "Cuauhtemoc, Insurgentes y Plaza Principal",
+			"latitude": 19.2551279153919,
+			"longitude": -99.05745599995439,
+			"stalls": 136
+		},
+		{
+			"id": "sedeco-325-378",
+			"name": "Santa Cruz Acalpixca",
+			"borough": "Xochimilco",
+			"neighborhood": "Sta. Cruz Acalpixca",
+			"address": "Av. Mexico y Pedro Benavides",
+			"latitude": 19.2460759154337,
+			"longitude": -99.07516299996169,
+			"stalls": 50
+		},
+		{
+			"id": "sedeco-326--381",
+			"name": "Tierra Nueva",
+			"borough": "Xochimilco",
+			"neighborhood": "Tierra Nueva",
+			"address": "18 de Marzo y Av. Mexico",
+			"latitude": 19.2640129153729,
+			"longitude": -99.1160669999829,
+			"stalls": 74
+		},
+		{
+			"id": "sedeco-327-146",
+			"name": "Tulyehualco",
+			"borough": "Xochimilco",
+			"neighborhood": "Pueblo de Tulyehualco",
+			"address": "Zaragoza y Division del Norte",
+			"latitude": 19.2547029153957,
+			"longitude": -99.0114549999761,
+			"stalls": 118
+		},
+		{
+			"id": "sedeco-328-377",
+			"name": "Xochimilco Anexo",
+			"borough": "Xochimilco",
+			"neighborhood": "Xochimilco",
+			"address": "Av. Morelos No 60 Esq. 16 de Sept. entre Netzahualcoyotl y Fco. I Madero",
+			"latitude": 19.2609549153565,
+			"longitude": -99.1043129999542,
+			"stalls": 968
+		},
+		{
+			"id": "sedeco-329-44",
+			"name": "Xochimilco Zona (Xochitl)",
+			"borough": "Xochimilco",
+			"neighborhood": "Xochimilco",
+			"address": "Av.morelos , entre Fco. I Madero y 16 de Septiembre",
+			"latitude": 19.2623379153694,
+			"longitude": -99.10404999993361,
+			"stalls": 447
+		}
+	]
+}

@@ -1,4 +1,4 @@
-# De Aquí — UX flows and prototype contract
+# entrepuestos — UX flows and prototype contract
 
 This document maps the editable `design.pen` screens into journeys. The parent designer owns the UX flow boards; the dashboard designer owns `T28VaZ` and related comparison screens; the prototype designer owns canvas ordering and the separate local prototype.
 

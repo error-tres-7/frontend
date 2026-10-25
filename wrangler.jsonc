@@ -1,6 +1,6 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "chilangathon",
+	"name": "entrepuestos",
 	"compatibility_date": "2026-10-25",
 	"compatibility_flags": ["nodejs_als"],
 	"main": ".svelte-kit/cloudflare/_worker.js",
@@ -9,5 +9,26 @@
 		"directory": ".svelte-kit/cloudflare"
 	},
 	"workers_dev": true,
-	"preview_urls": true
+	"preview_urls": true,
+	// Custom domain purchased in Cloudflare; deploy requires `wrangler login` on this account.
+	"routes": [
+		{ "pattern": "entrepuestos.com/*", "zone_name": "entrepuestos.com" },
+		{ "pattern": "www.entrepuestos.com/*", "zone_name": "entrepuestos.com" }
+	],
+	"observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": true,
+      "persist": true
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true
+    },
+    "issue_detection": {
+      "enabled": true
+    }
+  }
 }
